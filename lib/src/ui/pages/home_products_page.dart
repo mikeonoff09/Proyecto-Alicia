@@ -1,15 +1,10 @@
 import 'package:alicia/src/datasources/http_handler.dart';
-import 'package:alicia/src/datasources/mysql_server.dart';
-import 'package:alicia/src/helpers/list_helper.dart';
 import 'package:alicia/src/models/initial_data.dart';
 import 'package:alicia/src/models/product.dart';
-import 'package:alicia/src/repositories/repository.dart';
 import 'package:alicia/src/ui/components/table_widget.dart';
 import 'package:alicia/src/ui/pages/product_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
-
-import '../components/menu_item.dart';
 
 class HomeProductsPage extends StatefulWidget {
   HomeProductsPage({Key key}) : super(key: key);
@@ -68,13 +63,13 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     final size = MediaQuery.of(context).size;
     List<List<dynamic>> data = getListData();
     return Scaffold(
-      drawer: getDrawer(context),
+      // drawer: getDrawer(context),
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         key: Key("addproduct"),
         child: Icon(Icons.add),
         onPressed: () {
-          createNewProduct(context);
+          // createNewProduct(context);
         },
       ),
       body: Row(
@@ -83,258 +78,266 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 40,
-                      child: Center(
-                        child: Text(
-                          "Filtros",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.065,
-                      child: TextFormField(
-                        decoration: InputDecoration(labelText: "Id Producto"),
-                        controller: idController,
-                        onChanged: (value) {
-                          loadData();
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.1,
-                      child: TextFormField(
-                        decoration: InputDecoration(labelText: "Nombre"),
-                        controller: nameController,
-                        onChanged: (value) {
-                          loadData();
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Transform.translate(
-                      offset: Offset(0, 8),
-                      child: SizedBox(
-                        width: size.width * 0.14,
-                        child: SearchableDropdown<Categoria>.single(
-                          value: categorySelected,
-                          onChanged: (value) {
-                            setState(() {
-                              categorySelected = value;
-                            });
-                            loadData();
-                          },
-                          items: categories
-                              .map(
-                                (e) => DropdownMenuItem<Categoria>(
-                                  child: Text(
-                                    "${e.name}",
-                                  ),
-                                  value: e,
-                                ),
-                              )
-                              .toList(),
-                          isExpanded: true,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.1,
-                      child: TextFormField(
-                        decoration: InputDecoration(labelText: "Referencia"),
-                        controller: referenceController,
-                        onChanged: (value) {
-                          loadData();
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Transform.translate(
-                      offset: Offset(0, 8),
-                      child: SizedBox(
-                        width: size.width * 0.14,
-                        child: SearchableDropdown<Fabricante>.single(
-                          value: manufacturSelected,
-                          onChanged: (value) {
-                            setState(() {
-                              manufacturSelected = value;
-                            });
-                            loadData();
-                          },
-                          items: manufactures
-                              .map(
-                                (e) => DropdownMenuItem<Fabricante>(
-                                  child: Text(
-                                    "${e.name}",
-                                  ),
-                                  value: e,
-                                ),
-                              )
-                              .toList(),
-                          isExpanded: true,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Transform.translate(
-                      offset: Offset(0, 8),
-                      child: SizedBox(
-                        width: size.width * 0.14,
-                        child: SearchableDropdown<Map<String, dynamic>>.single(
-                          value: stateWebSelected,
-                          onChanged: (value) {
-                            setState(() {
-                              stateWebSelected = value;
-                            });
-                            loadData();
-                          },
-                          items: stateWebs
-                              .map(
-                                (e) => DropdownMenuItem<Map<String, dynamic>>(
-                                  child: Text(
-                                    "${e["name"]} (${e["id"]})",
-                                  ),
-                                  value: e,
-                                ),
-                              )
-                              .toList(),
-                          isExpanded: true,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Transform.translate(
-                      offset: Offset(0, 8),
-                      child: SizedBox(
-                        width: size.width * 0.14,
-                        child: SearchableDropdown<Map<String, dynamic>>.single(
-                          value: pasoSelected,
-                          onChanged: (value) {
-                            setState(() {
-                              pasoSelected = value;
-                            });
-                            loadData();
-                          },
-                          items: pasos
-                              .map(
-                                (e) => DropdownMenuItem<Map<String, dynamic>>(
-                                  child: Text(
-                                    "${e["name"]} (${e["id"]})",
-                                  ),
-                                  value: e,
-                                ),
-                              )
-                              .toList(),
-                          isExpanded: true,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                if (productList == null)
-                  Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                if (productList != null)
-                  Expanded(
-                    child: TableWidget(
-                      centerHorizontal: true,
-                      countToDisplay: 5,
-                      onRowTap: (index) {
-                        try {
-                          print(index);
-                          final product = productList[index];
-                          final route = MaterialPageRoute(
-                            builder: (context) => ProductDetailsPage(
-                              product: product,
-                              generalData: this.generalData,
-                            ),
-                          );
-                          Navigator.push(
-                            context,
-                            route,
-                          );
-                        } catch (e) {
-                          print(e);
-                        }
-                      },
-                      page: page,
-                      totalPage: totalPage,
-                      data: data,
-                      rowHeight: 115,
-                      cellTextAlign: TextAlign.center,
-                      widthSizes: {
-                        0: 0.05,
-                        1: 0.08,
-                        2: 0.08,
-                        3: 0.2,
-                        4: 0.1,
-                        5: 0.08,
-                        6: 0.07,
-                        7: 0.07,
-                        8: 0.045,
-                        9: 0.045,
-                        10: 0.06,
-                      },
-                      headerTextColor: Colors.black54,
-                      paginationButtonColor: Theme.of(context).accentColor,
-                      headerColor: Theme.of(context).primaryColor,
-                      selecteds: getSelectedsList(),
-                      values: List<String>.from(
-                          (productList?.map((e) => e?.toString()) ?? [])
-                              .toList()),
-                      onRowSelectedChange: onRowSelectedChange,
-                      actions: [
-                        TableAction(
-                          onPressed: (index) {},
-                          icon: Icon(Icons.edit),
-                        ),
-                        TableAction(
-                          onPressed: (index) {},
-                          icon: Icon(Icons.remove_red_eye),
-                        )
-                      ],
-                      headers: getHeaders(context),
-                      onPageChanged: (int page) {
-                        setState(() {
-                          this.page = page;
-
-                          productList = null;
-                        });
-                        Future.microtask(() => loadData());
-                      },
-                    ),
-                  )
+                _filtros(),
+                Divider(),
+                SizedBox(height: 20),
+                productList == null
+                    ? Center(child: CircularProgressIndicator())
+                    : _tablaProductos(context, data),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Container _filtros() {
+    return Container(
+      padding: EdgeInsets.all(8),
+      // decoration: BoxDecoration(
+      //     border: Border.all(color: Colors.blueAccent)),
+      child: Wrap(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: WrapCrossAlignment.start,
+        alignment: WrapAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: Center(
+              child: Text(
+                "Filtros",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: TextFormField(
+              decoration: InputDecoration(labelText: "Id Producto"),
+              controller: idController,
+              onChanged: (value) {
+                loadData();
+              },
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: TextFormField(
+              decoration: InputDecoration(labelText: "Nombre"),
+              controller: nameController,
+              onChanged: (value) {
+                loadData();
+              },
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8.0),
+            height: 84,
+            width: 200,
+            child: Transform.translate(
+              offset: Offset(0, 0),
+              child: SearchableDropdown<Categoria>.single(
+                value: categorySelected,
+                onChanged: (value) {
+                  setState(() {
+                    categorySelected = value;
+                  });
+                  loadData();
+                },
+                items: categories
+                    .map(
+                      (e) => DropdownMenuItem<Categoria>(
+                        child: Text("${e.name}"),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                isExpanded: true,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: TextFormField(
+              decoration: InputDecoration(labelText: "Referencia"),
+              controller: referenceController,
+              onChanged: (value) {
+                loadData();
+              },
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: Transform.translate(
+              offset: Offset(0, 0),
+              child: SearchableDropdown<Fabricante>.single(
+                value: manufacturSelected,
+                onChanged: (value) {
+                  setState(() {
+                    manufacturSelected = value;
+                  });
+                  loadData();
+                },
+                items: manufactures
+                    .map(
+                      (e) => DropdownMenuItem<Fabricante>(
+                        child: Text("${e.name}"),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                isExpanded: true,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: Transform.translate(
+              offset: Offset(0, 0),
+              child: SearchableDropdown<Map<String, dynamic>>.single(
+                value: stateWebSelected,
+                onChanged: (value) {
+                  setState(() {
+                    stateWebSelected = value;
+                  });
+                  loadData();
+                },
+                items: stateWebs
+                    .map(
+                      (e) => DropdownMenuItem<Map<String, dynamic>>(
+                        child: Text(
+                          "${e["name"]} (${e["id"]})",
+                        ),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                isExpanded: true,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            height: 84,
+            width: 200,
+            child: Transform.translate(
+              offset: Offset(0, 0),
+              child: SearchableDropdown<Map<String, dynamic>>.single(
+                // menuConstraints: BoxConstraints.loose(Size(
+                //     MediaQuery.of(context).size.width * 0.5,
+                //     MediaQuery.of(context).size.height * 0.9)),
+                // dialogBox: false,
+                value: pasoSelected,
+                onChanged: (value) {
+                  setState(() {
+                    pasoSelected = value;
+                  });
+                  loadData();
+                },
+                items: pasos
+                    .map(
+                      (e) => DropdownMenuItem<Map<String, dynamic>>(
+                        child: Text(
+                          "${e["name"]} (${e["id"]})",
+                        ),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                isExpanded: true,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Expanded _tablaProductos(BuildContext context, List<List<dynamic>> data) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TableWidget(
+          centerHorizontal: true,
+          countToDisplay: 5,
+          onRowTap: (index) {
+            try {
+              print(index);
+              final product = productList[index];
+              final route = MaterialPageRoute(
+                builder: (context) => ProductDetailsPage(
+                  product: product,
+                  generalData: this.generalData,
+                ),
+              );
+              Navigator.push(context, route);
+            } catch (e) {
+              print(e);
+            }
+          },
+          page: page,
+          totalPage: totalPage,
+          data: data,
+          rowHeight: 115,
+          cellTextAlign: TextAlign.center,
+          widthSizes: {
+            0: 0.05,
+            1: 0.08,
+            2: 0.08,
+            3: 0.2,
+            4: 0.15,
+            5: 0.08,
+            6: 0.07,
+            7: 0.07,
+            8: 0.1,
+            9: 0.045,
+            // 10: 0.06,
+          },
+          headerTextColor: Colors.black54,
+          paginationButtonColor: Theme.of(context).accentColor,
+          headerColor: Theme.of(context).primaryColor,
+          selecteds: getSelectedsList(),
+          values: List<String>.from(
+              (productList?.map((e) => e?.toString()) ?? []).toList()),
+          onRowSelectedChange: onRowSelectedChange,
+          actions: [
+            // TableAction(
+            //   onPressed: (index) {
+            //     print("ejecutando el onPressed de edit");
+            //   },
+            //   icon: Icon(Icons.edit),
+            // ),
+            // TableAction(
+            //   onPressed: (index) {
+            //     print("ejecutando el onPressed de remove red eye");
+            //   },
+            //   icon: Icon(Icons.remove_red_eye),
+            // ),
+          ],
+          headers: getHeaders(context),
+          onPageChanged: (int page) {
+            setState(() {
+              this.page = page;
+
+              productList = null;
+            });
+            Future.microtask(() => loadData());
+          },
+        ),
       ),
     );
   }
@@ -354,27 +357,6 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     return result;
   }
 
-  String getManufacturerName(int id) {
-    for (var item in generalData.fabricantes) {
-      if (item.idManufacturer == id) return item.name;
-    }
-    return "No encontrado";
-  }
-
-  String getCategoryName(int id) {
-    for (var item in generalData.categorias) {
-      if (item.idCategory == id) return item.name;
-    }
-    return "No encontrado";
-  }
-
-  String getSupplierName(int id) {
-    for (var item in generalData.distribuidores) {
-      if (item.idSupplier == id) return item.name;
-    }
-    return "No encontrado";
-  }
-
   Future onRowSelectedChange(int index, bool selected) async {}
 
   List<dynamic> getRow(int index) {
@@ -385,10 +367,8 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
 
     values[1] = new Image.network(calcImageUrlFromId(int.tryParse(values[1])));
     values[2] = new Image.network(calcImageUrlFromId(int.tryParse(values[2])));
-    values[5] = getCategoryName(int.tryParse(values[5]));
-    values[6] = getManufacturerName(int.tryParse(values[6]));
-    values[7] = getSupplierName(int.tryParse(values[7]));
-    //values.removeLast();
+
+    values.removeLast();
     return values;
   }
 
@@ -409,6 +389,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     Future.microtask(() => setState(() {}));
   }
 
+//  Mejorar
   Future loadData() async {
     Future.microtask(() => this.productList = null);
     String name = nameController.text;
@@ -419,11 +400,10 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     int stateWeb = 2;
     int paso = 0;
     String idproduct = idController.text;
-    if (categorySelected != null) {
-      category = categorySelected?.idCategory;
-    } else {
-      category = 0;
-    }
+    
+    categorySelected == null
+        ? category = 0
+        : category = categorySelected?.idCategory;
 
     if (idproduct == null) {
       idproduct = "0";
@@ -433,40 +413,25 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
       }
     }
 
-    if (manufacturSelected != null) {
-      manu = manufacturSelected.idManufacturer;
-    } else {
-      manu = 0;
-    }
-    if (supplierSelected != null) {
-      supli = supplierSelected.idSupplier;
-    } else {
-      supli = 0;
-    }
-    if (stateWebSelected == null) {
-      stateWeb = 2;
-    } else {
-      stateWeb = stateWebSelected["id"] as int;
-      //if (stateWebSelected["id"] == 0) {
-      //  stateWeb = 0;
-      //}
-    }
-    if (pasoSelected == null) {
-      paso = 0;
-    } else {
-      paso = pasoSelected["id"] as int;
-      //if (stateWebSelected["id"] == 0) {
-      //  stateWeb = 0;
-      //}
-    }
+    manufacturSelected == null
+        ? manu = 0
+        : manu = manufacturSelected.idManufacturer;
+
+    supplierSelected == null ? supli = 0 : supli = supplierSelected.idSupplier;
+
+    //TODO: try catch parser
+    stateWebSelected == null
+        ? stateWeb = 2
+        : stateWeb = stateWebSelected["id"] as int;
+
+    pasoSelected == null ? paso = 0 : paso = pasoSelected["id"] as int;
+
     print(
         "idproduct = $idproduct, paso =$paso, stateWeb=$stateWeb, name = $name, referencia = $referencia, category = $category, fabricante = $manu , supplier = $supli");
-    if (name.trim() == "") {
-      name = "";
-    }
-    if (referencia.trim() == "") {
-      referencia = "";
-    }
+
+    name.trim() == "" ? name = "" : null;
+  
+    referencia.trim() == "" ? referencia = "" : null;
 
     productList = await HttpHandler.instance.getProductList(
         referencia: referencia,
@@ -484,64 +449,64 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
   List<String> getHeaders(BuildContext context) {
     if (productList?.isEmpty ?? true) return [];
     final result = productList[0].toMap().keys.toList();
-    //result.removeLast();
+    result.removeLast();
     return result;
   }
 
-  Widget getDrawer(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          MenuItem(
-            title: Text("Inicio"),
-            icon: Icon(Icons.home),
-            onPressed: () {},
-          ),
-          MenuItem(
-            title: Text("Filtrar Productos"),
-            icon: Icon(Icons.list),
-            onPressed: () {},
-          ),
-        ],
-      ),
-    );
-  }
+  // Widget getDrawer(BuildContext context) {
+  //   return Drawer(
+  //     child: ListView(
+  //       children: [
+  //         MenuItem(
+  //           title: Text("Inicio"),
+  //           icon: Icon(Icons.home),
+  //           onPressed: () {},
+  //         ),
+  //         MenuItem(
+  //           title: Text("Filtrar Productos"),
+  //           icon: Icon(Icons.list),
+  //           onPressed: () {},
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }
 
-Future createNewProduct(BuildContext context) async {
-  int lastId = (await MysqlSeverDataSource.instance.getLastProductId()) + 1;
+// Future createNewProduct(BuildContext context) async {
+//   int lastId = (await MysqlSeverDataSource.instance.getLastProductId()) + 1;
 
-  final product = {
-    "id_supplier": 0,
-    "id_manufacturer": 0,
-    "id_category_default": 0,
-    "ean13": "",
-    "minimal_quantity": 1,
-    "price": 0.0,
-    "id_product": lastId,
-    "wholesale_price": 0.0,
-    "reference": "",
-    "supplier_reference": "",
-    "redirect_type": "",
-    "id_type_redirected": 0,
-    "date_add": DateTime.now(),
-    "date_upd": DateTime.now(),
-    "stateWeb": 1,
-    "paso": 0
-  };
-  final images = <Map<String, dynamic>>[];
+//   final product = {
+//     "id_supplier": 0,
+//     "id_manufacturer": 0,
+//     "id_category_default": 0,
+//     "ean13": "",
+//     "minimal_quantity": 1,
+//     "price": 0.0,
+//     "id_product": lastId,
+//     "wholesale_price": 0.0,
+//     "reference": "",
+//     "supplier_reference": "",
+//     "redirect_type": "",
+//     "id_type_redirected": 0,
+//     "date_add": DateTime.now(),
+//     "date_upd": DateTime.now(),
+//     "stateWeb": 1,
+//     "paso": 0
+//   };
+//   final images = <Map<String, dynamic>>[];
 
-  /*  final route = MaterialPageRoute(
-    builder: (context) => ProductDetailsPage(
-      images: images,
-      product: product,
-    ),
-  );
-  Navigator.push(
-    context,
-    route,
-  ); */
-}
+//   /*  final route = MaterialPageRoute(
+//     builder: (context) => ProductDetailsPage(
+//       images: images,
+//       product: product,
+//     ),
+//   );
+//   Navigator.push(
+//     context,
+//     route,
+//   ); */
+// }
 
 String calcImageUrl(Map<String, dynamic> imagenData,
     {String quality = "-cart_default.jpg"}) {

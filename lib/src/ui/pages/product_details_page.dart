@@ -2,12 +2,12 @@ import 'package:alicia/src/datasources/http_handler.dart';
 import 'package:alicia/src/models/caracteristicas_data.dart';
 import 'package:alicia/src/models/initial_data.dart';
 import 'package:alicia/src/models/product.dart';
-import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/models/product_details.dart' as product_details;
+import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/table_filter_dialog.dart';
-import 'package:alicia/src/ui/pages/photo_editor_page.dart';
 import 'package:flutter/material.dart';
+
 import 'home_products_page.dart';
 import 'html_editor_page.dart';
 
@@ -150,27 +150,28 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                                 child: Stack(
                                                   children: [
                                                     Center(
-                                                        child:
-                                                            Image.network(url)),
+                                                      child: Image.network(url),
+                                                    ),
                                                   ],
                                                 ),
                                                 onTap: () {
-                                                  setState(() {
-                                                    selectedImage = index;
-                                                  });
+                                                  setState(() =>
+                                                      selectedImage = index);
                                                 },
                                               ),
                                               height:
                                                   132, //La miniatura es de 128 Pixels
                                               decoration: BoxDecoration(
-                                                  color: selectedImage == index
-                                                      ? Colors.red
-                                                          .withOpacity(0.8)
-                                                      : null,
-                                                  border: Border(
-                                                      bottom: BorderSide(
-                                                          color:
-                                                              Colors.black))),
+                                                color: selectedImage == index
+                                                    ? Colors.red
+                                                        .withOpacity(0.8)
+                                                    : null,
+                                                border: Border(
+                                                  bottom: BorderSide(
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ),
                                             );
                                           },
                                           itemCount: images?.length ?? 0,

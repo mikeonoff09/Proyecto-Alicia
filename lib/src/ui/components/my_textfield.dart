@@ -151,11 +151,13 @@ class MyTextField extends StatelessWidget {
         bool _haycaracteres = false;
         validator = (String _value) {
           List<String> listaa = ['<', '>', ';', '=', '#', '{', '}'];
-          listaa.forEach((item) {
-            if (_value.contains(item)) {
-              _haycaracteres = true;
-            }
-          });
+          listaa.forEach(
+            (item) {
+              if (_value.contains(item)) {
+                _haycaracteres = true;
+              }
+            },
+          );
           if (_haycaracteres) {
             return "No se admiten < > ; = # { }";
           }
@@ -237,81 +239,84 @@ class MyTextField extends StatelessWidget {
           ))
         : border;
     final child = ValueListenableBuilder(
-        valueListenable: this.showPassword,
-        builder: (context, value, child) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              onTap: onTap,
-              textAlign: textAlign,
-              autofocus: autoFocus,
-              obscureText: (isPassword) ? (!value) : false,
-              keyboardType: keyboardType,
-              onChanged: onChanged,
-              controller: controller,
-              focusNode: focusNode,
-              maxLength: maxLength,
-              initialValue: initialValue,
-              validator: requiredField
-                  ? validator != null
-                      ? (value) {
-                          value = value.trim();
-                          controller?.text = value;
-                          return validator(value);
-                        }
-                      : (value) {
-                          value = value.trim();
-                          controller?.text = value;
-                          return _validator(
-                            value,
-                          );
-                        }
+      valueListenable: this.showPassword,
+      builder: (context, value, child) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextFormField(
+            onTap: onTap,
+            textAlign: textAlign,
+            autofocus: autoFocus,
+            obscureText: (isPassword) ? (!value) : false,
+            keyboardType: keyboardType,
+            onChanged: onChanged,
+            controller: controller,
+            focusNode: focusNode,
+            maxLength: maxLength,
+            initialValue: initialValue,
+            validator: requiredField
+                ? validator != null
+                    ? (value) {
+                        value = value.trim();
+                        controller?.text = value;
+                        return validator(value);
+                      }
+                    : (value) {
+                        value = value.trim();
+                        controller?.text = value;
+                        return _validator(
+                          value,
+                        );
+                      }
+                : null,
+            onEditingComplete: nextFocus != null
+                ? () {
+                    FocusScope.of(context).requestFocus(nextFocus);
+                  }
+                : () {
+                    FocusScope.of(context).requestFocus(FocusNode());
+                    onEditingComplete();
+                  },
+            textInputAction:
+                nextFocus != null ? TextInputAction.next : textInputAction,
+            enabled: enabled,
+            readOnly: readOnly,
+            onSaved: (value) {
+              onSaved(value);
+            },
+            maxLines: maxLines,
+            style: style,
+            decoration: InputDecoration(
+              fillColor: fillColor,
+              filled: fillColor != null,
+              suffixIcon: suffixWidget,
+              border: border,
+              disabledBorder: border,
+              enabledBorder: border,
+              errorBorder: border,
+              focusedErrorBorder: border,
+              focusedBorder: border,
+              hintText: hintText != null ? hintText : strHintText,
+              labelText: labelText != null ? labelText : null,
+              prefixIcon: prefixIcon,
+              suffix: (isPassword)
+                  ? GestureDetector(
+                      child:
+                          Icon(value ? Icons.visibility_off : Icons.visibility),
+                      onTap: () {
+                        showPassword.value = !showPassword.value;
+                      },
+                    )
                   : null,
-              onEditingComplete: nextFocus != null
-                  ? () {
-                      FocusScope.of(context).requestFocus(nextFocus);
-                    }
-                  : () {
-                      FocusScope.of(context).requestFocus(FocusNode());
-                      onEditingComplete();
-                    },
-              textInputAction:
-                  nextFocus != null ? TextInputAction.next : textInputAction,
-              enabled: enabled,
-              readOnly: readOnly,
-              onSaved: (value) {
-                onSaved(value);
-              },
-              maxLines: maxLines,
-              style: style,
-              decoration: InputDecoration(
-                  fillColor: fillColor,
-                  filled: fillColor != null,
-                  suffixIcon: suffixWidget,
-                  border: border,
-                  disabledBorder: border,
-                  enabledBorder: border,
-                  errorBorder: border,
-                  focusedErrorBorder: border,
-                  focusedBorder: border,
-                  hintText: hintText != null ? hintText : strHintText,
-                  labelText: labelText != null ? labelText : null,
-                  prefixIcon: prefixIcon,
-                  suffix: (isPassword)
-                      ? GestureDetector(
-                          child: Icon(
-                              value ? Icons.visibility_off : Icons.visibility),
-                          onTap: () {
-                            showPassword.value = !showPassword.value;
-                          })
-                      : null,
-                  labelStyle: TextStyle(
-                    fontSize: 18,
-                    backgroundColor: Colors.white,
-                  )),
+              labelStyle: TextStyle(
+                fontSize: 18,
+                backgroundColor: Colors.white,
+              ),
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
 
     return (padding != null)
         ? Padding(
@@ -320,7 +325,8 @@ class MyTextField extends StatelessWidget {
                     child: child,
                     elevation: elevation,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(radius)),
+                      borderRadius: BorderRadius.circular(radius),
+                    ),
                   )
                 : child,
             padding: padding,

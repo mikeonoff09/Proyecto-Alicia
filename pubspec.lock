@@ -273,10 +273,10 @@ packages:
   responsive:
     dependency: "direct main"
     description:
-      path: "../libraries/responsive"
-      relative: true
-    source: path
-    version: "0.3.0+6"
+      name: responsive
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.9+9"
   screenshot:
     dependency: "direct main"
     description:
@@ -373,6 +373,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  window_size:
+    dependency: "direct main"
+    description:
+      path: "plugins/window_size"
+      ref: HEAD
+      resolved-ref: e48abe7c3e9ebfe0b81622167c5201d4e783bb81
+      url: "git://github.com/google/flutter-desktop-embedding.git"
+    source: git
+    version: "0.1.0"
   xml:
     dependency: transitive
     description:
