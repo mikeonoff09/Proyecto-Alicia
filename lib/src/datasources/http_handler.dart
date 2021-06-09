@@ -10,7 +10,7 @@ import "package:http/http.dart" as http;
 const _baseUrl = "https://mueblesextraordinarios.com/app2/public/v1/";
 
 class HttpHandler {
-  HttpHandler _link;
+  // HttpHandler _link;
   static final HttpHandler instance = HttpHandler._();
   HttpHandler._();
 
@@ -148,8 +148,8 @@ class HttpHandler {
           HttpHeaders.contentTypeHeader: "application/json",
         });
     if (response.statusCode == 200) {
-      final body = json.decode(response.body);
-      final data = body["data"] as List;
+      // final body = json.decode(response.body);
+      // final data = body["data"] as List;
 
       return response.body.toString();
     } else {
@@ -161,13 +161,14 @@ class HttpHandler {
   Future<CaracteriscasData> getCaracteristicas() async {
     final body = {};
     final response = await http.post(
-        Uri.parse(
-          _baseUrl + "ps_feature/get_todos",
-        ),
-        body: json.encode(body),
-        headers: {
-          HttpHeaders.contentTypeHeader: "application/json",
-        });
+      Uri.parse(
+        _baseUrl + "ps_feature/get_todos",
+      ),
+      body: json.encode(body),
+      headers: {
+        HttpHeaders.contentTypeHeader: "application/json",
+      },
+    );
     if (response.statusCode == 200) {
       final body = json.decode(response.body);
       final data = body["data"];

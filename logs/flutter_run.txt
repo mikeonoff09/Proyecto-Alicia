@@ -175,3 +175,153 @@
 [1:39:33 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"40","progressId":"hot.reload","finished":true}}]
 [1:39:33 PM]: <== Reloaded 1 of 1260 libraries in 414ms.
 [1:39:33 PM]: <== [{"id":"25","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[1:45:12 PM]: ==> [{"id":"26","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:45:12 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"42","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:45:12 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"43","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:45:13 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"43","progressId":null,"finished":true}}]
+[1:45:13 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"42","progressId":"hot.reload","finished":true}}]
+[1:45:13 PM]: <== Reloaded 1 of 1260 libraries in 507ms.
+[1:45:13 PM]: <== [{"id":"26","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[1:45:25 PM]: ==> [{"id":"27","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:45:25 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"44","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:45:25 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"45","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:45:25 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"45","progressId":null,"finished":true}}]
+[1:45:26 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"44","progressId":"hot.reload","finished":true}}]
+[1:45:26 PM]: <== Reloaded 1 of 1260 libraries in 411ms.
+[1:45:26 PM]: <== [{"id":"27","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[1:48:08 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 1, fabricante = 88 , supplier = 0
+[1:48:09 PM]: <== flutter: []
+[1:48:11 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 1, fabricante = 88 , supplier = 0
+[1:48:12 PM]: <== flutter: []
+[1:48:13 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 1, fabricante = 88 , supplier = 0
+[1:48:14 PM]: <== flutter: []
+[1:48:14 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 0, fabricante = 88 , supplier = 0
+[1:48:15 PM]: <== flutter: [ProductModel(714, Módulo intermedio Brembo - Atelier), ProductModel(713, Rinconera Brembo - Atelier), ProductModel(709, Mesa Centro Brembo - Atelier), ProductModel(708, Sofá 3 Plazas Basento Rattán PE - Atelier), ProductModel(707, Sofá 2 Plaza Basento Rattán PE - Atelier), ProductModel(706, Sofá 1 Plaza Basento Rattán PE - Atelier), ProductModel(705, Mesa Basento Rattán PE - Atelier), ProductModel(704, Rinconera Basento rattán PE - Atelier), ProductModel(701, Luces EASY & CLICK - Atelier), ProductModel(699, Conjunto Albegna - Atelier), ProductModel(697, Guirnalda 10 Luces Exterior - Atelier), ProductModel(695, Vela Toldo Triangular Aniene - Atelier), ProductModel(694, Cojín Aniene - Atelier), ProductModel(693, Puff Aniene - Atelier), ProductModel(692, Sillón tricolor rattán Arno - Atelier), ProductModel(691, Conjunto terraza Arda - Atelier), ProductModel(690, Mesas Auxiliares colores Aurino - Atelier), ProductModel(687, Mesa auxiliar Aso colores - Atelier), ProductModel(685, Sillón colgante Agri small- Atelier), ProductModel(681, Silla colgante Maggiore - Atelier), ProductModel(679, Mesa Auxiliar Maggiore - Atelier), ProductModel(669, Sillón colgante Agri - Atelier), ProductModel(648, Sofá Adigio - Atelier), ProductModel(647, Cama redonda Adda 126 - Atelier), ProductModel(646, Cama redonda Adda 180 - Atelier)]
+[1:48:17 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 18, fabricante = 88 , supplier = 0
+[1:48:18 PM]: <== flutter: []
+[1:48:23 PM]: <== flutter: idproduct = 0, paso =0, stateWeb=2, name = , referencia = , category = 18, fabricante = 0 , supplier = 0
+[1:48:24 PM]: <== flutter: [ProductModel(597, Banco Anya - Bloomingville), ProductModel(591, Banco de Roble Pedro - Bloomingville), ProductModel(395, Banco Randa - Vical Home), ProductModel(183, Silla 209 - Thonet), ProductModel(145, Banco retro cincha negro - HKLiving), ProductModel(141, Mesa Infinity redonda - Porada), ProductModel(80, Tocador Cocoon Trousse Keramik - Cattelan Italia), ProductModel(66, Mueble bar Portos – Cattelan Italia), ProductModel(64, Aparador Horizon - Cattelan Italia), ProductModel(62, Aparador Absolut - Cattelan Italia), ProductModel(40, Mesa Hystrix - Cattelan Italia), ProductModel(33, Mesa Spyder Wood - Cattelan Italia)]
+[1:48:33 PM]: <== flutter: idproduct = 0, paso =1, stateWeb=2, name = , referencia = , category = 18, fabricante = 0 , supplier = 0
+[1:48:34 PM]: <== flutter: [ProductModel(597, Banco Anya - Bloomingville), ProductModel(591, Banco de Roble Pedro - Bloomingville), ProductModel(395, Banco Randa - Vical Home), ProductModel(183, Silla 209 - Thonet), ProductModel(145, Banco retro cincha negro - HKLiving), ProductModel(141, Mesa Infinity redonda - Porada), ProductModel(80, Tocador Cocoon Trousse Keramik - Cattelan Italia), ProductModel(66, Mueble bar Portos – Cattelan Italia), ProductModel(64, Aparador Horizon - Cattelan Italia), ProductModel(62, Aparador Absolut - Cattelan Italia), ProductModel(40, Mesa Hystrix - Cattelan Italia), ProductModel(33, Mesa Spyder Wood - Cattelan Italia)]
+[1:48:42 PM]: <== flutter: 8
+[1:48:44 PM]: <== flutter: {"message":"SQLSTATE[42S02]: Base table or view not found: 1146 Table 'muebleu569.ps_feature_super' doesn't exist","data":"","memory":3035344,"time":0.02761220932006836}
+[1:51:56 PM]: ==> [{"id":"28","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:51:56 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"46","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:51:56 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"47","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:51:56 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"47","progressId":null,"finished":true}}]
+[1:51:57 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"46","progressId":"hot.reload","finished":true}}]
+[1:51:57 PM]: <== Reloaded 3 of 1260 libraries in 619ms.
+[1:51:57 PM]: <== [{"id":"28","result":{"code":0,"message":"Reloaded 3 of 1260 libraries"}}]
+[1:54:28 PM]: ==> [{"id":"29","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:54:28 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"48","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:54:28 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"49","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:54:28 PM]: lib/src/ui/pages/product_details_page.dart:957:43: Error: The method 'openHtmlEditor' isn't defined for the class '_DetallesProductoState'.
+[1:54:28 PM]: - '_DetallesProductoState' is from 'package:alicia/src/ui/pages/product_details_page.dart' ('lib/src/ui/pages/product_details_page.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'openHtmlEditor'.
+                    onPressed: () => this.openHtmlEditor(
+                                          ^^^^^^^^^^^^^^
+[1:54:28 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"49","progressId":null,"finished":true}}]
+[1:54:28 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"48","progressId":"hot.reload","finished":true}}]
+[1:54:28 PM]: <== [{"id":"29","result":{"code":1,"message":"DevFS synchronization failed"}}]
+[1:57:07 PM]: ==> [{"id":"30","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:57:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"50","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:57:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"51","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:57:08 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"51","progressId":null,"finished":true}}]
+[1:57:08 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"50","progressId":"hot.reload","finished":true}}]
+[1:57:08 PM]: <== Reloaded 3 of 1260 libraries in 661ms.
+[1:57:08 PM]: <== [{"id":"30","result":{"code":0,"message":"Reloaded 3 of 1260 libraries"}}]
+[1:57:44 PM]: ==> [{"id":"31","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.getSelectedSummaryWidget","params":{"previousSelectionId":null,"objectGroup":"my-group"}}}]
+[1:57:44 PM]: <== [{"id":"31","result":{"result":{"description":"Row","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-1997","valueId":"inspector-869","locationId":0,"creationLocation":{"file":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia/lib/src/ui/pages/product_details_page.dart","line":127,"column":40,"parameterLocations":[{"file":null,"line":128,"column":35,"name":"children"}]},"createdByLocalProject":true,"children":[{"description":"Scrollbar","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-1998","valueId":"inspector-1984","locationId":1,"creationLocation":{"file":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia/lib/src/ui/pages/product_details_page.dart","line":129,"column":37,"parameterLocations":[{"file":null,"line":130,"column":39,"name":"controller"},{"file":null,"line":131,"column":39,"name":"child"}]},"createdByLocalProject":true,"widgetRuntimeType":"Scrollbar","stateful":true},{"description":"Container","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-1999","valueId":"inspector-1986","locationId":2,"creationLocation":{"file":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia/lib/src/ui/pages/product_details_page.dart","line":180,"column":37,"parameterLocations":[{"file":null,"line":181,"column":39,"name":"height"},{"file":null,"line":182,"column":39,"name":"width"},{"file":null,"line":183,"column":39,"name":"color"},{"file":null,"line":184,"column":39,"name":"margin"}]},"createdByLocalProject":true,"widgetRuntimeType":"Container","stateful":false},{"description":"Container","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-2000","valueId":"inspector-1988","locationId":3,"creationLocation":{"file":"file:///C:/Users/jairo/Documents/PCToDr…
+[1:57:44 PM]: ==> [{"id":"32","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.disposeGroup","params":{"objectGroup":"my-group"}}}]
+[1:57:44 PM]: <== [{"id":"32","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.disposeGroup"}}]
+[1:57:51 PM]: ==> [{"id":"33","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.getSelectedSummaryWidget","params":{"previousSelectionId":null,"objectGroup":"my-group"}}}]
+[1:57:51 PM]: <== [{"id":"33","result":{"result":{"description":"Scrollbar","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-6343","valueId":"inspector-1984","locationId":1,"creationLocation":{"file":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia/lib/src/ui/pages/product_details_page.dart","line":129,"column":37,"parameterLocations":[{"file":null,"line":130,"column":39,"name":"controller"},{"file":null,"line":131,"column":39,"name":"child"}]},"createdByLocalProject":true,"children":[{"description":"_MaterialScrollbar","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-6344","valueId":"inspector-2987","locationId":171,"creationLocation":{"file":"file:///C:/src/flutter/packages/flutter/lib/src/material/scrollbar.dart","line":189,"column":12,"parameterLocations":[{"file":null,"line":190,"column":7,"name":"child"},{"file":null,"line":191,"column":7,"name":"controller"},{"file":null,"line":192,"column":7,"name":"isAlwaysShown"},{"file":null,"line":193,"column":7,"name":"showTrackOnHover"},{"file":null,"line":194,"column":7,"name":"hoverThickness"},{"file":null,"line":195,"column":7,"name":"thickness"},{"file":null,"line":196,"column":7,"name":"radius"},{"file":null,"line":197,"column":7,"name":"notificationPredicate"},{"file":null,"line":198,"column":7,"name":"interactive"}]},"children":[{"description":"NotificationListener<ScrollNotification>","type":"_ElementDiagnosticableTreeNode","style":"dense","hasChildren":true,"allowWrap":false,"objectId":"inspector-6345","valueId":"inspector-2995","locationId":172,"creationLocation":{"file":"file:///C:/src/flutter/packages/flutter/lib/src/widgets/scrollbar.dart","line":1337,"column":12,"parameterLocations":[{"file":null,"line":1338,"column":7,"name":"onNotification"},{"file":null,"line":1339,"column":7,"name":"child"}]},"children":[{"description":"RepaintBoundary","type":"_ElementDiagnosti…
+[1:57:51 PM]: ==> [{"id":"34","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.disposeGroup","params":{"objectGroup":"my-group"}}}]
+[1:57:51 PM]: <== [{"id":"34","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.disposeGroup"}}]
+[1:59:24 PM]: ==> [{"id":"35","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:59:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"52","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:59:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"53","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:59:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"53","progressId":null,"finished":true}}]
+[1:59:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"52","progressId":"hot.reload","finished":true}}]
+[1:59:24 PM]: <== Reloaded 1 of 1260 libraries in 715ms.
+[1:59:24 PM]: <== [{"id":"35","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[1:59:42 PM]: ==> [{"id":"36","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[1:59:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"54","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:59:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"55","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:59:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"55","progressId":null,"finished":true}}]
+[1:59:43 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"54","progressId":"hot.reload","finished":true}}]
+[1:59:43 PM]: <== Reloaded 1 of 1260 libraries in 668ms.
+[1:59:43 PM]: <== [{"id":"36","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[2:08:54 PM]: ==> [{"id":"37","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:08:54 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"56","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:08:54 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"57","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:08:54 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"57","progressId":null,"finished":true}}]
+[2:08:55 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"56","progressId":"hot.reload","finished":true}}]
+[2:08:55 PM]: <== Reloaded 3 of 1260 libraries in 735ms.
+[2:08:55 PM]: <== [{"id":"37","result":{"code":0,"message":"Reloaded 3 of 1260 libraries"}}]
+[2:10:42 PM]: ==> [{"id":"38","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:10:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"58","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:10:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"59","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:10:42 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"59","progressId":null,"finished":true}}]
+[2:10:43 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"58","progressId":"hot.reload","finished":true}}]
+[2:10:43 PM]: <== Reloaded 1 of 1260 libraries in 648ms.
+[2:10:43 PM]: <== [{"id":"38","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[2:12:27 PM]: ==> [{"id":"39","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:12:27 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"60","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:12:27 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"61","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:12:27 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"61","progressId":null,"finished":true}}]
+[2:12:27 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"60","progressId":"hot.reload","finished":true}}]
+[2:12:27 PM]: <== Reloaded 3 of 1260 libraries in 740ms.
+[2:12:27 PM]: <== [{"id":"39","result":{"code":0,"message":"Reloaded 3 of 1260 libraries"}}]
+[2:12:39 PM]: ==> [{"id":"40","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:12:39 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"62","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:12:39 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"63","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:12:39 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"63","progressId":null,"finished":true}}]
+[2:12:40 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"62","progressId":"hot.reload","finished":true}}]
+[2:12:40 PM]: <== Reloaded 1 of 1260 libraries in 623ms.
+[2:12:40 PM]: <== [{"id":"40","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[2:13:24 PM]: ==> [{"id":"41","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:13:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"64","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:13:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"65","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:13:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"65","progressId":null,"finished":true}}]
+[2:13:24 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"64","progressId":"hot.reload","finished":true}}]
+[2:13:24 PM]: <== Reloaded 1 of 1260 libraries in 664ms.
+[2:13:24 PM]: <== [{"id":"41","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[2:15:06 PM]: ==> [{"id":"42","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:15:06 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"66","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:15:06 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"67","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:15:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"67","progressId":null,"finished":true}}]
+[2:15:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"66","progressId":"hot.reload","finished":true}}]
+[2:15:07 PM]: <== Reloaded 4 of 1260 libraries in 718ms.
+[2:15:07 PM]: <== [{"id":"42","result":{"code":0,"message":"Reloaded 4 of 1260 libraries"}}]
+[2:15:26 PM]: ==> [{"id":"43","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:15:26 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"68","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:15:26 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"69","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:15:26 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"69","progressId":null,"finished":true}}]
+[2:15:27 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"68","progressId":"hot.reload","finished":true}}]
+[2:15:27 PM]: <== Reloaded 1 of 1260 libraries in 609ms.
+[2:15:27 PM]: <== [{"id":"43","result":{"code":0,"message":"Reloaded 1 of 1260 libraries"}}]
+[2:16:07 PM]: ==> [{"id":"44","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[2:16:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"70","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:16:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"71","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:16:07 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"71","progressId":null,"finished":true}}]
+[2:16:08 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"70","progressId":"hot.reload","finished":true}}]
+[2:16:08 PM]: <== Reloaded 0 libraries in 308ms.
+[2:16:08 PM]: <== [{"id":"44","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[2:17:01 PM]: ==> [{"id":"45","method":"app.restart","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","fullRestart":true,"pause":false,"reason":"manual"}}]
+[2:17:01 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"72","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[2:17:01 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"73","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:17:02 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"73","progressId":null,"finished":true}}]
+[2:17:02 PM]: <== [{"event":"app.progress","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","id":"72","progressId":"hot.restart","finished":true}}]
+[2:17:02 PM]: <== Restarted application in 528ms.
+[2:17:02 PM]: <== [{"id":"45","result":{"code":0,"message":""}}]
+[2:17:02 PM]: ==> [{"id":"46","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
+[2:17:02 PM]: ==> [{"id":"47","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.platformOverride"}}]
+[2:17:02 PM]: ==> [{"id":"48","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.brightnessOverride"}}]
+[2:17:02 PM]: ==> [{"id":"49","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[2:17:02 PM]: ==> [{"id":"50","method":"app.callServiceExtension","params":{"appId":"c0b7f61a-612f-4194-98a2-9fbd8801e376","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/3484783519442443","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
+[2:17:03 PM]: <== [{"id":"46","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
+[2:17:03 PM]: <== [{"id":"47","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
+[2:17:03 PM]: <== [{"id":"48","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
+[2:17:03 PM]: <== [{"id":"49","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[2:17:03 PM]: <== [{"id":"50","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]

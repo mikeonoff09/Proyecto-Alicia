@@ -1,12 +1,7 @@
 import 'package:alicia/src/datasources/mysql_server.dart';
-import 'package:alicia/src/ui/components/filtros.dart';
-import 'package:alicia/src/ui/components/my_textfield.dart';
-import 'package:expandable/expandable.dart';
-import 'package:flutter/material.dart';
-
 import 'package:alicia/src/models/product_details.dart' as product_details;
-import 'package:flutter_treeview/flutter_treeview.dart';
-import 'package:provider/provider.dart';
+import 'package:alicia/src/ui/components/my_textfield.dart';
+import 'package:flutter/material.dart';
 
 class CategoriesPage extends StatefulWidget {
   final product_details.ProductDetails productDetails;

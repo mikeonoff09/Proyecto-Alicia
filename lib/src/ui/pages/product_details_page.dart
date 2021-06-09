@@ -102,9 +102,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         ],
       ),
       body: productData == null
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
+          ? Center(child: CircularProgressIndicator())
           : Form(
               key: formKey,
               child: Padding(
@@ -150,13 +148,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                                 child: Stack(
                                                   children: [
                                                     Center(
-                                                      child: Image.network(url),
-                                                    ),
+                                                        child:
+                                                            Image.network(url)),
                                                   ],
                                                 ),
                                                 onTap: () {
-                                                  setState(() =>
-                                                      selectedImage = index);
+                                                  setState(() {
+                                                    selectedImage = index;
+                                                  });
                                                 },
                                               ),
                                               height:
@@ -168,8 +167,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                                     : null,
                                                 border: Border(
                                                   bottom: BorderSide(
-                                                    color: Colors.black,
-                                                  ),
+                                                      color: Colors.black),
                                                 ),
                                               ),
                                             );

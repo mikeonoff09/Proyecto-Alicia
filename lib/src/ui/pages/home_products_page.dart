@@ -219,9 +219,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
                 items: stateWebs
                     .map(
                       (e) => DropdownMenuItem<Map<String, dynamic>>(
-                        child: Text(
-                          "${e["name"]} (${e["id"]})",
-                        ),
+                        child: Text("${e["name"]} (${e["id"]})"),
                         value: e,
                       ),
                     )
@@ -251,9 +249,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
                 items: pasos
                     .map(
                       (e) => DropdownMenuItem<Map<String, dynamic>>(
-                        child: Text(
-                          "${e["name"]} (${e["id"]})",
-                        ),
+                        child: Text("${e["name"]} (${e["id"]})"),
                         value: e,
                       ),
                     )
@@ -332,7 +328,6 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           onPageChanged: (int page) {
             setState(() {
               this.page = page;
-
               productList = null;
             });
             Future.microtask(() => loadData());
@@ -400,7 +395,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     int stateWeb = 2;
     int paso = 0;
     String idproduct = idController.text;
-    
+
     categorySelected == null
         ? category = 0
         : category = categorySelected?.idCategory;
@@ -430,7 +425,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
         "idproduct = $idproduct, paso =$paso, stateWeb=$stateWeb, name = $name, referencia = $referencia, category = $category, fabricante = $manu , supplier = $supli");
 
     name.trim() == "" ? name = "" : null;
-  
+
     referencia.trim() == "" ? referencia = "" : null;
 
     productList = await HttpHandler.instance.getProductList(
