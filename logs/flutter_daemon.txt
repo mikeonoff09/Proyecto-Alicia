@@ -13,25 +13,27 @@ NO_PROXY: undefined
 Logging Categories:
     FlutterDaemon
 
-Wed Jun 09 2021 [13:19:58 GMT-0500 (Ecuador Time)] Log file started
-[1:19:58 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
-[1:19:58 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
-[1:19:58 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[1:19:58 PM] [FlutterDaemon] [Info]     PID: 11048
-[1:19:58 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
-[1:20:00 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":16260}}]
-[1:20:00 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
-[1:20:00 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
-[1:20:00 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
-[1:20:00 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[1:20:04 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
-[1:20:04 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[1:20:04 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
-[1:20:04 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[1:20:04 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[1:20:36 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[1:20:36 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["windows","ios","android","web"]}}]
-[1:20:36 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[1:20:36 PM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
-[1:20:37 PM] [General] [Warn] Did not find session b1944ac6-e5a6-46bb-af7f-ef3070a78876 to handle dart.progressStart. There were 0 sessions:
-[1:20:37 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+Thu Jun 10 2021 [11:41:22 GMT-0500 (Ecuador Time)] Log file started
+[11:41:22 AM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
+[11:41:22 AM] [FlutterDaemon] [Info] ..  in C:\src\flutter
+[11:41:22 AM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[11:41:22 AM] [FlutterDaemon] [Info]     PID: 5188
+[11:41:22 AM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
+[11:41:24 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[11:41:24 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[11:41:25 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":7204}}]
+[11:41:25 AM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
+[11:41:25 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[11:41:25 AM] [FlutterDaemon] [Info] <== [{"id":"2"}]
+[11:41:25 AM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[11:41:29 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
+[11:41:29 AM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[11:41:29 AM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
+[11:41:29 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[11:41:29 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[11:55:39 AM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[11:55:39 AM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["windows","ios","android","web"]}}]
+[11:55:39 AM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[11:55:40 AM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
+[11:55:40 AM] [General] [Warn] Did not find session 8b5c4774-e906-4552-85a8-f53e22ea4941 to handle dart.progressStart. There were 0 sessions:
+[11:55:40 AM] [General] [Warn] Event will be queued and processed when the session start event fires

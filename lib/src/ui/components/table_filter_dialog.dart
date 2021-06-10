@@ -77,9 +77,12 @@ class _TableFilterDialogState extends State<TableFilterDialog> {
                                   )
                                 : Text(item[widget.campoId].toString()),
                             onTap: () {
-                              widget.onResult(ResultData(
+                              widget.onResult(
+                                ResultData(
                                   id: item[widget.campoId],
-                                  label: item[widget.campoToShow]));
+                                  label: item[widget.campoToShow],
+                                ),
+                              );
                               Navigator.pop(context);
                             },
                           );

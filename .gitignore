@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+*.txt
 
 # IntelliJ related
 *.iml
@@ -45,3 +46,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+logs/analyzer.txt
+logs/flutter_run.txt
+logs/observatory.txt
+*.txt
