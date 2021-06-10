@@ -253,12 +253,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
       final Map<String, dynamic> featureValue = {
         "id_feature_value": selectedValue,
         "id_feature": selectedFeatureId,
-        "value": 1,
+        "name": 1,
       };
       final Map<String, dynamic> featureValueLang = {
         "id_feature_value": selectedValue,
-        // "value": featureValueController.text,
-        "id_lang": widget.idLang,
+        // "name": featureValueController.text,
       };
       final Map<String, dynamic> featureValueProduct = {
         "id_feature_value": selectedValue,
@@ -384,10 +383,10 @@ Future<Map<String, dynamic>> editFeature(
 
 Future<Map<String, dynamic>> editFeatureValue(
     BuildContext context, Map<String, dynamic> item) async {
-  final valueController = TextEditingController(text: item["value"]);
+  final valueController = TextEditingController(text: item["name"]);
   final size = MediaQuery.of(context).size;
   final save = () {
-    item["value"] = valueController.text;
+    item["name"] = valueController.text;
     Navigator.pop(context, item);
     final result =
         MysqlSeverDataSource.instance.updateCaracteristicaLang(item, 1);

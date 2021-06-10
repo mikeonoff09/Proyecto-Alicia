@@ -94,26 +94,26 @@ class PsFeatureValue extends Equatable {
     this.idFeatureValue,
     this.idFeature,
     this.position,
-    this.value,
+    this.name,
   });
 
   int idFeatureValue;
   int idFeature;
   int position;
-  String value;
+  String name;
 
   factory PsFeatureValue.fromMap(Map<String, dynamic> json) => PsFeatureValue(
         idFeatureValue: json["id_feature_value"],
         idFeature: json["id_feature"],
         position: json["position"],
-        value: json["value"],
+        name: json["name"],
       );
 
   Map<String, dynamic> toMap() => {
         "id_feature_value": idFeatureValue,
         "id_feature": idFeature,
         "position": position,
-        "value": value,
+        "name": name,
       };
 
   @override

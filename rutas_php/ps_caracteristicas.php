@@ -90,7 +90,7 @@ $app->post('/ps_feature_todas/get', function (Request $request, Response $respon
 			$ps_feature_super = $statement->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		$sql = 'SELECT id_feature,id_feature_super,position,name FROM a_tabla_feature order by position';
+		$sql = 'SELECT id_feature,id_feature_super,position FROM a_tabla_feature order by position';
 		$statement = $db->prepare($sql);
 		$statement->execute();
 		if ($statement->rowCount() == 0) {
@@ -99,7 +99,7 @@ $app->post('/ps_feature_todas/get', function (Request $request, Response $respon
 			$ps_feature = $statement->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		$sql = 'SELECT id_feature_value,id_feature,position,value FROM a_tabla_feature_value';
+		$sql = 'SELECT id_feature_value,id_feature,position,name FROM a_tabla_feature_value';
 		$statement = $db->prepare($sql);
 		$statement->execute();
 		if ($statement->rowCount() == 0) {
@@ -151,8 +151,8 @@ $app->post('/ps_feature/add', function (Request $request, Response $response) {
 		$statement->execute();
 
 		if ($statement->rowCount() > 0) {
-			$id = $db->lastInsertId();
-			return sendResponse(201, null, "Nueva id_feature: $id  position: $position", $response);
+			$id_nuevo = $db->lastInsertId();
+			return sendResponse(201, null, '{"id_feature": $id_nuevo, "position": $position}', $response);
 		}else{
 			return sendResponse(404, null, "Error añadiendo feature", $response);
 		}
@@ -213,7 +213,7 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, "ActualizadoOk", $response);
+            return sendResponse(200, null, '{"id_feature": $id_feature,"actualizar":"ok"}', $response);
         } else {
             return sendResponse(404, null, "No se pudo actualizar", $response);
         }
@@ -242,7 +242,7 @@ $app->post('/ps_feature/delete', function (Request $request, Response $response)
 
 	if(borrar_feature($id_feature,$data["position"],$db)){
 		$db = null;
-		return sendResponse(200, null, "BorradoOk", $response);
+		return sendResponse(200, null,  '{"id_feature": $id_feature,  "borrar":"ok"}', $response);
     }else{
         return sendResponse(500, "", $e->getMessage(), $response);
     }
@@ -251,15 +251,10 @@ $app->post('/ps_feature/delete', function (Request $request, Response $response)
 
 
 
-
-
-
-
-
 $app->post('/ps_feature_value/add', function (Request $request, Response $response) {
-    $value = trim($request->getParam("value"));
+    $name = trim($request->getParam("name"));
 
-	if(strlen($value)< 1){   //minimo debe tener 1 letra
+	if(strlen($name)< 1){   //minimo debe tener 1 letra
 		return sendResponse(404, null, "No has enviado el nombre", $response);
 	}
 	$id_feature =$request->getParam("id_feature");
@@ -286,16 +281,16 @@ $app->post('/ps_feature_value/add', function (Request $request, Response $respon
 		$data = $statement->fetch();
 		$position = $data['contador'];
 
-		$sql = "insert into a_tabla_feature_value (position,value,id_feature) values (:position, :value, :id_feature)";
+		$sql = "insert into a_tabla_feature_value (position,name,id_feature) values (:position, :name, :id_feature)";
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
 		$statement->bindParam(":position", $position, PDO::PARAM_INT);
-		$statement->bindParam(":value", $value,PDO::PARAM_STR);
+		$statement->bindParam(":name", $name,PDO::PARAM_STR);
 		$statement->execute();
 
 		if ($statement->rowCount() > 0) {
-			$id = $db->lastInsertId();
-			return sendResponse(201, null, "Nueva id_feature_value: $id  position: $position", $response);
+			$id_nuevo = $db->lastInsertId();
+			return sendResponse(201, null, '{"id_feature_value": $id_nuevo, "position": $position}', $response);
 		}else{
 			return sendResponse(404, null, "Error añadiendo feature_value", $response);
 		}
@@ -306,18 +301,18 @@ $app->post('/ps_feature_value/add', function (Request $request, Response $respon
 });
 
 
-$app->post('/ps_feature_value/update', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature_value/update', function (Request $request, Response $response) {
     $id_feature_value = $request->getParam("id_feature_value");
     $position = $request->getParam("position");
-    $value = trim($request->getParam("value"));
+    $name = trim($request->getParam("name"));
 	if(!is_numeric($position)){   //debe ser un número
 		return sendResponse(404, null, "Posicion no es numero", $response);
 	}
 	if(!is_numeric($id_feature_value)){   //debe ser un número
 		return sendResponse(404, null, "id_feature_value no es numero", $response);
 	}
-	if(strlen($value)< 1){   //minimo debe
-		return sendResponse(404, null, "No has enviado el value", $response);
+	if(strlen($name)< 1){   //minimo debe
+		return sendResponse(404, null, "No has enviado el name", $response);
 	}
 
 	$sql = 'SELECT position,id_feature FROM a_tabla_feature_value where id_feature_value = :id_feature_value';
@@ -349,15 +344,15 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
 	}
 
     try {
-		$sql = "UPDATE a_tabla_feature_value SET position=:position, value=:value WHERE id_feature_value = :id_feature_value";
+		$sql = "UPDATE a_tabla_feature_value SET position=:position, name=:name WHERE id_feature_value = :id_feature_value";
         $statement = $db->prepare($sql);
         $statement->bindParam(":id_feature_value", $id_feature, PDO::PARAM_INT);
         $statement->bindParam(":position", $position, PDO::PARAM_INT);
-        $statement->bindParam(":value", $value,PDO::PARAM_STR);
+        $statement->bindParam(":name", $name,PDO::PARAM_STR);
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, "ActualizadoOk", $response);
+            return sendResponse(200, null, '{"id_feature_value": $id_feature_value, "actualizar": "ok"}', $response);
         } else {
             return sendResponse(404, null, "No se pudo actualizar", $response);
         }
@@ -368,7 +363,7 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
 });
 
 
-$app->post('/ps_feature_value/delete', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature_value/delete', function (Request $request, Response $response) {
     $id_feature_value = $request->getParam('id_feature_value');
 	if(!is_numeric($id_feature_value)){   //debe ser un número
 		return sendResponse(404, null, "id_feature no es numero", $response);
@@ -386,7 +381,7 @@ $app->post('/ps_feature_value/delete', function (Request $request, Response $res
 	$position = $data['position'];
 
 	if (borrar_feature_value($id_feature_value,$position,$db)){
-		return sendResponse(200, null, "BorradoOk", $response);
+		return sendResponse(200, null, '{"id_feature_value": $id_feature, "borrar": "ok"}', $response);
 	}else{
 		return sendResponse(500, "", $e->getMessage(), $response);
 	}
@@ -396,9 +391,7 @@ $app->post('/ps_feature_value/delete', function (Request $request, Response $res
 
 
 
-
-
-$app->post('/ps_feature_super/add', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature_super/add', function (Request $request, Response $response) {
     $name = trim($request->getParam("name"));
 
 	if(strlen($name)< 1){   //minimo debe tener 1 letra
@@ -425,8 +418,8 @@ $app->post('/ps_feature_super/add', function (Request $request, Response $respon
 		$statement->execute();
 
 		if ($statement->rowCount() > 0) {
-			$id = $db->lastInsertId();
-			return sendResponse(201, null, "Nueva id_feature_super: $id  position: $position", $response);
+			$id_nuevo = $db->lastInsertId();
+			return sendResponse(201, null, '{"id_feature_super": $id_nuevo,  "position": $position}', $response);
 		}else{
 			return sendResponse(404, null, "Error añadiendo feature_super", $response);
 		}
@@ -437,7 +430,7 @@ $app->post('/ps_feature_super/add', function (Request $request, Response $respon
 });
 
 
-$app->post('/ps_feature_super/update', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature_super/update', function (Request $request, Response $response) {
     $id_feature_super = $request->getParam("id_feature_super");
     $position = $request->getParam("position");
     $name = trim($request->getParam("name"));
@@ -486,7 +479,7 @@ $app->post('/ps_feature_super/update', function (Request $request, Response $res
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, "ActualizadoOk", $response);
+            return sendResponse(200, null, '{"id_feature_super": $id_feature, "actualizar":"ok"}', $response);
         } else {
             return sendResponse(404, null, "No se pudo actualizar", $response);
         }
@@ -497,7 +490,7 @@ $app->post('/ps_feature_super/update', function (Request $request, Response $res
 });
 
 
-$app->post('/ps_feature_super/delete', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature_super/delete', function (Request $request, Response $response) {
     $id_feature_super = $request->getParam('id_feature_super');
 	if(!is_numeric($id_feature_super)){   //debe ser un número 
 		return sendResponse(404, null, "id_feature_super no es numero", $response);
@@ -534,14 +527,14 @@ $app->post('/ps_feature_super/delete', function (Request $request, Response $res
 		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
 		$statement->execute();
         $db = null;
-		return sendResponse(200, null, "BorradoOk", $response);
+		return sendResponse(200, null, '{"id_feature_super": $id_feature_super, "borrar":"ok"}', $response);
     } catch (PDOException $e) {
         return sendResponse(500, "", $e->getMessage(), $response);
     }
 });
 
 
-$app->post('/ps_feature/get_todos', function (Request $request, Response $response) {
+$app->post('/a_tabla_feature/get_todos', function (Request $request, Response $response) {
 	try {
 		$dbInstance = new Db();
         $db = $dbInstance->connectDB();
@@ -549,19 +542,19 @@ $app->post('/ps_feature/get_todos', function (Request $request, Response $respon
 		$sql = 'SELECT id_feature_super,position,name FROM a_tabla_feature_super order by position';
 		$statement = $db->prepare($sql);
 		$statement->execute();
-		$ps_feature_super = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$a_tabla_feature_super = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 		$sql = 'SELECT id_feature,id_feature_super,position,name FROM a_tabla_feature order by position';
 		$statement = $db->prepare($sql);
 		$statement->execute();
-		$ps_feature = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$a_tabla_feature = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 		$sql = 'SELECT id_feature_value,id_feature,position,value FROM a_tabla_feature_value';
 		$dbInstance = new Db();
         $db = $dbInstance->connectDB();
 		$statement = $db->prepare($sql);
 		$statement->execute();
-		$ps_feature_value = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$a_tabla_feature_value = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$db = null;
 		
 		return sendResponse(200, ["ps_feature_super"=>$ps_feature_super, "ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value], "lista_feature_todos", $response);

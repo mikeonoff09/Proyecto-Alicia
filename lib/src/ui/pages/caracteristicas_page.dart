@@ -195,13 +195,13 @@ class _CaracteristicasDialogState extends State<CaracteristicasDialog> {
                                 .toList();
 
                             /*final filteredValuesLang = constructorSQLselect(
-                                campofiltro: "value",
+                                campofiltro: "name",
                                 originalList: widget
                                     .productDetails.featuresValueLang
                                     .where((element) {
                                   return (idsList.contains(
                                           element["id_feature_value"])) &&
-                                      (element["value"] as String)
+                                      (element["name"] as String)
                                           .toUpperCase()
                                           .contains(value.toUpperCase());
                                 }).toList(),
@@ -213,7 +213,7 @@ class _CaracteristicasDialogState extends State<CaracteristicasDialog> {
                                     title: Row(
                                       children: [
                                         Expanded(
-                                            child: Text(item["value"] ?? "")),
+                                            child: Text(item["name"] ?? "")),
                                         IconButton(
                                           icon: Icon(Icons.edit),
                                           color: Theme.of(context).accentColor,
@@ -245,7 +245,7 @@ class _CaracteristicasDialogState extends State<CaracteristicasDialog> {
                                     value: item["id_feature_value"],
                                     onChanged: (value) {
                                       /*    featureNameController.text =
-                                                                                              item["value"]; */
+                                                                                              item["name"]; */
                                       setState(() {
                                         selectedValue = value;
                                       });
@@ -333,7 +333,7 @@ class _CaracteristicasDialogState extends State<CaracteristicasDialog> {
       };
       final featureValueLang = {
         "id_feature_value": lastValueLang,
-        "value": featureValueController.text,
+        "name": featureValueController.text,
       };
       final featureValueProduct = {
         "id_feature_value": lastValueLang,
@@ -361,7 +361,7 @@ class _CaracteristicasDialogState extends State<CaracteristicasDialog> {
       };
       final Map<String, dynamic> featureValueLang = {
         "id_feature_value": selectedValue,
-        // "value": featureValueController.text,
+        // "name": featureValueController.text,
       };
       final Map<String, dynamic> featureValueProduct = {
         "id_feature_value": selectedValue,
@@ -486,10 +486,10 @@ Future<Map<String, dynamic>> editFeature(
 
 Future<Map<String, dynamic>> editFeatureValue(
     BuildContext context, Map<String, dynamic> item) async {
-  final valueController = TextEditingController(text: item["value"]);
+  final valueController = TextEditingController(text: item["name"]);
   final size = MediaQuery.of(context).size;
   final save = () {
-    item["value"] = valueController.text;
+    item["name"] = valueController.text;
     Navigator.pop(context, item);
     final result =
         MysqlSeverDataSource.instance.updateCaracteristicaLang(item, 1);

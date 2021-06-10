@@ -945,7 +945,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           Text(
-                            valueLang["value"] ?? "Sin valor",
+                            valueLang["name"] ?? "Sin valor",
                             style: TextStyle(fontSize: 16),
                           )
                         ],
@@ -1046,14 +1046,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
  */
   void _showFeaturesDialog(BuildContext context) {
-    /*    showDialog(
+    /*showDialog(
       context: context,
       builder: (context) => CaracteristicasDialog(
-        productDetails: this.productDetails,
+        productDetails: this.productDetails.features,
       ),
     ).then((value) {
       loadData();
-    }); */
+    });*/
   }
 
   Future openCategories(BuildContext context) async {

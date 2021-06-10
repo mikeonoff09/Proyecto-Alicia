@@ -343,19 +343,50 @@ class Product {
   Product();
 }
 
-class Feature {
+class Feature_Super {
   // Catacteristica
-  int get id_feature => values["id_feature"];
-  set id_feature(value) => {values["id_feature"] = value};
+  int get id_feature_super => values["id_feature_super"];
+  set id_feature_super(value) => {values["id_feature_super"] = value};
   int get position => values["position"];
   set position(value) => values["position"] = value;
   String get name => values["name"];
   set name(value) => values["name"] = value;
+  bool get nuevo => values["nuevo"];
+  set nuevo(value) => values["nuevo"] = value;
+  bool get borrar => values["borrar"];
+  set borrar(value) => values["borrar"] = value;
 
   Map<String, dynamic> values = {
     "id_feature": 0,
     "position": 0,
     "name": "",
+    "borrar": 0,
+    "nuevo": false,
+  };
+  Feature_Super();
+}
+
+class Feature {
+  // Catacteristica
+  int get id_feature => values["id_feature"];
+  set id_feature(value) => {values["id_feature"] = value};
+  int get id_feature_super => values["id_feature_super"];
+  set id_feature_super(value) => {values["id_feature_super"] = value};
+  int get position => values["position"];
+  set position(value) => values["position"] = value;
+  String get name => values["name"];
+  set name(value) => values["name"] = value;
+  bool get nuevo => values["nuevo"];
+  set nuevo(value) => values["nuevo"] = value;
+  bool get borrar => values["borrar"];
+  set borrar(value) => values["borrar"] = value;
+  Map<String, dynamic> values = {
+    "id_feature": 0,
+    "id_feature_super": 0,
+    "position": 0,
+    "name": "",
+    "borrar": 0,
+    "nuevo": false,
   };
   Feature();
 }
@@ -366,13 +397,22 @@ class Feature_Value {
   set id_feature(value) => values["id_feature"] = value;
   int get id_feature_value => values["id_feature_value"];
   set id_feature_value(value) => values["id_feature_value"] = value;
-  String get value => values["value"];
-  set value(val) => values["value"] = val;
+  String get value => values["name"];
+  set value(val) => values["name"] = val;
+  int get position => values["position"];
+  set position(value) => values["position"] = value;
+  bool get nuevo => values["nuevo"];
+  set nuevo(value) => values["nuevo"] = value;
+  bool get borrar => values["borrar"];
+  set borrar(value) => values["borrar"] = value;
 
   Map<String, dynamic> values = {
     "id_feature": 0,
     "id_feature_value": 0,
-    "value": "",
+    "name": "",
+    "position": 0,
+    "borrar": 0,
+    "nuevo": false,
   };
 
   Feature_Value();
@@ -419,9 +459,13 @@ class Category_product {
   set position(value) => values["position"] = value;
   bool get borrar => values["borrar"];
   set borrar(value) => values["borrar"] = value;
+  bool get nuevo => values["nuevo"];
+  set nuevo(value) => values["nuevo"] = value;
   Map<String, dynamic> values = {
     "id_category": 0,
     "position": 0,
+    "borrar": 0,
+    "nuevo": false,
   };
 
   Category_product();
