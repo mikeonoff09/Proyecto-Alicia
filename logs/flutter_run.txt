@@ -21,3 +21,220 @@
 [11:56:09 AM]: <== [{"id":"3","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
 [11:56:09 AM]: <== [{"id":"4","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
 [11:56:09 AM]: <== [{"id":"5","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
+[12:01:34 PM]: ==> [{"id":"6","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[12:01:34 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[12:01:34 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"3","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[12:01:34 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"3","progressId":null,"finished":true}}]
+[12:01:35 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"2","progressId":"hot.reload","finished":true}}]
+[12:01:35 PM]: <== Reloaded 7 of 789 libraries in 617ms.
+[12:01:35 PM]: <== [{"id":"6","result":{"code":0,"message":"Reloaded 7 of 789 libraries"}}]
+[12:14:32 PM]: <== flutter: 0
+[12:14:35 PM]: <== flutter: {"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'value' in 'field list'","data":"","memory":3049568,"time":0.023524999618530273}
+[1:00:23 PM]: ==> [{"id":"7","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:00:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"4","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:00:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"5","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:00:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"5","progressId":null,"finished":true}}]
+[1:00:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"4","progressId":"hot.reload","finished":true}}]
+[1:00:23 PM]: <== Reloaded 1 of 789 libraries in 751ms.
+[1:00:23 PM]: <== [{"id":"7","result":{"code":0,"message":"Reloaded 1 of 789 libraries"}}]
+[1:04:11 PM]: ==> [{"id":"8","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:04:11 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"6","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:04:11 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"7","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:04:11 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"7","progressId":null,"finished":true}}]
+[1:04:12 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"6","progressId":"hot.reload","finished":true}}]
+[1:04:12 PM]: <== Reloaded 0 libraries in 240ms.
+[1:04:12 PM]: <== [{"id":"8","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:13:46 PM]: ==> [{"id":"9","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:13:46 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"8","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:13:46 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"9","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:13:46 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"9","progressId":null,"finished":true}}]
+[1:13:46 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"8","progressId":"hot.reload","finished":true}}]
+[1:13:46 PM]: <== Reloaded 0 libraries in 322ms.
+[1:13:46 PM]: <== [{"id":"9","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:22:47 PM]: ==> [{"id":"10","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:22:47 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"10","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:22:47 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"11","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:22:47 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"11","progressId":null,"finished":true}}]
+[1:22:47 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"10","progressId":"hot.reload","finished":true}}]
+[1:22:47 PM]: <== Reloaded 0 libraries in 220ms.
+[1:22:47 PM]: <== [{"id":"10","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:34:33 PM]: ==> [{"id":"11","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:34:33 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"12","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:34:33 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"13","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:34:33 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"13","progressId":null,"finished":true}}]
+[1:34:33 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"12","progressId":"hot.reload","finished":true}}]
+[1:34:33 PM]: <== Reloaded 0 libraries in 217ms.
+[1:34:33 PM]: <== [{"id":"11","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:41:18 PM]: ==> [{"id":"12","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:41:18 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"14","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:41:18 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"15","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:41:18 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"15","progressId":null,"finished":true}}]
+[1:41:18 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"14","progressId":"hot.reload","finished":true}}]
+[1:41:18 PM]: <== Reloaded 0 libraries in 266ms.
+[1:41:18 PM]: <== [{"id":"12","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:45:43 PM]: ==> [{"id":"13","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:45:44 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"16","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:45:44 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"17","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:45:44 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"17","progressId":null,"finished":true}}]
+[1:45:44 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"16","progressId":"hot.reload","finished":true}}]
+[1:45:44 PM]: <== Reloaded 0 libraries in 234ms.
+[1:45:44 PM]: <== [{"id":"13","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:47:01 PM]: ==> [{"id":"14","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:47:01 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"18","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:47:01 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"19","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:47:01 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"19","progressId":null,"finished":true}}]
+[1:47:01 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"18","progressId":"hot.reload","finished":true}}]
+[1:47:01 PM]: <== Reloaded 5 of 791 libraries in 619ms.
+[1:47:01 PM]: <== [{"id":"14","result":{"code":0,"message":"Reloaded 5 of 791 libraries"}}]
+[1:47:22 PM]: ==> [{"id":"15","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:47:22 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"20","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:47:22 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"21","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:47:22 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"21","progressId":null,"finished":true}}]
+[1:47:22 PM]: ==> [{"id":"16","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:47:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"20","progressId":"hot.reload","finished":true}}]
+[1:47:23 PM]: <== Reloaded 3 of 791 libraries in 555ms.
+[1:47:23 PM]: <== [{"id":"15","result":{"code":0,"message":"Reloaded 3 of 791 libraries"}}]
+[1:47:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"22","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:47:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"23","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:47:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"23","progressId":null,"finished":true}}]
+[1:47:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"22","progressId":"hot.reload","finished":true}}]
+[1:47:23 PM]: <== Reloaded 0 libraries in 221ms.
+[1:47:23 PM]: <== [{"id":"16","result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[1:47:37 PM]: <== [ERROR:flutter/lib/ui/ui_dart_state.cc(199)] Unhandled Exception: FormatException: Invalid radix-10 number (at character 1)
+[1:47:37 PM]: <== //mueblesextraordinarios.com/app2/public/v1/
+[1:47:37 PM]: <== ^
+[1:47:37 PM]: <== #0      int._throwFormatException (dart:core-patch/integers_patch.dart:132:5)
+[1:47:37 PM]: <== #1      int._parseRadix (dart:core-patch/integers_patch.dart:158:16)
+[1:47:37 PM]: <== #2      int._parse (dart:core-patch/integers_patch.dart:101:12)
+[1:47:37 PM]: <== #3      int.parse (dart:core-patch/integers_patch.dart:64:12)
+[1:47:37 PM]: <== #4      _Uri._makeHttpUri (dart:core/uri.dart:1591:49)
+[1:47:37 PM]: <== #5      new _Uri.http (dart:core/uri.dart:1456:12)
+[1:47:37 PM]: <== #6      FeaturesProvider.getAllFeatures (package:alicia/src/providers/features_provider.dart:19:21)
+[1:47:37 PM]: <== #7      _ProductDetailsPageState._showDatos (package:alicia/src/ui/pages/product_details_page.dart:1036:22)
+[1:47:37 PM]: <== #8      _ProductDetailsPageState.imagesSection.<anonymous closure> (package:alicia/src/ui/pages/product_details_page.dart:736:21)
+[1:47:37 PM]: <== #9      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:989:21)
+[1:47:37 PM]: <== #10     GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+[1:47:37 PM]: <== #11     TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:607:11)
+[1:47:37 PM]: <== #12     BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:296:5)
+[1:47:37 PM]: <== #13     BaseTapGestureRecognizer.acceptGesture (package:flutter/src/gestures/tap.dart:267:7)
+[1:47:37 PM]: <== #14     GestureArenaManager.sweep (package:flutter/src/gestures/arena.dart:157:27)
+[1:47:37 PM]: <== #15     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:443:20)
+[1:47:37 PM]: <== #16     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:419:22)
+[1:47:37 PM]: <== #17     RendererBinding.dispatchEvent (package:flutter/src/rendering/binding.dart:287:11)
+[1:47:37 PM]: <== #18     GestureBinding._handlePointerEventImmediately (package:flutter/src/gestures/binding.dart:374:7)
+[1:47:37 PM]: <== #19     GestureBinding.handlePointerEvent (package:flutter/src/gestures/binding.dart:338:5)
+[1:47:37 PM]: <== #20     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:296:7)
+[1:47:37 PM]: <== #21     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:279:7)
+[1:47:37 PM]: <== #22     _rootRunUnary (dart:async/zone.dart:1370:13)
+[1:47:37 PM]: <== #23     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+[1:47:37 PM]: <== #24     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+[1:47:37 PM]: <== #25     _invoke1 (dart:ui/hooks.dart:182:10)
+[1:47:37 PM]: <== #26     PlatformDispatcher._dispatchPointerDataPacket (dart:ui/platform_dispatcher.dart:282:7)
+[1:47:37 PM]: <== #27     _dispatchPointerDataPacket (dart:ui/hooks.dart:96:31)
+[1:49:14 PM]: ==> [{"id":"17","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:49:14 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"24","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:49:14 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"25","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:49:14 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"25","progressId":null,"finished":true}}]
+[1:49:15 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"24","progressId":"hot.reload","finished":true}}]
+[1:49:15 PM]: <== Reloaded 1 of 791 libraries in 500ms.
+[1:49:15 PM]: <== [{"id":"17","result":{"code":0,"message":"Reloaded 1 of 791 libraries"}}]
+[1:49:17 PM]: <== [ERROR:flutter/lib/ui/ui_dart_state.cc(199)] Unhandled Exception: FormatException: Invalid radix-10 number (at character 1)
+[1:49:17 PM]: <== //mueblesextraordinarios.com/app2/public/v1/
+[1:49:17 PM]: <== ^
+[1:49:17 PM]: <== #0      int._throwFormatException (dart:core-patch/integers_patch.dart:132:5)
+[1:49:17 PM]: <== #1      int._parseRadix (dart:core-patch/integers_patch.dart:158:16)
+[1:49:17 PM]: <== #2      int._parse (dart:core-patch/integers_patch.dart:101:12)
+[1:49:17 PM]: <== #3      int.parse (dart:core-patch/integers_patch.dart:64:12)
+[1:49:17 PM]: <== #4      _Uri._makeHttpUri (dart:core/uri.dart:1591:49)
+[1:49:17 PM]: <== #5      new _Uri.http (dart:core/uri.dart:1456:12)
+[1:49:17 PM]: <== #6      FeaturesProvider.getAllFeatures (package:alicia/src/providers/features_provider.dart:19:21)
+[1:49:17 PM]: <== #7      _ProductDetailsPageState._showDatos (package:alicia/src/ui/pages/product_details_page.dart:1036:22)
+[1:49:17 PM]: <== #8      _ProductDetailsPageState.imagesSection.<anonymous closure> (package:alicia/src/ui/pages/product_details_page.dart:736:21)
+[1:49:17 PM]: <== #9      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:989:21)
+[1:49:17 PM]: <== #10     GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+[1:49:17 PM]: <== #11     TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:607:11)
+[1:49:17 PM]: <== #12     BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:296:5)
+[1:49:17 PM]: <== #13     BaseTapGestureRecognizer.acceptGesture (package:flutter/src/gestures/tap.dart:267:7)
+[1:49:17 PM]: <== #14     GestureArenaManager.sweep (package:flutter/src/gestures/arena.dart:157:27)
+[1:49:17 PM]: <== #15     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:443:20)
+[1:49:17 PM]: <== #16     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:419:22)
+[1:49:17 PM]: <== #17     RendererBinding.dispatchEvent (package:flutter/src/rendering/binding.dart:287:11)
+[1:49:17 PM]: <== #18     GestureBinding._handlePointerEventImmediately (package:flutter/src/gestures/binding.dart:374:7)
+[1:49:17 PM]: <== #19     GestureBinding.handlePointerEvent (package:flutter/src/gestures/binding.dart:338:5)
+[1:49:17 PM]: <== #20     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:296:7)
+[1:49:17 PM]: <== #21     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:279:7)
+[1:49:17 PM]: <== #22     _rootRunUnary (dart:async/zone.dart:1370:13)
+[1:49:17 PM]: <== #23     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+[1:49:17 PM]: <== #24     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+[1:49:17 PM]: <== #25     _invoke1 (dart:ui/hooks.dart:182:10)
+[1:49:17 PM]: <== #26     PlatformDispatcher._dispatchPointerDataPacket (dart:ui/platform_dispatcher.dart:282:7)
+[1:49:17 PM]: <== #27     _dispatchPointerDataPacket (dart:ui/hooks.dart:96:31)
+[1:49:42 PM]: <== [ERROR:flutter/lib/ui/ui_dart_state.cc(199)] Unhandled Exception: FormatException: Invalid radix-10 number (at character 1)
+[1:49:42 PM]: <== //mueblesextraordinarios.com/app2/public/v1/
+[1:49:42 PM]: <== ^
+[1:49:42 PM]: <== #0      int._throwFormatException (dart:core-patch/integers_patch.dart:132:5)
+[1:49:42 PM]: <== #1      int._parseRadix (dart:core-patch/integers_patch.dart:158:16)
+[1:49:42 PM]: <== #2      int._parse (dart:core-patch/integers_patch.dart:101:12)
+[1:49:42 PM]: <== #3      int.parse (dart:core-patch/integers_patch.dart:64:12)
+[1:49:42 PM]: <== #4      _Uri._makeHttpUri (dart:core/uri.dart:1591:49)
+[1:49:42 PM]: <== #5      new _Uri.http (dart:core/uri.dart:1456:12)
+[1:49:42 PM]: <== #6      FeaturesProvider.getAllFeatures (package:alicia/src/providers/features_provider.dart:19:21)
+[1:49:42 PM]: <== #7      _ProductDetailsPageState._showDatos (package:alicia/src/ui/pages/product_details_page.dart:1036:22)
+[1:49:42 PM]: <== #8      _ProductDetailsPageState.imagesSection.<anonymous closure> (package:alicia/src/ui/pages/product_details_page.dart:736:21)
+[1:49:42 PM]: <== #9      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:989:21)
+[1:49:42 PM]: <== #10     GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+[1:49:42 PM]: <== #11     TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:607:11)
+[1:49:42 PM]: <== #12     BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:296:5)
+[1:49:42 PM]: <== #13     BaseTapGestureRecognizer.acceptGesture (package:flutter/src/gestures/tap.dart:267:7)
+[1:49:42 PM]: <== #14     GestureArenaManager.sweep (package:flutter/src/gestures/arena.dart:157:27)
+[1:49:42 PM]: <== #15     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:443:20)
+[1:49:42 PM]: <== #16     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:419:22)
+[1:49:42 PM]: <== #17     RendererBinding.dispatchEvent (package:flutter/src/rendering/binding.dart:287:11)
+[1:49:42 PM]: <== #18     GestureBinding._handlePointerEventImmediately (package:flutter/src/gestures/binding.dart:374:7)
+[1:49:42 PM]: <== #19     GestureBinding.handlePointerEvent (package:flutter/src/gestures/binding.dart:338:5)
+[1:49:42 PM]: <== #20     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:296:7)
+[1:49:42 PM]: <== #21     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:279:7)
+[1:49:42 PM]: <== #22     _rootRunUnary (dart:async/zone.dart:1370:13)
+[1:49:42 PM]: <== #23     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+[1:49:42 PM]: <== #24     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+[1:49:42 PM]: <== #25     _invoke1 (dart:ui/hooks.dart:182:10)
+[1:49:42 PM]: <== #26     PlatformDispatcher._dispatchPointerDataPacket (dart:ui/platform_dispatcher.dart:282:7)
+[1:49:42 PM]: <== #27     _dispatchPointerDataPacket (dart:ui/hooks.dart:96:31)
+[1:50:23 PM]: ==> [{"id":"18","method":"app.restart","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[1:50:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"26","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[1:50:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"27","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[1:50:23 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"27","progressId":null,"finished":true}}]
+[1:50:24 PM]: <== [{"event":"app.progress","params":{"appId":"4faf1f5c-5f1e-4bb4-9334-fc3dc90c6fad","id":"26","progressId":"hot.reload","finished":true}}]
+[1:50:24 PM]: <== Reloaded 4 of 791 libraries in 569ms.
+[1:50:24 PM]: <== [{"id":"18","result":{"code":0,"message":"Reloaded 4 of 791 libraries"}}]
+[1:50:32 PM]: <== [ERROR:flutter/lib/ui/ui_dart_state.cc(199)] Unhandled Exception: FormatException: Invalid radix-10 number (at character 1)
+[1:50:32 PM]: <== //mueblesextraordinarios.com/app2/public/v1/
+[1:50:32 PM]: <== ^
+[1:50:32 PM]: <== #0      int._throwFormatException (dart:core-patch/integers_patch.dart:132:5)
+[1:50:32 PM]: <== #1      int._parseRadix (dart:core-patch/integers_patch.dart:158:16)
+[1:50:32 PM]: <== #2      int._parse (dart:core-patch/integers_patch.dart:101:12)
+[1:50:32 PM]: <== #3      int.parse (dart:core-patch/integers_patch.dart:64:12)
+[1:50:32 PM]: <== #4      _Uri._makeHttpUri (dart:core/uri.dart:1591:49)
+[1:50:32 PM]: <== #5      new _Uri.http (dart:core/uri.dart:1456:12)
+[1:50:32 PM]: <== #6      FeaturesProvider.getAllFeatures (package:alicia/src/providers/features_provider.dart:19:21)
+[1:50:32 PM]: <== #7      _ProductDetailsPageState._showDatos (package:alicia/src/ui/pages/product_details_page.dart:1036:22)
+[1:50:32 PM]: <== #8      _ProductDetailsPageState.imagesSection.<anonymous closure> (package:alicia/src/ui/pages/product_details_page.dart:736:21)
+[1:50:32 PM]: <== #9      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:989:21)
+[1:50:32 PM]: <== #10     GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+[1:50:32 PM]: <== #11     TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:607:11)
+[1:50:32 PM]: <== #12     BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:296:5)
+[1:50:32 PM]: <== #13     BaseTapGestureRecognizer.acceptGesture (package:flutter/src/gestures/tap.dart:267:7)
+[1:50:32 PM]: <== #14     GestureArenaManager.sweep (package:flutter/src/gestures/arena.dart:157:27)
+[1:50:32 PM]: <== #15     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:443:20)
+[1:50:32 PM]: <== #16     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:419:22)
+[1:50:32 PM]: <== #17     RendererBinding.dispatchEvent (package:flutter/src/rendering/binding.dart:287:11)
+[1:50:32 PM]: <== #18     GestureBinding._handlePointerEventImmediately (package:flutter/src/gestures/binding.dart:374:7)
+[1:50:32 PM]: <== #19     GestureBinding.handlePointerEvent (package:flutter/src/gestures/binding.dart:338:5)
+[1:50:32 PM]: <== #20     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:296:7)
+[1:50:32 PM]: <== #21     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:279:7)
+[1:50:32 PM]: <== #22     _rootRunUnary (dart:async/zone.dart:1370:13)
+[1:50:32 PM]: <== #23     _CustomZone.runUnary (dart:async/zone.dart:1265:19)
+[1:50:32 PM]: <== #24     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1170:7)
+[1:50:32 PM]: <== #25     _invoke1 (dart:ui/hooks.dart:182:10)
+[1:50:32 PM]: <== #26     PlatformDispatcher._dispatchPointerDataPacket (dart:ui/platform_dispatcher.dart:282:7)
+[1:50:32 PM]: <== #27     _dispatchPointerDataPacket (dart:ui/hooks.dart:96:31)

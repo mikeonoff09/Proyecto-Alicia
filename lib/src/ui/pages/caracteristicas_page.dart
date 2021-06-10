@@ -1,9 +1,8 @@
 import 'package:alicia/src/datasources/mysql_server.dart';
+import 'package:alicia/src/models/product_details.dart' as product_details;
 import 'package:alicia/src/ui/components/filtros.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:flutter/material.dart';
-
-import 'package:alicia/src/models/product_details.dart' as product_details;
 
 class CaracteristicasDialog extends StatefulWidget {
   final product_details.ProductDetails productDetails;

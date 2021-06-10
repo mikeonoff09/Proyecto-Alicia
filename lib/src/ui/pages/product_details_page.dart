@@ -4,6 +4,7 @@ import 'package:alicia/src/models/initial_data.dart';
 import 'package:alicia/src/models/product.dart';
 import 'package:alicia/src/models/product_details.dart' as product_details;
 import 'package:alicia/src/models/product_details_model.dart';
+import 'package:alicia/src/providers/features_provider.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/table_filter_dialog.dart';
 import 'package:flutter/material.dart';
@@ -731,7 +732,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
                 IconButton(
                   onPressed: () {
-                    _showFeaturesDialog(context);
+                    // _showFeaturesDialog(context);
+                    _showDatos();
                   },
                   icon: Icon(Icons.edit),
                 )
@@ -897,10 +899,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   Widget featuresWidget(BuildContext context) {
-  //   Map<int, Widget> result = {};
-  //   final size = MediaQuery.of(context).size;
-  //   final idProduct = widget.product.id;
-  //   final features = this.productDetails?.features;
+    //   Map<int, Widget> result = {};
+    //   final size = MediaQuery.of(context).size;
+    //   final idProduct = widget.product.id;
+    //   final features = this.productDetails?.features;
 /*
     if (features == null) return SizedBox();
     for (var fea in features) {
@@ -1028,15 +1030,21 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
  */
+
+  Future<void> _showDatos() async {
+    FeaturesProvider featuresProvider = new FeaturesProvider();
+    featuresProvider.getAllFeatures().then((value) => print(value.toString()));
+  }
+
   void _showFeaturesDialog(BuildContext context) {
-    /*showDialog(
-      context: context,
-      builder: (context) => CaracteristicasDialog(
-        productDetails: this.productDetails.features,
-      ),
-    ).then((value) {
-      loadData();
-    });*/
+    // showDialog(
+    //   context: context,
+    //   builder: (context) => CaracteristicasDialog(
+    //     productDetails: this.productDetails.features,
+    //   ),
+    // ).then((value) {
+    //   loadData();
+    // });
   }
 
   //         MysqlSeverDataSource.instance
@@ -1063,7 +1071,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //   );
   // }
 
-   //void _showFeaturesDialog(BuildContext context) {
+  //  void _showFeaturesDialog(BuildContext context) {
   //   showDialog(
   //     context: context,
   //     builder: (context) => CaracteristicasDialog(
@@ -1072,9 +1080,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //   ).then((value) {
   //     loadData();
   //   });
-   //}
+  //  }
 
-   Future openCategories(BuildContext context) async {
+  Future openCategories(BuildContext context) async {
 //     showDialog(
 //       context: context,
 //       builder: (context) => CategoriesPage(
@@ -1083,5 +1091,5 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 //     ).then((value) {
 //       loadData();
 //     });
-   }
- }
+  }
+}
