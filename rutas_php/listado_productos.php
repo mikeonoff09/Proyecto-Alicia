@@ -17,15 +17,15 @@ try {
 	
 	$dbInstance = new Db();
 	$db = $dbInstance->connectDB();
-	$statement = $db->prepare("select id_category,name,id_parent,level_depth,nleft,nright,active,position,is_root_category from ps_category order by position");
+	$statement = $db->prepare("select id_category,name,id_parent,level_depth,nleft,nright,active,position,is_root_category from a_tabla_category order by position");
 	$statement->execute();
 	$lista_categorias = $statement->fetchAll(PDO::FETCH_OBJ);
 
-	$statement = $db->prepare("select id_manufacturer,name, description from ps_manufacturer order by name");
+	$statement = $db->prepare("select id_manufacturer,name, description from a_tabla_manufacturer order by name");
 	$statement->execute();
 	$lista_fabricantes = $statement->fetchAll(PDO::FETCH_OBJ);
 
-	$statement = $db->prepare("select id_supplier,name, description from ps_supplier order by name");
+	$statement = $db->prepare("select id_supplier,name, description from a_tabla_supplier order by name");
 	$statement->execute();
 	$lista_distribuidores = $statement->fetchAll(PDO::FETCH_OBJ);
 	$db = null;

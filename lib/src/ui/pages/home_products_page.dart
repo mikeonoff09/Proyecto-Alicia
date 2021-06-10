@@ -352,6 +352,27 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     return result;
   }
 
+  String getManufacturerName(int id) {
+    for (var item in generalData.fabricantes) {
+      if (item.idManufacturer == id) return item.name;
+    }
+    return "No encontrado";
+  }
+
+  String getCategoryName(int id) {
+    for (var item in generalData.categorias) {
+      if (item.idCategory == id) return item.name;
+    }
+    return "No encontrado";
+  }
+
+  String getSupplierName(int id) {
+    for (var item in generalData.distribuidores) {
+      if (item.idSupplier == id) return item.name;
+    }
+    return "No encontrado";
+  }
+
   Future onRowSelectedChange(int index, bool selected) async {}
 
   List<dynamic> getRow(int index) {
@@ -362,7 +383,9 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
 
     values[1] = new Image.network(calcImageUrlFromId(int.tryParse(values[1])));
     values[2] = new Image.network(calcImageUrlFromId(int.tryParse(values[2])));
-
+    values[5] = getCategoryName(int.tryParse(values[5]));
+    values[6] = getManufacturerName(int.tryParse(values[6]));
+    values[7] = getSupplierName(int.tryParse(values[7]));
     values.removeLast();
     return values;
   }

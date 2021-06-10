@@ -81,6 +81,8 @@ class PsImage extends Equatable {
     this.fechamodificacion,
     this.resolucionrecorte,
     this.padding,
+    this.nuevo,
+    this.actualizar,
   });
 
   int idImage;
@@ -94,6 +96,8 @@ class PsImage extends Equatable {
   DateTime fechamodificacion;
   String resolucionrecorte;
   int padding;
+  bool nuevo;
+  bool actualizar;
 
   factory PsImage.fromMap(Map<String, dynamic> json) => PsImage(
         idImage: json["id_image"],
@@ -107,6 +111,8 @@ class PsImage extends Equatable {
         fechamodificacion: DateTime.parse(json["fechamodificacion"]),
         resolucionrecorte: json["resolucionrecorte"],
         padding: json["padding"],
+        nuevo: json["nuevo"],
+        actualizar: json["actualizar"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -120,7 +126,8 @@ class PsImage extends Equatable {
         "descartada": descartada,
         "fechamodificacion": fechamodificacion.toIso8601String(),
         "resolucionrecorte": resolucionrecorte,
-        "padding": padding,
+        "nuevo": nuevo,
+        "actualizar": actualizar,
       };
 
   @override

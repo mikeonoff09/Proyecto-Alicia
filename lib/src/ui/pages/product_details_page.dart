@@ -901,67 +901,69 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //   final size = MediaQuery.of(context).size;
   //   final idProduct = widget.product.id;
   //   final features = this.productDetails?.features;
-
-  //   if (features == null) return SizedBox();
-  //   for (var fea in features) {
-  //     final hasValue = productDetails.productHasFeature(
-  //         idProduct: widget.product.id, idFeature: fea["id_feature"]);
-  //     final feaLang = productDetails.getFeatureLang(fea["id_feature"]);
-  //     if (feaLang != null) {
-  //       if (hasValue != null) {
-  //         final values =
-  //             productDetails.getFeatureValues(fea["id_feature"], idProduct);
-  //         if (values != null) {
-  //           for (var value in values) {
-  //             final valueLang =
-  //                 productDetails.getFeatureValueLang(value["id_feature_value"]);
-  //             if (valueLang != null) {
-  //               final key =
-  //                   Key('${fea["id_feature"]} ${value["id_feature_value"]}');
-  //               result[value["id_feature_value"]] = Padding(
-  //                 key: key,
-  //                 padding: EdgeInsets.only(left: size.width * 0.068, top: 10),
-  //                 child: Row(
-  //                   children: [
-  //                     Row(
-  //                       mainAxisSize: MainAxisSize.min,
-  //                       children: [
-  //                         Text(
-  //                           (feaLang["name"] ?? "Sin nombre") + ": ",
-  //                           style: TextStyle(
-  //                               fontWeight: FontWeight.bold, fontSize: 16),
-  //                         ),
-  //                         Text(
-  //                           valueLang["value"] ?? "Sin valor",
-  //                           style: TextStyle(fontSize: 16),
-  //                         )
-  //                       ],
-  //                     ),
-  //                     IconButton(
-  //                       onPressed: () {
-  //                         MysqlSeverDataSource.instance.deleteValueProduct(
-  //                             idFeatureValue: value["id_feature_value"],
-  //                             idProduct: idProduct);
-  //                         setState(() {
-  //                           productDetails.featuresProduct = productDetails
-  //                               .featuresProduct
-  //                               .where((element) =>
-  //                                   element["id_feature_value"] !=
-  //                                   value["id_feature_value"])
-  //                               .toList();
-  //                         });
-  //                       },
-  //                       icon: Icon(Icons.delete),
-  //                     )
-  //                   ],
-  //                 ),
-  //               );
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-     }
+/*
+    if (features == null) return SizedBox();
+    for (var fea in features) {
+      final hasValue = productDetails.productHasFeature(
+          idProduct: widget.product.id, idFeature: fea["id_feature"]);
+      final feaLang = productDetails.getFeatureLang(fea["id_feature"]);
+      if (feaLang != null) {
+        if (hasValue != null) {
+          final values =
+              productDetails.getFeatureValues(fea["id_feature"], idProduct);
+          if (values != null) {
+            for (var value in values) {
+              final valueLang =
+                  productDetails.getFeatureValueLang(value["id_feature_value"]);
+              if (valueLang != null) {
+                final key =
+                    Key('${fea["id_feature"]} ${value["id_feature_value"]}');
+                result[value["id_feature_value"]] = Padding(
+                  key: key,
+                  padding: EdgeInsets.only(left: size.width * 0.068, top: 10),
+                  child: Row(
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            (feaLang["name"] ?? "Sin nombre") + ": ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          Text(
+                            valueLang["name"] ?? "Sin valor",
+                            style: TextStyle(fontSize: 16),
+                          )
+                        ],
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          MysqlSeverDataSource.instance.deleteValueProduct(
+                              idFeatureValue: value["id_feature_value"],
+                              idProduct: idProduct);
+                          setState(() {
+                            productDetails.featuresProduct = productDetails
+                                .featuresProduct
+                                .where((element) =>
+                                    element["id_feature_value"] !=
+                                    value["id_feature_value"])
+                                .toList();
+                          });
+                        },
+                        icon: Icon(Icons.delete),
+                      )
+                    ],
+                  ),
+                );
+              }
+            }
+          }
+        }
+      } */
+  }
+/* 
+    List<Map<String, dynamic>> resultListData = [];
 
   //   List<Map<String, dynamic>> resultListData = [];
 
@@ -1002,11 +1004,40 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //           for (var i = 0; i < resultListData.length; i++) {
   //             final itemValue = resultListData[i];
 
-  //             if (result[itemValue["id_feature_value"]] != null) {
-  //               itemValue["position"] = (i + 1);
-  //             }
-  //           }
-  //         });
+          MysqlSeverDataSource.instance
+              .updateCaracteristicaValueList(
+                  this
+                      .productDetails
+                      .featuresValue
+                      .where((element) =>
+                          result[element["id_feature_value"]] != null)
+                      .toList(),
+                  productDetails.idProduct)
+              .then((value) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Características actualizadas correctamente"),
+            ));
+          });
+        },
+        scrollController: leftController,
+        itemBuilder: (context, index) {
+          return resultList[index];
+        },
+        itemCount: resultList.length ?? 0,
+      ),
+    );
+  }
+ */
+  void _showFeaturesDialog(BuildContext context) {
+    /*showDialog(
+      context: context,
+      builder: (context) => CaracteristicasDialog(
+        productDetails: this.productDetails.features,
+      ),
+    ).then((value) {
+      loadData();
+    });*/
+  }
 
   //         MysqlSeverDataSource.instance
   //             .updateCaracteristicaValueList(
@@ -1032,7 +1063,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //   );
   // }
 
-   void _showFeaturesDialog(BuildContext context) {
+   //void _showFeaturesDialog(BuildContext context) {
   //   showDialog(
   //     context: context,
   //     builder: (context) => CaracteristicasDialog(
@@ -1041,7 +1072,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //   ).then((value) {
   //     loadData();
   //   });
-   }
+   //}
 
    Future openCategories(BuildContext context) async {
 //     showDialog(
