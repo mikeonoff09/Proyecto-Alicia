@@ -19,6 +19,8 @@ class HttpHandler {
         await http.post(Uri.parse(_baseUrl + "inicio_aplicacion/get"));
     if (response.statusCode == 200) {
       final body = json.decode(response.body);
+      print('=============================================');
+      // print(body.toString());
       final data = body["data"];
       return InitalData.fromJson(data);
     }
@@ -27,11 +29,13 @@ class HttpHandler {
 
   Future<ProductDetailsMode> getProductData(int idProduct) async {
     final body = {"id_product": idProduct};
-    final response = await http.post(Uri.parse(_baseUrl + "productos/get"),
-        body: json.encode(body),
-        headers: {
-          HttpHeaders.contentTypeHeader: "application/json",
-        });
+    print('====================');
+    print(json.encode(body));
+    final response = await http.post(
+      Uri.parse(_baseUrl + "productos/get"),
+      body: json.encode(body),
+      headers: {HttpHeaders.contentTypeHeader: "application/json"},
+    );
     if (response.statusCode == 200) {
       final body = json.decode(response.body);
       final data = body["data"];

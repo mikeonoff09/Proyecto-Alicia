@@ -50,3 +50,4 @@ logs/analyzer.txt
 logs/flutter_run.txt
 logs/observatory.txt
 *.txt
+logs/analyzer.txt
