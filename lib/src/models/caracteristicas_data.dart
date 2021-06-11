@@ -28,6 +28,11 @@ class CaracteriscasData {
         "ps_feature_value":
             List<dynamic>.from(psFeatureValue.map((x) => x.toMap())),
       };
+
+  @override
+  String toString() {
+    return this.toMap().toString();
+  }
 }
 
 class PsFeatureSuper extends Equatable {
@@ -56,6 +61,11 @@ class PsFeatureSuper extends Equatable {
 
   @override
   List<Object> get props => [idFeatureSuper];
+
+  @override
+  String toString() {
+    return this.toMap().toString();
+  }
 }
 
 class PsFeature extends Equatable {
@@ -87,6 +97,11 @@ class PsFeature extends Equatable {
 
   @override
   List<Object> get props => [idFeature];
+
+  @override
+  String toString() {
+    return toMap().toString();
+  }
 }
 
 class PsFeatureValue extends Equatable {
@@ -118,4 +133,9 @@ class PsFeatureValue extends Equatable {
 
   @override
   List<Object> get props => [idFeatureValue, idFeature];
+
+  @override
+  String toString() {
+    return this.toMap().toString();
+  }
 }
