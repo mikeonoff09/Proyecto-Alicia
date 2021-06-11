@@ -80,22 +80,25 @@ class PsFeature {
     this.idFeature,
     this.idFeatureSuper,
     this.position,
+    this.name,
   });
 
   int idFeature;
   int idFeatureSuper;
   int position;
-
+  String name;
   factory PsFeature.fromJson(Map<String, dynamic> json) => PsFeature(
         idFeature: json["id_feature"],
         idFeatureSuper: json["id_feature_super"],
         position: json["position"],
+        name: json["name"],
       );
 
   Map<String, dynamic> toJson() => {
         "id_feature": idFeature,
         "id_feature_super": idFeatureSuper,
         "position": position,
+        "name": name,
       };
 
   @override
