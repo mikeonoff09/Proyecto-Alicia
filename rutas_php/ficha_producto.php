@@ -3,8 +3,6 @@ use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->post('/productos/get', function (Request $request, Response $response) {
-	// attachment ps_product_attachment attributes  
-
     $id_product = $request->getParam("id_product");
 	if(!is_numeric($id_product)){
 		return sendResponse(404, null, "No has enviado el numero", $response);
@@ -17,27 +15,38 @@ $app->post('/productos/get', function (Request $request, Response $response) {
 			' where id_product = :id_product';
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
+
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 		if ($statement->rowCount() == 0) {
-			return sendResponse(404, null, "No existe el producto con id $id_product", $response);
+			return sendResponse(404, null, '{"razon": "id '.$id_product.' no existe"}', $response);
 		}
 		$ps_product = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$id_combinacion =$ps_product[0]['cache_default_attribute'];
+		
+		
+		$sql = "select id_feature_value,position from a_tabla_feature_value where id_feature =:id_feature";
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+		$statement->execute();
+		while ($fila  = $statement->fetch()) {
+			borrar_feature_value($fila['id_feature_value'],$fila['position'],$db);
+		}
 
-		$sql = 'SELECT * FROM a_tabla_image where id_product= :id_product'; //al añadir siempre es el último en "position"
+		$sql = 'SELECT * FROM a_tabla_image where id_product= :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 		$ps_image = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-		$sql = 'SELECT id_category FROM a_tabla_category_product where id_product= :id_product'; //al añadir siempre es el último en "position"
+		$sql = 'SELECT id_category FROM a_tabla_category_product where id_product= :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 		$ps_category_product = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-		$sql = 'SELECT id_feature_value FROM a_tabla_feature_product where id_product= :id_product'; //al añadir siempre es el último en "position"
+		$sql = 'SELECT id_feature_value FROM a_tabla_feature_product where id_product= :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
@@ -59,16 +68,43 @@ $app->post('/productos/get', function (Request $request, Response $response) {
 		$statement = $db->prepare($sql);
 		$statement->execute();
 		$ps_feature_value = $statement->fetchAll(PDO::FETCH_ASSOC);
-		//ps_product_attribute_image  ps_product_attribute_combination
-		/*
-		$sql = 'SELECT id_product_attribute,reference,supplier_reference,location,ean13,isbn,upc,wholesale_price,price,ecotax,quantity,weight,unit_price_impact,default_on,minimal_quantity,low_stock_threshold,low_stock_alert,available_date FROM ps_product_attribute where id_product= :id_product'; //al añadir siempre es el último en "position"
-		$statement = $db->prepare($sql);
-		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-		$statement->execute();
-		$ps_product_attribute = $statement->fetchAll(PDO::FETCH_ASSOC);
-		return sendResponse(200, ["ps_product"=>$ps_product, "ps_image"=>$ps_image,"ps_category_product"=>$ps_category_product, "ps_feature_product"=>$ps_feature_product, "ps_product_attribute"=> $ps_product_attribute],"todo de un producto", $response);
-		*/
-		return sendResponse(200, ["ps_product"=>$ps_product, "ps_image"=>$ps_image,"ps_category_product"=>$ps_category_product, "ps_feature_product"=>$ps_feature_product,"ps_feature_super"=>$ps_feature_super,"ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value],"todo de un producto", $response);
+
+		if($id_combinacion==0){
+			return sendResponse(200, [[],"ps_tabla_attribute"=>[],"ps_product_attribute"=>[],"ps_product_attribute_combination"=>[],"ps_product_attribute_image"=>[],"ps_product"=>$ps_product, "ps_image"=>$ps_image,"ps_category_product"=>$ps_category_product, "ps_feature_product"=>$ps_feature_product,"ps_feature_super"=>$ps_feature_super,"ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value],"Todo de Producto Simple".$id_combinacion."-.-", $response);
+		}else{
+			$sql = 'select id_attribute,id_attribute_group,color,position,name from a_tabla_attribute';
+			$statement = $db->prepare($sql);
+			$statement->execute();
+			$ps_tabla_attribute = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+			$sql = 'select id_attribute_group, is_color_group, group_type, position, name, public_name from a_tabla_attribute_group';
+			$statement = $db->prepare($sql);
+			$statement->execute();
+			$ps_attribute_group = $statement->fetchAll(PDO::FETCH_ASSOC);
+			
+			$sql = 'SELECT id_product_attribute,reference,supplier_reference,ean13,price,quantity,default_on,available_date FROM a_tabla_product_attribute where id_product= :id_product';
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+			$statement->execute();
+			$ps_product_attribute = $statement->fetchAll(PDO::FETCH_ASSOC);
+			$lista_id_combinaciones="";
+			foreach ($ps_product_attribute as $key => $fila) {
+				$lista_id_combinaciones .= $fila['id_product_attribute']. ",";
+			}
+			$lista_id_combinaciones = substr($lista_id_combinaciones,0,-1);
+
+			$sql = "SELECT id_product_attribute, id_attribute FROM a_tabla_product_attribute_combination where id_product_attribute in ( ".$lista_id_combinaciones.") order by id_product_attribute";
+			$statement = $db->prepare($sql);
+			$statement->execute();
+			$ps_product_attribute_combination = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+			$sql = "SELECT id_product_attribute,id_image FROM a_tabla_product_attribute_image where id_product_attribute in (".$lista_id_combinaciones.")";
+			$statement = $db->prepare($sql);
+			$statement->execute();
+			$ps_product_attribute_image= $statement->fetchAll(PDO::FETCH_ASSOC);
+
+			return sendResponse(200, ["ps_attribute_group"=>$ps_attribute_group,"ps_tabla_attribute"=>$ps_tabla_attribute,"ps_product_attribute"=>$ps_product_attribute,"ps_product_attribute_combination"=>$ps_product_attribute_combination,"ps_product_attribute_image"=>$ps_product_attribute_image,	"ps_product"=>$ps_product,"ps_image"=>$ps_image,"ps_category_product"=>$ps_category_product, "ps_feature_product"=>$ps_feature_product,"ps_feature_super"=>$ps_feature_super,"ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value],"Todo de Producto con Combinaciones", $response);
+		}
 
 		$db = null;
     } catch (PDOException $e) {
@@ -115,26 +151,26 @@ $app->post('/productos/delete', function (Request $request, Response $response) 
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 
-		$sql = 'delete ps_product_attachment.* from ps_product_attachment where id_product = :id_product';
+		$sql = 'delete a_tabla_product_attachment.* from a_tabla_product_attachment where id_product = :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 
-		$sql = 'DELETE ps_product_attribute_image.* FROM ps_product_attribute INNER JOIN ps_product_attribute_image
-		ON ps_product_attribute.id_product_attribute = ps_product_attribute_image.id_product_attribute
-		WHERE ps_product_attribute.id_product = :id_product';
+		$sql = 'DELETE a_tabla_product_attribute_image.* FROMa_tabla_product_attribute INNER JOIN a_tabla_product_attribute_image
+		ON a_tabla_product_attribute.id_product_attribute = a_tabla_product_attribute_image.id_product_attribute
+		WHERE a_tabla_product_attribute.id_product = :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 
-		$sql = 'DELETE ps_product_attribute_combination.* FROM ps_product_attribute INNER JOIN ps_product_attribute_combination
-		ON ps_product_attribute.id_product_attribute = ps_product_attribute_combination.id_product_attribute
-		WHERE ps_product_attribute.id_product= :id_product';
+		$sql = 'DELETE a_tabla_product_attribute_combination.* FROM a_tabla_product_attribute INNER JOIN a_tabla_product_attribute_combination
+		ON a_tabla_product_attribute.id_product_attribute = a_tabla_product_attribute_combination.id_product_attribute
+		WHERE a_tabla_product_attribute.id_product= :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 
-		$sql = 'DELETE ps_product_attribute.* FROM ps_product_attribute WHERE id_product= :id_product';
+		$sql = 'DELETE a_tabla_product_attribute.* FROM a_tabla_product_attribute WHERE id_product= :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
@@ -242,7 +278,7 @@ $app->post('/productos/add_category', function (Request $request, Response $resp
 	}
 
 	try {
-		$sql = 'SELECT * FROM ps_category_product where id_product = :id_product and id_category = :id_category';
+		$sql = 'SELECT * FROM a_tabla_category_product where id_product = :id_product and id_category = :id_category';
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
 		$statement = $db->prepare($sql);
@@ -251,7 +287,7 @@ $app->post('/productos/add_category', function (Request $request, Response $resp
 		$statement->execute();
 
 		if ($statement->rowCount() == 0) {
-			$sql = 'SELECT COUNT(*) as contador FROM ps_category_product where id_category= :id_category'; //al añadir siempre es el último en "position"
+			$sql = 'SELECT COUNT(*) as contador FROM a_tabla_category_product where id_category= :id_category'; //al añadir siempre es el último en "position"
 			$statement = $db->prepare($sql);
 			
 			$statement->bindParam(":id_category", $id_category, PDO::PARAM_INT);
@@ -259,7 +295,7 @@ $app->post('/productos/add_category', function (Request $request, Response $resp
 			$data = $statement->fetch();
 			$position = $data['contador'];
 			
-			$sql = 'insert into ps_category_product(id_category,id_product,position) values(:id_category, :id_product, :position)'; //al añadir siempre es el último en "position"
+			$sql = 'insert into a_tabla_category_product(id_category,id_product,position) values(:id_category, :id_product, :position)'; //al añadir siempre es el último en "position"
 			$statement = $db->prepare($sql);
 			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 			$statement->bindParam(":id_category", $id_category, PDO::PARAM_INT);
