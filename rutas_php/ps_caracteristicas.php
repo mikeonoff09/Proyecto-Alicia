@@ -76,7 +76,6 @@ function borrar_feature_value($id_feature_value,$position,$db){
 
 
 $app->post('/ps_feature_todas/get', function (Request $request, Response $response) {
-	$sql = 'SELECT id_feature,id_feature_super,position,name FROM a_tabla_feature order by position';
 	try {
 		$dbInstance = new Db();
         $db = $dbInstance->connectDB();

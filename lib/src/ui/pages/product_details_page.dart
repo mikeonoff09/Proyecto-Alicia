@@ -70,7 +70,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   CaracteriscasData caracteristicas;
 
   List<PsImage> images;
-
+  List<PsFeatureProduct> caracteristicasProducto;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

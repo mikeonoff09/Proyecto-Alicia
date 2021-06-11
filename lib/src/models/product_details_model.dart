@@ -13,19 +13,19 @@ class ProductDetailsMode extends Equatable {
   List<PsProduct> psProduct;
   List<PsImage> psImage;
   List<PsCategoryProduct> psCategoryProduct;
-  List<dynamic> psFeatureProduct;
+  List<PsFeatureProduct> psFeatureProduct;
 
   factory ProductDetailsMode.fromMap(Map<String, dynamic> json) =>
       ProductDetailsMode(
         psProduct: List<PsProduct>.from(
             json["ps_product"].map((x) => PsProduct.fromMap(x))),
-        psImage:
-            List<PsImage>.from(json["ps_image"].map((x) => PsImage.fromMap(x))),
         psCategoryProduct: List<PsCategoryProduct>.from(
             json["ps_category_product"]
                 .map((x) => PsCategoryProduct.fromMap(x))),
-        psFeatureProduct:
-            List<dynamic>.from(json["ps_feature_product"].map((x) => x)),
+        psImage:
+            List<PsImage>.from(json["ps_image"].map((x) => PsImage.fromMap(x))),
+        psFeatureProduct: List<PsFeatureProduct>.from(
+            json["ps_feature_product"].map((x) => PsFeatureProduct.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
@@ -34,7 +34,7 @@ class ProductDetailsMode extends Equatable {
         "ps_category_product":
             List<dynamic>.from(psCategoryProduct.map((x) => x.toMap())),
         "ps_feature_product":
-            List<dynamic>.from(psFeatureProduct.map((x) => x)),
+            List<dynamic>.from(psFeatureProduct.map((x) => x.toMap())),
       };
 
   @override
@@ -134,6 +134,28 @@ class PsImage extends Equatable {
   List<Object> get props => [
         idImage,
         idProduct,
+      ];
+}
+
+class PsFeatureProduct extends Equatable {
+  PsFeatureProduct({
+    this.idfeaturevalue,
+  });
+
+  int idfeaturevalue;
+
+  factory PsFeatureProduct.fromMap(Map<String, dynamic> json) =>
+      PsFeatureProduct(
+        idfeaturevalue: json["id_feature_value"],
+      );
+
+  Map<String, dynamic> toMap() => {
+        "id_feature_value": idfeaturevalue,
+      };
+
+  @override
+  List<Object> get props => [
+        idfeaturevalue,
       ];
 }
 

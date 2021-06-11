@@ -8,11 +8,9 @@ $app->post('/productos/get', function (Request $request, Response $response) {
 		return sendResponse(404, null, "No has enviado el numero", $response);
 	}
 	try {
-		$sql = 'SELECT id_product,`id_supplier`, `id_manufacturer`,`id_category_default`,`ean13`,`quantity`, `minimal_quantity`, `price`,'.
-			'`reference`, `supplier_reference`,`cache_default_attribute`, `date_add`,'.
-			'`date_upd`, `stateWeb`, `description`, `description_short`, `link_rewrite`, `meta_description`, `meta_keywords`, `meta_title`,'.
-			'`name`, `delivery_in_stock`, `delivery_out_stock`,`paso`,preciocoste FROM a_tabla_product'.
-			' where id_product = :id_product';
+		$sql = 'SELECT id_product,`id_supplier`, `id_manufacturer`,`id_category_default`,`ean13`,`quantity`, `minimal_quantity`, `price`,`reference`, `supplier_reference`,'.
+			'`cache_default_attribute`, `date_add`,`date_upd`, `stateWeb`, `description`, `description_short`, `link_rewrite`, `meta_description`, `meta_keywords`, `meta_title`,'.
+			'`name`, `delivery_in_stock`, `delivery_out_stock`,`paso`,preciocoste FROM a_tabla_product where id_product = :id_product';
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
 
@@ -24,7 +22,7 @@ $app->post('/productos/get', function (Request $request, Response $response) {
 		}
 		$ps_product = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$id_combinacion =$ps_product[0]['cache_default_attribute'];
-		
+
 		
 		$sql = "select id_feature_value,position from a_tabla_feature_value where id_feature =:id_feature";
 		$statement = $db->prepare($sql);
@@ -69,7 +67,8 @@ $app->post('/productos/get', function (Request $request, Response $response) {
 		$statement->execute();
 		$ps_feature_value = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-		if($id_combinacion==0){
+		//if($id_combinacion==0){
+		if(0==0){	
 			return sendResponse(200, [[],"ps_tabla_attribute"=>[],"ps_product_attribute"=>[],"ps_product_attribute_combination"=>[],"ps_product_attribute_image"=>[],"ps_product"=>$ps_product, "ps_image"=>$ps_image,"ps_category_product"=>$ps_category_product, "ps_feature_product"=>$ps_feature_product,"ps_feature_super"=>$ps_feature_super,"ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value],"Todo de Producto Simple".$id_combinacion."-.-", $response);
 		}else{
 			$sql = 'select id_attribute,id_attribute_group,color,position,name from a_tabla_attribute';

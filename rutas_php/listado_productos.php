@@ -14,7 +14,6 @@ function removeDoubleSpaces($str) {
 
 $app->post('/inicio_aplicacion/get', function (Request $request, Response $response) {
 try {
-	
 	$dbInstance = new Db();
 	$db = $dbInstance->connectDB();
 	$statement = $db->prepare("select id_category,name,id_parent,level_depth,nleft,nright,active,position,is_root_category from a_tabla_category order by position");
