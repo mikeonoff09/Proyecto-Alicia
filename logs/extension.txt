@@ -13,178 +13,178 @@ NO_PROXY: undefined
 Logging Categories:
     General
 
-Fri Jun 11 2021 [10:01:18 GMT-0500 (Ecuador Time)] Log file started
-[10:01:18 AM] [General] [Info] Searching for SDKs...
-[10:01:18 AM] [General] [Info] Environment PATH:
-[10:01:18 AM] [General] [Info]     C:\Program Files (x86)\VMware\VMware Workstation\bin\
-[10:01:18 AM] [General] [Info]     C:\WINDOWS\system32
-[10:01:18 AM] [General] [Info]     C:\WINDOWS
-[10:01:18 AM] [General] [Info]     C:\WINDOWS\System32\Wbem
-[10:01:18 AM] [General] [Info]     C:\WINDOWS\System32\WindowsPowerShell\v1.0\
-[10:01:18 AM] [General] [Info]     C:\WINDOWS\System32\OpenSSH\
-[10:01:18 AM] [General] [Info]     C:\src\flutter\bin
-[10:01:18 AM] [General] [Info]     C:\Program Files\Git\cmd
-[10:01:18 AM] [General] [Info]     C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]     C:\Program Files\Java\jre1.8.0_271\bin
-[10:01:18 AM] [General] [Info]     C:\Program Files\nodejs\
-[10:01:18 AM] [General] [Info]     C:\Program Files\VDownloader
-[10:01:18 AM] [General] [Info]     C:\Program Files (x86)\Calibre2\
-[10:01:18 AM] [General] [Info]     C:\Program Files (x86)\Common Files\Oracle\Java\javapath
-[10:01:18 AM] [General] [Info]     C:\Program Files\MATLAB\R2018b\runtime\win64
-[10:01:18 AM] [General] [Info]     C:\Program Files\MATLAB\R2018b\bin
-[10:01:18 AM] [General] [Info]     C:\Program Files\PuTTY\
-[10:01:18 AM] [General] [Info]     C:\Program Files\dotnet\
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Python\Python39\
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\GitHubDesktop\bin
-[10:01:18 AM] [General] [Info]     C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Roaming\npm
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\atom\bin
-[10:01:18 AM] [General] [Info]     C:\Python27
-[10:01:18 AM] [General] [Info]     C:\Python27\Scripts
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
-[10:01:18 AM] [General] [Info]     C:\Users\jairo\.dotnet\tools
-[10:01:18 AM] [General] [Info] Found Flutter project at C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia:
+Fri Jun 11 2021 [12:47:04 GMT-0500 (Ecuador Time)] Log file started
+[12:47:04 PM] [General] [Info] Searching for SDKs...
+[12:47:04 PM] [General] [Info] Environment PATH:
+[12:47:04 PM] [General] [Info]     C:\Program Files (x86)\VMware\VMware Workstation\bin\
+[12:47:04 PM] [General] [Info]     C:\WINDOWS\system32
+[12:47:04 PM] [General] [Info]     C:\WINDOWS
+[12:47:04 PM] [General] [Info]     C:\WINDOWS\System32\Wbem
+[12:47:04 PM] [General] [Info]     C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[12:47:04 PM] [General] [Info]     C:\WINDOWS\System32\OpenSSH\
+[12:47:04 PM] [General] [Info]     C:\src\flutter\bin
+[12:47:04 PM] [General] [Info]     C:\Program Files\Git\cmd
+[12:47:04 PM] [General] [Info]     C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]     C:\Program Files\Java\jre1.8.0_271\bin
+[12:47:04 PM] [General] [Info]     C:\Program Files\nodejs\
+[12:47:04 PM] [General] [Info]     C:\Program Files\VDownloader
+[12:47:04 PM] [General] [Info]     C:\Program Files (x86)\Calibre2\
+[12:47:04 PM] [General] [Info]     C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[12:47:04 PM] [General] [Info]     C:\Program Files\MATLAB\R2018b\runtime\win64
+[12:47:04 PM] [General] [Info]     C:\Program Files\MATLAB\R2018b\bin
+[12:47:04 PM] [General] [Info]     C:\Program Files\PuTTY\
+[12:47:04 PM] [General] [Info]     C:\Program Files\dotnet\
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Python\Python39\
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\GitHubDesktop\bin
+[12:47:04 PM] [General] [Info]     C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Roaming\npm
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\atom\bin
+[12:47:04 PM] [General] [Info]     C:\Python27
+[12:47:04 PM] [General] [Info]     C:\Python27\Scripts
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
+[12:47:04 PM] [General] [Info]     C:\Users\jairo\.dotnet\tools
+[12:47:04 PM] [General] [Info] Found Flutter project at C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia:
 			Mobile? true
 			Web? false
 			Create Trigger? false
 			Flutter Repo? false
-[10:01:18 AM] [General] [Info] Searching for flutter.bat
-[10:01:18 AM] [General] [Info]     Looking for flutter.bat in:
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\bin
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\.flutter
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\.flutter\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\vendor\flutter
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\vendor\flutter\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\flutter-sdk
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\flutter-sdk\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.flutter-sdk
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.flutter-sdk\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\VMware\VMware Workstation\bin\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\system32
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\system32\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\Wbem
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\Wbem\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\bin
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Git\cmd
-[10:01:18 AM] [General] [Info]         C:\Program Files\Git\cmd\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jre1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\nodejs\
-[10:01:18 AM] [General] [Info]         C:\Program Files\nodejs\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\VDownloader
-[10:01:18 AM] [General] [Info]         C:\Program Files\VDownloader\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Calibre2\
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Calibre2\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\PuTTY\
-[10:01:18 AM] [General] [Info]         C:\Program Files\PuTTY\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\dotnet\
-[10:01:18 AM] [General] [Info]         C:\Program Files\dotnet\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\GitHubDesktop\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\atom\bin
-[10:01:18 AM] [General] [Info]         C:\Python27
-[10:01:18 AM] [General] [Info]         C:\Python27\bin
-[10:01:18 AM] [General] [Info]         C:\Python27\Scripts
-[10:01:18 AM] [General] [Info]         C:\Python27\Scripts\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.dotnet\tools
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.dotnet\tools\bin
-[10:01:18 AM] [General] [Info]     Found at:
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin
-[10:01:18 AM] [General] [Info]     Candidate paths to be post-filtered:
-[10:01:18 AM] [General] [Info]         C:\src\flutter
-[10:01:18 AM] [General] [Info]         C:\src\flutter
-[10:01:18 AM] [General] [Info]     Found at C:\src\flutter
-[10:01:18 AM] [General] [Info]     Returning SDK path C:\src\flutter for flutter.bat
-[10:01:18 AM] [General] [Info] Searching for dart.exe
-[10:01:18 AM] [General] [Info]     Looking for dart.exe in:
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\VMware\VMware Workstation\bin\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\system32
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\system32\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\Wbem
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\Wbem\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
-[10:01:18 AM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\bin
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Git\cmd
-[10:01:18 AM] [General] [Info]         C:\Program Files\Git\cmd\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jre1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\nodejs\
-[10:01:18 AM] [General] [Info]         C:\Program Files\nodejs\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\VDownloader
-[10:01:18 AM] [General] [Info]         C:\Program Files\VDownloader\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Calibre2\
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Calibre2\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
-[10:01:18 AM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\MATLAB\R2018b\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\PuTTY\
-[10:01:18 AM] [General] [Info]         C:\Program Files\PuTTY\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\dotnet\
-[10:01:18 AM] [General] [Info]         C:\Program Files\dotnet\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\GitHubDesktop\bin
-[10:01:18 AM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\atom\bin
-[10:01:18 AM] [General] [Info]         C:\Python27
-[10:01:18 AM] [General] [Info]         C:\Python27\bin
-[10:01:18 AM] [General] [Info]         C:\Python27\Scripts
-[10:01:18 AM] [General] [Info]         C:\Python27\Scripts\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.dotnet\tools
-[10:01:18 AM] [General] [Info]         C:\Users\jairo\.dotnet\tools\bin
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
-[10:01:18 AM] [General] [Info]     Found at:
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
-[10:01:18 AM] [General] [Info]     Candidate paths to be post-filtered:
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
-[10:01:18 AM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
-[10:01:18 AM] [General] [Info]     Found at C:\src\flutter\bin\cache\dart-sdk
-[10:01:18 AM] [General] [Info]     Returning SDK path C:\src\flutter\bin\cache\dart-sdk for dart.exe
-[10:01:18 AM] [General] [Info] Experiment random number is 95 for experiement 'lsp-default'. Experiment is enabled for <= 50
-[10:01:18 AM] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+[12:47:04 PM] [General] [Info] Searching for flutter.bat
+[12:47:04 PM] [General] [Info]     Looking for flutter.bat in:
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\bin
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\.flutter
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\.flutter\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\vendor\flutter
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\vendor\flutter\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\flutter-sdk
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\flutter-sdk\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.flutter-sdk
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.flutter-sdk\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\VMware\VMware Workstation\bin\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\system32
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\system32\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\Wbem
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\Wbem\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\bin
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Git\cmd
+[12:47:04 PM] [General] [Info]         C:\Program Files\Git\cmd\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jre1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\nodejs\
+[12:47:04 PM] [General] [Info]         C:\Program Files\nodejs\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\VDownloader
+[12:47:04 PM] [General] [Info]         C:\Program Files\VDownloader\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Calibre2\
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Calibre2\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\PuTTY\
+[12:47:04 PM] [General] [Info]         C:\Program Files\PuTTY\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\dotnet\
+[12:47:04 PM] [General] [Info]         C:\Program Files\dotnet\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\GitHubDesktop\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\atom\bin
+[12:47:04 PM] [General] [Info]         C:\Python27
+[12:47:04 PM] [General] [Info]         C:\Python27\bin
+[12:47:04 PM] [General] [Info]         C:\Python27\Scripts
+[12:47:04 PM] [General] [Info]         C:\Python27\Scripts\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.dotnet\tools
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.dotnet\tools\bin
+[12:47:04 PM] [General] [Info]     Found at:
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin
+[12:47:04 PM] [General] [Info]     Candidate paths to be post-filtered:
+[12:47:04 PM] [General] [Info]         C:\src\flutter
+[12:47:04 PM] [General] [Info]         C:\src\flutter
+[12:47:04 PM] [General] [Info]     Found at C:\src\flutter
+[12:47:04 PM] [General] [Info]     Returning SDK path C:\src\flutter for flutter.bat
+[12:47:04 PM] [General] [Info] Searching for dart.exe
+[12:47:04 PM] [General] [Info]     Looking for dart.exe in:
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\VMware\VMware Workstation\bin\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\system32
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\system32\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\Wbem
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\Wbem\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
+[12:47:04 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\bin
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Git\cmd
+[12:47:04 PM] [General] [Info]         C:\Program Files\Git\cmd\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jre1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\nodejs\
+[12:47:04 PM] [General] [Info]         C:\Program Files\nodejs\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\VDownloader
+[12:47:04 PM] [General] [Info]         C:\Program Files\VDownloader\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Calibre2\
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Calibre2\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[12:47:04 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\runtime\win64\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\MATLAB\R2018b\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\PuTTY\
+[12:47:04 PM] [General] [Info]         C:\Program Files\PuTTY\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\dotnet\
+[12:47:04 PM] [General] [Info]         C:\Program Files\dotnet\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\Scripts\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Python\Python39\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Microsoft\WindowsApps\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\GitHubDesktop\bin
+[12:47:04 PM] [General] [Info]         C:\Program Files\Java\jdk1.8.0_271\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Roaming\npm\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\atom\bin
+[12:47:04 PM] [General] [Info]         C:\Python27
+[12:47:04 PM] [General] [Info]         C:\Python27\bin
+[12:47:04 PM] [General] [Info]         C:\Python27\Scripts
+[12:47:04 PM] [General] [Info]         C:\Python27\Scripts\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\AppData\Local\Programs\Microsoft VS Code\bin
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.dotnet\tools
+[12:47:04 PM] [General] [Info]         C:\Users\jairo\.dotnet\tools\bin
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
+[12:47:04 PM] [General] [Info]     Found at:
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk\bin
+[12:47:04 PM] [General] [Info]     Candidate paths to be post-filtered:
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[12:47:04 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[12:47:04 PM] [General] [Info]     Found at C:\src\flutter\bin\cache\dart-sdk
+[12:47:04 PM] [General] [Info]     Returning SDK path C:\src\flutter\bin\cache\dart-sdk for dart.exe
+[12:47:04 PM] [General] [Info] Experiment random number is 95 for experiement 'lsp-default'. Experiment is enabled for <= 50
+[12:47:04 PM] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
 
 Dart Code extension: 3.23.0
 Flutter extension: 3.23.0 (not activated)
@@ -206,11 +206,10 @@ Flutter SDK:
 
 HTTP_PROXY: undefined
 NO_PROXY: undefined
-[10:01:18 AM] [General] [Info] Spawning C:\src\flutter\bin\cache\dart-sdk\bin\pub.bat with args ["global","list"]
-[10:01:18 AM] [General] [Info] Activating Flutter extension for Flutter project...
-[10:01:18 AM] [General] [Info] Extension:Startup timing: 365ms
-[10:01:18 AM] [General] [Info] Found 0 folders requiring "pub get":
-[10:01:19 AM] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+[12:47:04 PM] [General] [Info] Spawning C:\src\flutter\bin\cache\dart-sdk\bin\pub.bat with args ["global","list"]
+[12:47:04 PM] [General] [Info] Activating Flutter extension for Flutter project...
+[12:47:04 PM] [General] [Info] Extension:Startup timing: 478ms
+[12:47:05 PM] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
 
 Dart Code extension: 3.23.0
 Flutter extension: 3.23.0 (activated)
@@ -232,22 +231,25 @@ Flutter SDK:
 
 HTTP_PROXY: undefined
 NO_PROXY: undefined
-[10:01:19 AM] [General] [Info] devtools version 2.3.2 appears to be latest so returning Valid
-[10:01:19 AM] [General] [Info] Analyzer:Startup timing: 631ms
-[10:01:19 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[10:01:19 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[10:01:24 AM] [General] [Info] Checking 1 projects for supported platforms
-[10:01:24 AM] [General] [Info] Supported platforms for the workspace are windows, ios, android, web
-[10:01:25 AM] [General] [Info] Analyzer:FirstAnalysis timing: 5276ms
-[10:03:08 AM] [General] [Info] Starting debug session...
-[10:03:08 AM] [General] [Info]     workspace: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
-[10:03:08 AM] [General] [Info] Using found common entry point: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\lib\main.dart
-[10:03:08 AM] [General] [Info] Using workspace as cwd: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
-[10:03:08 AM] [General] [Info] Detected launch project as Flutter
-[10:03:08 AM] [General] [Info] Using Flutter debug adapter for this session
-[10:03:08 AM] [General] [Info] Getting DevTools server address to pass to Flutter...
-[10:03:08 AM] [General] [Info] Checking for errors before launching
-[10:03:08 AM] [General] [Info] Debug session starting...
+[12:47:05 PM] [General] [Info] Found 0 folders requiring "pub get":
+[12:47:08 PM] [General] [Info] Analyzer:Startup timing: 3768ms
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Info] devtools version 2.3.2 appears to be latest so returning Valid
+[12:47:12 PM] [General] [Info] Checking 1 projects for supported platforms
+[12:47:12 PM] [General] [Info] Supported platforms for the workspace are windows, ios, android, web
+[12:47:13 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[12:47:18 PM] [General] [Info] Starting debug session...
+[12:47:18 PM] [General] [Info]     workspace: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[12:47:18 PM] [General] [Info] Using found common entry point: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\lib\main.dart
+[12:47:18 PM] [General] [Info] Using workspace as cwd: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[12:47:18 PM] [General] [Info] Detected launch project as Flutter
+[12:47:18 PM] [General] [Info] Using Flutter debug adapter for this session
+[12:47:18 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[12:47:18 PM] [General] [Info] Checking for errors before launching
+[12:47:18 PM] [General] [Info] Debug session starting...
     {
         "name": "Alicia",
         "request": "launch",
@@ -291,8 +293,109 @@ NO_PROXY: undefined
         },
         "flutterRunLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_run.txt",
         "flutterTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_test.tx…
-[10:03:08 AM] [General] [Info] Using flutter debugger for Flutter
-[10:03:08 AM] [General] [Info] Running debugger via node with c:\Users\jairo\.vscode\extensions\dart-code.dart-code-3.23.0\out\dist\debug.js    flutter
-[10:03:09 AM] [General] [Warn] Did not find session bbf9f690-d73b-4abb-8708-b52d9c60bb32 to handle dart.progressStart. There were 0 sessions:
-[10:03:09 AM] [General] [Warn] Event will be queued and processed when the session start event fires
-[10:03:09 AM] [General] [Info] Processing delayed event dart.progressStart for session bbf9f690-d73b-4abb-8708-b52d9c60bb32
+[12:47:18 PM] [General] [Info] Using flutter debugger for Flutter
+[12:47:18 PM] [General] [Info] Running debugger via node with c:\Users\jairo\.vscode\extensions\dart-code.dart-code-3.23.0\out\dist\debug.js    flutter
+[12:47:18 PM] [General] [Warn] Did not find session c09ac361-0ae6-494d-95a2-1255e94381e0 to handle dart.progressStart. There were 0 sessions:
+[12:47:18 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+[12:47:18 PM] [General] [Info] Processing delayed event dart.progressStart for session c09ac361-0ae6-494d-95a2-1255e94381e0
+[12:47:22 PM] [General] [Info] Analyzer:FirstAnalysis timing: 12819ms
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: Type 'PsFeatureElement' not found.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: 'PsFeatureElement' isn't a type.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]        ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:25: Error: 'PsFeatureElement' isn't a type.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                        ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:86: Error: Getter not found: 'PsFeatureElement'.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                                                                                     ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: Type 'PsFeatureElement' not found.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: 'PsFeatureElement' isn't a type.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:25: Error: 'PsFeatureElement' isn't a type.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                        ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:86: Error: Getter not found: 'PsFeatureElement'.
+        psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]                                                                                      ^^^^^^^^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: Type 'PsFeature' not found.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: 'PsFeature' isn't a type.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   ^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:20: Error: Getter not found: 'PsFeature'.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]         psFeature: PsFeature.fromJson(json["ps_feature_product"]),
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]                    ^^^^^^^^^
+[2:24:38 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: Type 'PsFeature' not found.
+[2:24:38 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+[2:24:38 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: 'PsFeature' isn't a type.
+[2:24:38 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+lib/src/models/product_details_model.dart:31:20: Error: Getter not found: 'PsFeature'.
+        psFeature: PsFeature.fromJson(json["ps_feature_product"]),
+                   ^^^^^^^^^
+[2:28:21 PM] [General] [Info] Debugger:SessionDuration timing: 6063273ms (Flutter)
+[2:33:55 PM] [General] [Info] Starting debug session...
+[2:33:55 PM] [General] [Info]     workspace: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[2:33:55 PM] [General] [Info] Using found common entry point: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\lib\main.dart
+[2:33:55 PM] [General] [Info] Using workspace as cwd: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[2:33:55 PM] [General] [Info] Detected launch project as Flutter
+[2:33:55 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:33:55 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:33:55 PM] [General] [Info] Checking for errors before launching
+[2:33:55 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Alicia",
+        "request": "launch",
+        "type": "dart",
+        "__configurationTarget": 5,
+        "program": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\lib\\main.dart",
+        "cwd": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": true,
+        "args": [
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmAdditionalArgs": [],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "pubTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\pub_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "globalFlutterArgs": [],
+        "useFlutterStructuredErrors": true,
+        "useInspectorNotificationsForWidgetErrors": true,
+        "debugExtensionBackendProtocol": "ws",
+        "injectedClientProtocol": "ws",
+        "forceFlutterVerboseMode": false,
+        "flutterTrackWidgetCreation": true,
+        "flutterMode": "debug",
+        "flutterPlatform": "default",
+        "workspaceConfig": {
+            "startDevToolsServerEagerly": true,
+            "useLsp": false
+        },
+        "flutterRunLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_test.tx…
+[2:33:55 PM] [General] [Info] Using flutter debugger for Flutter
+[2:33:55 PM] [General] [Info] Running debugger via node with c:\Users\jairo\.vscode\extensions\dart-code.dart-code-3.23.0\out\dist\debug.js    flutter
+[2:33:56 PM] [General] [Warn] Did not find session 2c6ebeba-d948-46fe-88ac-0eedef359ce9 to handle dart.progressStart. There were 0 sessions:
+[2:33:56 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+[2:33:56 PM] [General] [Info] Processing delayed event dart.progressStart for session 2c6ebeba-d948-46fe-88ac-0eedef359ce9

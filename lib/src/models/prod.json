@@ -1,0 +1,105 @@
+{
+    "message": "Todo de Producto Simple170382-.-",
+    "data": {
+        "0": [],
+        "ps_tabla_attribute": [],
+        "ps_product_attribute": [],
+        "ps_product_attribute_combination": [],
+        "ps_product_attribute_image": [],
+        "ps_product": [
+            {
+                "id_product": 898,
+                "id_supplier": 36,
+                "id_manufacturer": 36,
+                "id_category_default": 39,
+                "ean13": ""
+            }
+        ],
+        "ps_image": [
+            {
+                "id_image": 5783,
+                "id_product": 898,
+                "position": 1,
+                "cover": 1,
+                "legend": null,
+                "fechaanadida": "0000-00-00 00:00:00",
+                "resolucionorigen": "5783x898",
+                "descartada": 0,
+                "fechamodificacion": "0000-00-00 00:00:00",
+                "resolucionrecorte": "5783x898",
+                "padding": 5
+            },
+            {
+                "id_image": 5783,
+                "id_product": 898,
+                "position": 1,
+                "cover": 1,
+                "legend": null,
+                "fechaanadida": "0000-00-00 00:00:00",
+                "resolucionorigen": "5783x898",
+                "descartada": 0,
+                "fechamodificacion": "0000-00-00 00:00:00",
+                "resolucionrecorte": "5783x898",
+                "padding": 5
+            }
+        ],
+        "ps_category_product": [
+            {
+                "id_category": 2
+            },
+            {
+                "id_category": 18
+            }
+        ],
+        "ps_feature_product": [
+            {
+                "id_feature_value": 696
+            },
+            {
+                "id_feature_value": 16349
+            }
+        ],
+        "ps_feature_super": [
+            {
+                "id_feature_super": 2,
+                "position": 0,
+                "name": "Domingo Ros"
+            },
+            {
+                "id_feature_super": 1,
+                "position": 1,
+                "name": "Primera a mano"
+            }
+        ],
+        "ps_feature": [
+            {
+                "id_feature": 10,
+                "id_feature_super": 1,
+                "position": 0,
+                "name": "Garantía"
+            },
+            {
+                "id_feature": 2,
+                "id_feature_super": 1,
+                "position": 1,
+                "name": "Property"
+            }
+        ],
+        "ps_feature_value": [
+            {
+                "id_feature_value": 7,
+                "id_feature": 2,
+                "position": 0,
+                "name": "Long sleeves"
+            },
+            {
+                "id_feature_value": 8,
+                "id_feature": 2,
+                "position": 0,
+                "name": "Short sleeves"
+            }
+        ]
+    },
+    "memory": 3093704,
+    "time": 0.5295538902282715
+}

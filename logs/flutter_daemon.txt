@@ -13,27 +13,79 @@ NO_PROXY: undefined
 Logging Categories:
     FlutterDaemon
 
-Fri Jun 11 2021 [10:01:18 GMT-0500 (Ecuador Time)] Log file started
-[10:01:18 AM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
-[10:01:18 AM] [FlutterDaemon] [Info] ..  in C:\src\flutter
-[10:01:18 AM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[10:01:18 AM] [FlutterDaemon] [Info]     PID: 10028
-[10:01:18 AM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
-[10:01:19 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[10:01:19 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[10:01:20 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":12040}}]
-[10:01:20 AM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
-[10:01:20 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
-[10:01:20 AM] [FlutterDaemon] [Info] <== [{"id":"2"}]
-[10:01:20 AM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[10:01:24 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
-[10:01:24 AM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:01:24 AM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
-[10:01:24 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[10:01:24 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[10:03:08 AM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:03:08 AM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["windows","ios","android","web"]}}]
-[10:03:08 AM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:03:08 AM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
-[10:03:09 AM] [General] [Warn] Did not find session bbf9f690-d73b-4abb-8708-b52d9c60bb32 to handle dart.progressStart. There were 0 sessions:
-[10:03:09 AM] [General] [Warn] Event will be queued and processed when the session start event fires
+Fri Jun 11 2021 [12:47:04 GMT-0500 (Ecuador Time)] Log file started
+[12:47:04 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
+[12:47:04 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
+[12:47:04 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[12:47:04 PM] [FlutterDaemon] [Info]     PID: 7836
+[12:47:04 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:08 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[12:47:09 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":9572}}]
+[12:47:09 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
+[12:47:09 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[12:47:09 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
+[12:47:09 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[12:47:12 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[12:47:12 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
+[12:47:12 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"emulator.getEmulators"}]
+[12:47:12 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[12:47:13 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
+[12:47:14 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[12:47:14 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[12:47:18 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[12:47:18 PM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
+[12:47:18 PM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[12:47:18 PM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["windows","ios","android","web"]}}]
+[12:47:18 PM] [General] [Warn] Did not find session c09ac361-0ae6-494d-95a2-1255e94381e0 to handle dart.progressStart. There were 0 sessions:
+[12:47:18 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: Type 'PsFeatureElement' not found.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: 'PsFeatureElement' isn't a type.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]        ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:25: Error: 'PsFeatureElement' isn't a type.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                        ^^^^^^^^^^^^^^^^
+[2:13:34 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:86: Error: Getter not found: 'PsFeatureElement'.
+[2:13:34 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                                                                                     ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: Type 'PsFeatureElement' not found.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:8: Error: 'PsFeatureElement' isn't a type.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]   List<PsFeatureElement> psFeature;
+       ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:25: Error: 'PsFeatureElement' isn't a type.
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]         psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+                        ^^^^^^^^^^^^^^^^
+[2:20:54 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:86: Error: Getter not found: 'PsFeatureElement'.
+        psFeature: List<PsFeatureElement>.from(json["ps_feature_product"].map((x) => PsFeatureElement.fromJson(x))),
+[2:20:54 PM] [FlutterRun] [Error] [Alicia]                                                                                      ^^^^^^^^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: Type 'PsFeature' not found.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: 'PsFeature' isn't a type.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]   ^^^^^^^^^
+[2:22:37 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:31:20: Error: Getter not found: 'PsFeature'.
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]         psFeature: PsFeature.fromJson(json["ps_feature_product"]),
+[2:22:37 PM] [FlutterRun] [Error] [Alicia]                    ^^^^^^^^^
+[2:24:38 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: Type 'PsFeature' not found.
+[2:24:38 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+[2:24:38 PM] [FlutterRun] [Error] [Alicia] lib/src/models/product_details_model.dart:22:3: Error: 'PsFeature' isn't a type.
+[2:24:38 PM] [FlutterRun] [Error] [Alicia]   PsFeature psFeature;
+  ^^^^^^^^^
+lib/src/models/product_details_model.dart:31:20: Error: Getter not found: 'PsFeature'.
+        psFeature: PsFeature.fromJson(json["ps_feature_product"]),
+                   ^^^^^^^^^
+[2:33:55 PM] [FlutterDaemon] [Info] ==> [{"id":"7","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[2:33:55 PM] [FlutterDaemon] [Info] <== [{"id":"7","result":{"platforms":["windows","ios","android","web"]}}]
+[2:33:55 PM] [FlutterDaemon] [Info] ==> [{"id":"8","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[2:33:55 PM] [FlutterDaemon] [Info] <== [{"id":"8","result":{"platforms":["windows","ios","android","web"]}}]
+[2:33:56 PM] [General] [Warn] Did not find session 2c6ebeba-d948-46fe-88ac-0eedef359ce9 to handle dart.progressStart. There were 0 sessions:
+[2:33:56 PM] [General] [Warn] Event will be queued and processed when the session start event fires

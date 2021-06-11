@@ -1,45 +1,44 @@
-[10:03:09 AM]: Spawning C:\src\flutter\bin\flutter.bat with args ["run","--machine","--target","lib\\main.dart","-d","windows","--dart-define=flutter.inspector.structuredErrors=true","--start-paused","--web-server-debug-protocol","ws","--web-allow-expose-url","--devtools-server-address","http://127.0.0.1:9100/"]
-[10:03:09 AM]: ..  in C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
-[10:03:09 AM]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[10:03:09 AM]: PID: 12656
-[10:03:11 AM]: <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":736}}]
-[10:03:11 AM]: <== [{"event":"app.start","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","deviceId":"windows","directory":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","supportsRestart":true,"launchMode":"run"}}]
-[10:03:11 AM]: <== Launching lib\main.dart on Windows in debug mode...
-[10:03:11 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"0","progressId":null,"message":"Building Windows application...","finished":false}}]
-[10:03:33 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"0","progressId":null,"finished":true}}]
-[10:03:34 AM]: <== [{"event":"app.debugPort","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","port":62307,"wsUri":"ws://127.0.0.1:62307/EvKHyRvyhQI=/ws","baseUri":"file:///C:/Users/jairo/AppData/Local/Temp/Proyecto-Alicia771a733f/Proyecto-Alicia/"}}]
-[10:03:34 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"1","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[10:03:34 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"1","progressId":null,"finished":true}}]
-[10:03:34 AM]: <== [{"event":"app.started","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8"}}]
-[10:03:35 AM]: ==> [{"id":"1","method":"app.callServiceExtension","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","methodName":"ext.flutter.platformOverride"}}]
-[10:03:35 AM]: ==> [{"id":"2","method":"app.callServiceExtension","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","methodName":"ext.flutter.brightnessOverride"}}]
-[10:03:35 AM]: ==> [{"id":"3","method":"app.callServiceExtension","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[10:03:35 AM]: ==> [{"id":"4","method":"app.callServiceExtension","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[10:03:35 AM]: ==> [{"id":"5","method":"app.callServiceExtension","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/3757595782333907","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[10:03:36 AM]: <== [{"id":"1","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[10:03:36 AM]: <== [{"id":"2","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[10:03:36 AM]: <== [{"id":"3","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[10:03:36 AM]: <== [{"id":"4","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[10:03:36 AM]: <== [{"id":"5","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[10:03:39 AM]: <== flutter: =============================================
-[10:05:03 AM]: ==> [{"id":"6","method":"app.restart","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[10:05:03 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[10:05:03 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"3","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[10:05:03 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"3","progressId":null,"finished":true}}]
-[10:05:03 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"2","progressId":"hot.reload","finished":true}}]
-[10:05:03 AM]: <== Reloaded 5 of 791 libraries in 441ms.
-[10:05:03 AM]: <== [{"id":"6","result":{"code":0,"message":"Reloaded 5 of 791 libraries"}}]
-[10:06:16 AM]: ==> [{"id":"7","method":"app.restart","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[10:06:16 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"4","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[10:06:16 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"5","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[10:06:16 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"5","progressId":null,"finished":true}}]
-[10:06:17 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"4","progressId":"hot.reload","finished":true}}]
-[10:06:17 AM]: <== Reloaded 5 of 791 libraries in 327ms.
-[10:06:17 AM]: <== [{"id":"7","result":{"code":0,"message":"Reloaded 5 of 791 libraries"}}]
-[10:06:33 AM]: ==> [{"id":"8","method":"app.restart","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[10:06:33 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"6","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[10:06:33 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"7","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[10:06:33 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"7","progressId":null,"finished":true}}]
-[10:06:34 AM]: <== [{"event":"app.progress","params":{"appId":"26367bb2-7794-4243-83c0-2740de3a48a8","id":"6","progressId":"hot.reload","finished":true}}]
-[10:06:34 AM]: <== Reloaded 5 of 791 libraries in 333ms.
-[10:06:34 AM]: <== [{"id":"8","result":{"code":0,"message":"Reloaded 5 of 791 libraries"}}]
+[2:33:56 PM]: Spawning C:\src\flutter\bin\flutter.bat with args ["run","--machine","--target","lib\\main.dart","-d","windows","--dart-define=flutter.inspector.structuredErrors=true","--start-paused","--web-server-debug-protocol","ws","--web-allow-expose-url","--devtools-server-address","http://127.0.0.1:9100/"]
+[2:33:56 PM]: ..  in C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[2:33:56 PM]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[2:33:56 PM]: PID: 15616
+[2:33:58 PM]: <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":11136}}]
+[2:33:58 PM]: <== [{"event":"app.start","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","deviceId":"windows","directory":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","supportsRestart":true,"launchMode":"run"}}]
+[2:33:58 PM]: <== Launching lib\main.dart on Windows in debug mode...
+[2:33:58 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"0","progressId":null,"message":"Building Windows application...","finished":false}}]
+[2:34:21 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"0","progressId":null,"finished":true}}]
+[2:34:22 PM]: <== [{"event":"app.debugPort","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","port":57834,"wsUri":"ws://127.0.0.1:57834/srZyHS3e0mo=/ws","baseUri":"file:///C:/Users/jairo/AppData/Local/Temp/Proyecto-Aliciaa79fea9/Proyecto-Alicia/"}}]
+[2:34:22 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"1","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:34:22 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"1","progressId":null,"finished":true}}]
+[2:34:22 PM]: <== [{"event":"app.started","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c"}}]
+[2:34:23 PM]: ==> [{"id":"1","method":"app.callServiceExtension","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
+[2:34:23 PM]: ==> [{"id":"2","method":"app.callServiceExtension","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","methodName":"ext.flutter.platformOverride"}}]
+[2:34:23 PM]: ==> [{"id":"3","method":"app.callServiceExtension","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","methodName":"ext.flutter.brightnessOverride"}}]
+[2:34:23 PM]: ==> [{"id":"4","method":"app.callServiceExtension","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[2:34:23 PM]: ==> [{"id":"5","method":"app.callServiceExtension","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/1751709699888055","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
+[2:34:24 PM]: <== [{"id":"1","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
+[2:34:24 PM]: <== [{"id":"2","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
+[2:34:24 PM]: <== [{"id":"3","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
+[2:34:24 PM]: <== [{"id":"4","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[2:34:24 PM]: <== [{"id":"5","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
+[2:34:26 PM]: <== flutter: =============================================
+[2:34:33 PM]: <== flutter: idproduct = 8, paso =0, stateWeb=2, name = , referencia = , category = 0, fabricante = 0 , supplier = 0
+[2:34:33 PM]: <== flutter: idproduct = 89, paso =0, stateWeb=2, name = , referencia = , category = 0, fabricante = 0 , supplier = 0
+[2:34:33 PM]: <== flutter: idproduct = 898, paso =0, stateWeb=2, name = , referencia = , category = 0, fabricante = 0 , supplier = 0
+[2:34:34 PM]: <== flutter: []
+[2:34:34 PM]: <== flutter: [ProductModel(89, Escritorio Storm - Cattelan Italia)]
+[2:34:34 PM]: <== flutter: [ProductModel(898, Mesita noche Ripples - Horm & Casamania)]
+[2:34:37 PM]: <== flutter: 0
+[2:34:37 PM]: <== flutter: ====================
+[2:34:37 PM]: <== flutter: {"id_product":898}
+[2:37:57 PM]: <== [ERROR:flutter/lib/ui/ui_dart_state.cc(199)] Unhandled Exception: type 'MappedListIterable<dynamic, dynamic>' is not a subtype of type 'PsFeature'
+[2:37:57 PM]: <== #0      new ProductDetailsMode.fromMap (package:alicia/src/models/product_details_model.dart:30:39)
+[2:37:57 PM]: <== #1      HttpHandler.getProductData (package:alicia/src/datasources/http_handler.dart:43:33)
+[2:37:57 PM]: <== <asynchronous suspension>
+[2:37:57 PM]: <== #2      _ProductDetailsPageState.loadData (package:alicia/src/ui/pages/product_details_page.dart:790:9)
+[2:37:57 PM]: <== <asynchronous suspension>
+[2:38:00 PM]: ==> [{"id":"6","method":"app.restart","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[2:38:00 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[2:38:00 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"3","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[2:38:00 PM]: <== [{"event":"app.progress","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","id":"3","progressId":null,"finished":true}}]
+[2:41:08 PM]: ==> [{"id":"7","method":"app.restart","params":{"appId":"36256dfc-570d-42be-ae08-1b6807d8a15c","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]

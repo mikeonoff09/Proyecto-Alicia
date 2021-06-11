@@ -276,6 +276,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
               final product = productList[index];
               final route = MaterialPageRoute(
                 builder: (context) => ProductDetailsPage(
+                  
                   product: product,
                   generalData: this.generalData,
                 ),

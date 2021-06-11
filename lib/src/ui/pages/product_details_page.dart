@@ -4,7 +4,6 @@ import 'package:alicia/src/models/initial_data.dart';
 import 'package:alicia/src/models/product.dart';
 import 'package:alicia/src/models/product_details.dart' as product_details;
 import 'package:alicia/src/models/product_details_model.dart';
-import 'package:alicia/src/providers/features_provider.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/table_filter_dialog.dart';
 import 'package:flutter/material.dart';
@@ -718,9 +717,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         this.openHtmlEditor(descriptionController, context)),
               ),
             ),
-            SizedBox(
-              height: 25,
-            ),
+            SizedBox(height: 25),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -733,7 +730,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 IconButton(
                   onPressed: () {
                     // _showFeaturesDialog(context);
-                    _showDatos();
+                    // _showDatos();
                   },
                   icon: Icon(Icons.edit),
                 )
@@ -791,6 +788,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Future loadData() async {
     productData =
         await HttpHandler.instance.getProductData(widget.product.id_product);
+    print('==============================================================');
+    print(productData.psFeatureProduct.toString());
     caracteristicas = await HttpHandler.instance.getCaracteristicas();
     images = productData.psImage;
 
@@ -843,29 +842,31 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     try {
       String resultado;
       resultado = await HttpHandler.instance.saveProduct(
-          idproductController.text,
-          "3",
-          "3",
-          "32",
-          ean13Controller.text,
-          quantityController.text,
-          minimalquantityController.text,
-          priceController.text,
-          referenceController.text,
-          supplierreferenceController.text,
-          "0",
-          pricecostwithouttaxController.text,
-          "0",
-          descriptionController.text,
-          descriptionShortController.text,
-          linkrewriteController.text,
-          metadescriptionController.text,
-          metakeywordsController.text, //metametakeywordsController.text,
-          metatitleController.text,
-          nameController.text,
-          deliveryinstockController.text,
-          deliveryoutstockController.text,
-          stateController.text);
+        idproduct: idproductController.text,
+        idsupplier: "3",
+        idmanufacturer: "3",
+        idcategorydefault: "32",
+        ean13: ean13Controller.text,
+        quantity: quantityController.text,
+        minimalquantity: minimalquantityController.text,
+        price: priceController.text,
+        reference: referenceController.text,
+        supplierreference: supplierreferenceController.text,
+        paso: "0",
+        preciocoste: pricecostwithouttaxController.text,
+        cachedefaultattribute: "0",
+        description: descriptionController.text,
+        descriptionshort: descriptionShortController.text,
+        linkrewrite: linkrewriteController.text,
+        metadescription: metadescriptionController.text,
+        metakeywords:
+            metakeywordsController.text, //metametakeywordsController.text,
+        metatitle: metatitleController.text,
+        name: nameController.text,
+        deliveryinstock: deliveryinstockController.text,
+        deliveryoutstock: deliveryoutstockController.text,
+        stateWeb: stateController.text,
+      );
     } catch (e) {}
   }
 
@@ -899,10 +900,26 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   Widget featuresWidget(BuildContext context) {
-    //   Map<int, Widget> result = {};
-    //   final size = MediaQuery.of(context).size;
-    //   final idProduct = widget.product.id;
-    //   final features = this.productDetails?.features;
+    List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
+    
+
+    print("PsFeatureProduct: " + psFeatureProduct.toString());
+
+    return Container(
+      child: ListView.builder(
+        itemCount: psFeatureProduct.length,
+        itemBuilder: (BuildContext context, int index) {
+        return Container(child: Text('${psFeatureProduct[index].idfeaturevalue}'),);
+       },
+      ),
+    );
+
+    // productData.
+
+    // Map<int, Widget> result = {};
+    // final size = MediaQuery.of(context).size;
+    // final idProduct = widget.product.id;
+    // final features = this.productDetails?.features;
 /*
     if (features == null) return SizedBox();
     for (var fea in features) {
@@ -967,44 +984,44 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 /* 
     List<Map<String, dynamic>> resultListData = [];
 
-  //   List<Map<String, dynamic>> resultListData = [];
+    List<Map<String, dynamic>> resultListData = [];
 
-  //   this.productDetails.featuresValue.forEach((element) {
-  //     int id = element["id_feature_value"];
+    this.productDetails.featuresValue.forEach((element) {
+      int id = element["id_feature_value"];
 
-  //     final item = result[id];
-  //     if (item != null) {
-  //       resultListData.add(element);
-  //     }
-  //   });
-  //   resultListData.sort((a, b) {
-  //     final aValue = a["position"] as int;
-  //     final bValue = b["position"] as int;
-  //     return aValue.compareTo(bValue);
-  //   });
-  //   List<Widget> resultList = <Widget>[];
-  //   resultListData.forEach((element) {
-  //     int id = element["id_feature_value"];
+      final item = result[id];
+      if (item != null) {
+        resultListData.add(element);
+      }
+    });
+    resultListData.sort((a, b) {
+      final aValue = a["position"] as int;
+      final bValue = b["position"] as int;
+      return aValue.compareTo(bValue);
+    });
+    List<Widget> resultList = <Widget>[];
+    resultListData.forEach((element) {
+      int id = element["id_feature_value"];
 
-  //     final item = result[id];
-  //     if (item != null) {
-  //       resultList.add(item);
-  //     }
-  //   });
-  //   final leftController = ScrollController();
-  //   if (features == null) return SizedBox();
-  //   return Scrollbar(
-  //     controller: leftController,
-  //     child: ReorderableListView.builder(
-  //       onReorder: (int oldIndex, int newIndex) {
-  //         setState(() {
-  //           if (oldIndex < newIndex) {
-  //             newIndex -= 1;
-  //           }
-  //           final item = resultListData.removeAt(oldIndex);
-  //           resultListData.insert(newIndex, item);
-  //           for (var i = 0; i < resultListData.length; i++) {
-  //             final itemValue = resultListData[i];
+      final item = result[id];
+      if (item != null) {
+        resultList.add(item);
+      }
+    });
+    final leftController = ScrollController();
+    if (features == null) return SizedBox();
+    return Scrollbar(
+      controller: leftController,
+      child: ReorderableListView.builder(
+        onReorder: (int oldIndex, int newIndex) {
+          setState(() {
+            if (oldIndex < newIndex) {
+              newIndex -= 1;
+            }
+            final item = resultListData.removeAt(oldIndex);
+            resultListData.insert(newIndex, item);
+            for (var i = 0; i < resultListData.length; i++) {
+              final itemValue = resultListData[i];
 
           MysqlSeverDataSource.instance
               .updateCaracteristicaValueList(
@@ -1031,10 +1048,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
  */
 
-  Future<void> _showDatos() async {
-    FeaturesProvider featuresProvider = new FeaturesProvider();
-    featuresProvider.getAllFeatures().then((value) => print(value.toString()));
-  }
+  // Future<void> _showDatos() async {
+  //   FeaturesProvider featuresProvider = new FeaturesProvider();
+  //   featuresProvider.getAllFeatures().then((value) => print(value.toString()));
+  // }
 
   void _showFeaturesDialog(BuildContext context) {
     // showDialog(
@@ -1083,13 +1100,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //  }
 
   Future openCategories(BuildContext context) async {
-//     showDialog(
-//       context: context,
-//       builder: (context) => CategoriesPage(
-//         productDetails: this.productDetails,
-//       ),
-//     ).then((value) {
-//       loadData();
-//     });
+    // showDialog(
+    //   context: context,
+    //   builder: (context) => CategoriesPage(
+    //     productDetails: this.productDetails,
+    //   ),
+    // ).then((value) {
+    //   loadData();
+    // });
   }
 }

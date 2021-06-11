@@ -90,7 +90,9 @@ class HttpHandler {
     return null;
   }
 
-  Future<String> saveProduct(
+  // M'etodo para guardar el producto
+  //  Changed to named parameters
+  Future<String> saveProduct({
     String idproduct,
     String idsupplier,
     String idmanufacturer,
@@ -114,7 +116,7 @@ class HttpHandler {
     String deliveryinstock,
     String deliveryoutstock,
     String stateWeb,
-  ) async {
+  }) async {
     if (idproduct == "") {
       idproduct = "0";
     }
@@ -128,11 +130,11 @@ class HttpHandler {
       "quantity": quantity,
       "minimal_quantity": minimalquantity,
       "price": price,
+      "preciocoste": preciocoste,
       "reference": reference,
       "supplier_reference": supplierreference,
-      "paso": paso,
-      "preciocoste": preciocoste,
       "cache_default_attribute": cachedefaultattribute,
+      "paso": paso,
       "description": description,
       "description_short": descriptionshort,
       "link_rewrite": linkrewrite,
@@ -162,6 +164,7 @@ class HttpHandler {
     return null;
   }
 
+  // Para cargar los datos iniciales de la aplicación
   Future<CaracteriscasData> getCaracteristicas() async {
     final body = {};
     final response = await http.post(
