@@ -902,7 +902,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
     List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
     // List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
-    // List<PsFeature> psFeatureList = productData.psFeature;
+    List<PsFeature> psFeatureList = productData.psFeature;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
@@ -910,7 +910,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
     List<PsFeatureValue> features = [];
 
-    for (var featureProduct in psFeatureList) {
+    for (var featureProduct in psFeatureProduct) {
       for (var featureValue in psFeatureValueList) {
         if (featureProduct.idfeaturevalue == featureValue.idFeatureValue) {
           features.add(featureValue);

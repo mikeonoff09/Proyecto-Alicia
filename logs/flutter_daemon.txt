@@ -13,34 +13,31 @@ NO_PROXY: undefined
 Logging Categories:
     FlutterDaemon
 
-Fri Jun 11 2021 [20:59:48 GMT-0500 (Ecuador Time)] Log file started
-[8:59:48 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
-[8:59:48 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
-[8:59:48 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[8:59:48 PM] [FlutterDaemon] [Info]     PID: 19388
-[8:59:48 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
-[8:59:49 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[8:59:49 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[8:59:49 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[8:59:50 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":9664}}]
-[8:59:50 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
-[8:59:50 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
-[8:59:50 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
-[8:59:50 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[8:59:54 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
-[8:59:54 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[8:59:54 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
-[8:59:54 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[8:59:54 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[9:01:39 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[9:01:39 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["windows","ios","android","web"]}}]
-[9:01:39 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[9:01:39 PM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
-[9:01:39 PM] [General] [Warn] Did not find session 52a7742a-6868-473d-a035-958624c911a2 to handle dart.progressStart. There were 0 sessions:
-[9:01:39 PM] [General] [Warn] Event will be queued and processed when the session start event fires
-[9:05:28 PM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[9:05:28 PM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["windows","ios","android","web"]}}]
-[9:05:28 PM] [FlutterDaemon] [Info] ==> [{"id":"7","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[9:05:28 PM] [FlutterDaemon] [Info] <== [{"id":"7","result":{"platforms":["windows","ios","android","web"]}}]
-[9:05:28 PM] [General] [Warn] Did not find session 0df8f32e-1349-4e44-a459-d5bccc4d179c to handle dart.progressStart. There were 0 sessions:
-[9:05:28 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+Sat Jun 12 2021 [10:42:49 GMT-0500 (Ecuador Time)] Log file started
+[10:42:49 AM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
+[10:42:49 AM] [FlutterDaemon] [Info] ..  in C:\src\flutter
+[10:42:49 AM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[10:42:49 AM] [FlutterDaemon] [Info]     PID: 3624
+[10:42:49 AM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
+[10:42:51 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[10:42:51 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[10:42:51 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[10:42:51 AM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"emulator.getEmulators"}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":11496}}]
+[10:42:53 AM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"device.enable"}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"  ╔════════════════════════════════════════════════════════════════════════════╗\n  ║ A new version of Flutter is available!                                     ║\n  ║                                                                            ║\n  ║ To update to the latest version, run \"flutter upgrade\".                    ║\n  ╚════════════════════════════════════════════════════════════════════════════╝\n"}}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"id":"3"}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[10:42:53 AM] [FlutterDaemon] [Info] <== [{"id":"2","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[10:42:57 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
+[10:42:57 AM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[10:42:57 AM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["windows","ios","android","web"]}}]
+[10:42:57 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[10:42:57 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[10:45:20 AM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[10:45:20 AM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
+[10:45:20 AM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[10:45:20 AM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["windows","ios","android","web"]}}]
+[10:45:21 AM] [General] [Warn] Did not find session a5f64911-a209-4942-adec-ef44b12bbedc to handle dart.progressStart. There were 0 sessions:
+[10:45:21 AM] [General] [Warn] Event will be queued and processed when the session start event fires
