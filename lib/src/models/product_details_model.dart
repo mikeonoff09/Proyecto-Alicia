@@ -23,23 +23,35 @@ class ProductDetailsMode extends Equatable {
 
   factory ProductDetailsMode.fromMap(Map<String, dynamic> json) =>
       ProductDetailsMode(
-        psProduct: List<PsProduct>.from(json["ps_product"].map((x) => PsProduct.fromMap(x))),
-        psCategoryProduct: List<PsCategoryProduct>.from(json["ps_category_product"].map((x) => PsCategoryProduct.fromMap(x))),
-        psImage: List<PsImage>.from(json["ps_image"].map((x) => PsImage.fromMap(x))),
-        psFeatureProduct: List<PsFeatureProduct>.from( json["ps_feature_product"].map((x) => PsFeatureProduct.fromMap(x))),
-        psFeatureSuper: List<PsFeatureSuper>.from(json["ps_feature_super"].map((x) => PsFeatureSuper.fromMap(x))),
-        psFeature: List<PsFeature>.from( json["ps_feature"].map((x) => PsFeature.fromMap(x))),
-        psFeatureValue: List<PsFeatureValue>.from(json["ps_feature_value"].map((x) => PsFeatureValue.fromMap(x))),
+        psProduct: List<PsProduct>.from(
+            json["ps_product"].map((x) => PsProduct.fromMap(x))),
+        psCategoryProduct: List<PsCategoryProduct>.from(
+            json["ps_category_product"]
+                .map((x) => PsCategoryProduct.fromMap(x))),
+        psImage:
+            List<PsImage>.from(json["ps_image"].map((x) => PsImage.fromMap(x))),
+        psFeatureProduct: List<PsFeatureProduct>.from(
+            json["ps_feature_product"].map((x) => PsFeatureProduct.fromMap(x))),
+        psFeatureSuper: List<PsFeatureSuper>.from(
+            json["ps_feature_super"].map((x) => PsFeatureSuper.fromMap(x))),
+        psFeature: List<PsFeature>.from(
+            json["ps_feature"].map((x) => PsFeature.fromMap(x))),
+        psFeatureValue: List<PsFeatureValue>.from(
+            json["ps_feature_value"].map((x) => PsFeatureValue.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
         "ps_product": List<dynamic>.from(psProduct.map((x) => x.toMap())),
         "ps_image": List<dynamic>.from(psImage.map((x) => x.toMap())),
-        "ps_category_product": List<dynamic>.from(psCategoryProduct.map((x) => x.toMap())),
-        "ps_feature_product": List<dynamic>.from(psFeatureProduct.map((x) => x.toMap())),
-        "ps_feature_super": List<dynamic>.from(psFeatureSuper.map((x) => x.toMap())),
+        "ps_category_product":
+            List<dynamic>.from(psCategoryProduct.map((x) => x.toMap())),
+        "ps_feature_product":
+            List<dynamic>.from(psFeatureProduct.map((x) => x.toMap())),
+        "ps_feature_super":
+            List<dynamic>.from(psFeatureSuper.map((x) => x.toMap())),
         "ps_feature": List<dynamic>.from(psFeature.map((x) => x.toMap())),
-        "ps_feature_value": List<dynamic>.from(psFeatureValue.map((x) => x.toMap())),
+        "ps_feature_value":
+            List<dynamic>.from(psFeatureValue.map((x) => x.toMap())),
       };
 
   @override
@@ -249,11 +261,22 @@ class PsImage extends Equatable {
 }
 
 class PsFeatureProduct extends Equatable {
-  PsFeatureProduct({
-    this.idfeaturevalue,
-  });
+  PsFeatureProduct(
+      {this.idfeaturevalue,
+      this.ordenfeaturesuper,
+      this.ordenfeature,
+      this.orderfeaturevalue,
+      this.nombrefeaturesuper,
+      this.nombrefeature,
+      this.nombrefeacturevalue});
 
   int idfeaturevalue;
+  int ordenfeaturesuper;
+  int ordenfeature;
+  int orderfeaturevalue;
+  String nombrefeaturesuper;
+  String nombrefeature;
+  String nombrefeacturevalue;
 
   factory PsFeatureProduct.fromMap(Map<String, dynamic> json) =>
       PsFeatureProduct(

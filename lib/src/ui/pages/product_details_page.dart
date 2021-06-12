@@ -906,9 +906,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
+    if (psFeatureList.length == 0) return SizedBox();
+
     List<PsFeatureValue> features = [];
 
-    for (var featureProduct in psFeatureProduct) {
+    for (var featureProduct in psFeatureList) {
       for (var featureValue in psFeatureValueList) {
         if (featureProduct.idfeaturevalue == featureValue.idFeatureValue) {
           features.add(featureValue);

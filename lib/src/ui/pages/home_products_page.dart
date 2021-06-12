@@ -276,7 +276,6 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
               final product = productList[index];
               final route = MaterialPageRoute(
                 builder: (context) => ProductDetailsPage(
-                  
                   product: product,
                   generalData: this.generalData,
                 ),
@@ -354,24 +353,42 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
   }
 
   String getManufacturerName(int id) {
-    for (var item in generalData.fabricantes) {
-      if (item.idManufacturer == id) return item.name;
+    final _resultado = generalData.fabricantes.firstWhere(
+      (fabricante) => fabricante.idManufacturer == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
-    return "No encontrado";
   }
 
   String getCategoryName(int id) {
-    for (var item in generalData.categorias) {
-      if (item.idCategory == id) return item.name;
+    final _resultado = generalData.categorias.firstWhere(
+      (categoria) => categoria.idCategory == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
-    return "No encontrado";
   }
 
   String getSupplierName(int id) {
-    for (var item in generalData.distribuidores) {
-      if (item.idSupplier == id) return item.name;
+    final _resultado = generalData.distribuidores.firstWhere(
+      (distribuidor) => distribuidor.idSupplier == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
-    return "No encontrado";
   }
 
   Future onRowSelectedChange(int index, bool selected) async {}
