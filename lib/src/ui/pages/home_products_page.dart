@@ -353,69 +353,42 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
   }
 
   String getManufacturerName(int id) {
-    if (id == 0) {
-      return "No indicado";
-    } else {
-      String _resultado;
-      Fabricante findFabricante(int idBuscado) => generalData.fabricantes
-          .firstWhere((fabricante) => fabricante.idManufacturer == idBuscado,
-              orElse: () => null);
+    final _resultado = generalData.fabricantes.firstWhere(
+      (fabricante) => fabricante.idManufacturer == id,
+      orElse: () => null,
+    );
 
-      _resultado = findFabricante(id).name;
-      if (_resultado == null) {
-        return "No encontrado";
-      } else {
-        return _resultado;
-      }
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
-    //for (var item in generalData.fabricantes) {
-    //  if (item.idManufacturer == id) return item.name;
-    //}
-    //return "No encontrado";
   }
 
   String getCategoryName(int id) {
-    if (id == 0) {
-      return "No indicado";
-    } else {
-      String _resultado;
-      Categoria findCategoria(int idBuscado) => generalData.categorias
-          .firstWhere((categoria) => categoria.idCategory == idBuscado,
-              orElse: () => null);
+    final _resultado = generalData.categorias.firstWhere(
+      (categoria) => categoria.idCategory == id,
+      orElse: () => null,
+    );
 
-      _resultado = findCategoria(id).name;
-      if (_resultado == null) {
-        return "No encontrado";
-      } else {
-        return _resultado;
-      }
-      //  for (var item in generalData.categorias) {
-      //    if (item.idCategory == id) return item.name;
-      //  }
-      //  return "No encontrado";
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
   }
 
   String getSupplierName(int id) {
-    if (id == 0) {
-      return "No indicado";
-    } else {
-      String _resultado;
-      Distribuidor findDistribuidor(int idBuscado) => generalData.distribuidores
-          .firstWhere((distribuidor) => distribuidor.idSupplier == idBuscado,
-              orElse: () => null);
+    final _resultado = generalData.distribuidores.firstWhere(
+      (distribuidor) => distribuidor.idSupplier == id,
+      orElse: () => null,
+    );
 
-      _resultado = findDistribuidor(id).name;
-      if (_resultado == null) {
-        return "No encontrado";
-      } else {
-        return _resultado;
-      }
+    if (_resultado == null) {
+      return "No encontrado";
+    } else {
+      return _resultado.name;
     }
-    //for (var item in generalData.distribuidores) {
-    //  if (item.idSupplier == id) return item.name;
-    //}
-    //return "No encontrado";
   }
 
   Future onRowSelectedChange(int index, bool selected) async {}
