@@ -627,3 +627,69 @@ NO_PROXY: undefined
         },
         "flutterRunLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_run.txt",
         "flutterTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alic…
+[1:11:48 PM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[1:15:21 PM] [General] [Info] Pubspec C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\pubspec.yaml was modified
+[1:15:22 PM] [General] [Info] Found 1 folders requiring "pub get":
+    C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[1:15:35 PM] [General] [Info] Pubspec C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\pubspec.yaml was modified
+[1:15:36 PM] [General] [Info] Found 1 folders requiring "pub get":
+    C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[1:19:57 PM] [General] [Info] Debugger:SessionDuration timing: 3926930ms (Flutter)
+[2:09:04 PM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[2:22:25 PM] [General] [Info] Starting debug session...
+[2:22:25 PM] [General] [Info]     workspace: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[2:22:25 PM] [General] [Info] Using found common entry point: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\lib\main.dart
+[2:22:25 PM] [General] [Info] Using workspace as cwd: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[2:22:25 PM] [General] [Info] Detected launch project as Flutter
+[2:22:25 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:22:25 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:22:25 PM] [General] [Info] Checking for errors before launching
+[2:22:25 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Alicia",
+        "request": "launch",
+        "type": "dart",
+        "__configurationTarget": 5,
+        "program": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\lib\\main.dart",
+        "cwd": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": true,
+        "args": [
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmAdditionalArgs": [],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "pubTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\pub_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "globalFlutterArgs": [],
+        "useFlutterStructuredErrors": true,
+        "useInspectorNotificationsForWidgetErrors": true,
+        "debugExtensionBackendProtocol": "ws",
+        "injectedClientProtocol": "ws",
+        "forceFlutterVerboseMode": false,
+        "flutterTrackWidgetCreation": true,
+        "flutterMode": "debug",
+        "flutterPlatform": "default",
+        "workspaceConfig": {
+            "startDevToolsServerEagerly": true,
+            "useLsp": false
+        },
+        "flutterRunLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_test.tx…
+[2:22:26 PM] [General] [Info] Using flutter debugger for Flutter
+[2:22:26 PM] [General] [Info] Running debugger via node with c:\Users\jairo\.vscode\extensions\dart-code.dart-code-3.23.0\out\dist\debug.js    flutter
+[2:22:26 PM] [General] [Warn] Did not find session 337689b1-3cb7-44a7-878c-50ea16fc861a to handle dart.progressStart. There were 0 sessions:
+[2:22:26 PM] [General] [Warn] Event will be queued and processed when the session start event fires
+[2:22:26 PM] [General] [Info] Processing delayed event dart.progressStart for session 337689b1-3cb7-44a7-878c-50ea16fc861a

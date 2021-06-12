@@ -1,8 +1,16 @@
 part of 'product_bloc.dart';
 
-abstract class ProductEvent extends Equatable {
-  const ProductEvent();
+@immutable
+class ProductEvent {}
 
-  @override
-  List<Object> get props => [];
+class OnFeatureProductListChanged extends ProductEvent {
+  final List<PsFeatureProduct> featuresProduct;
+
+  OnFeatureProductListChanged({@required this.featuresProduct});
+}
+
+class OnDeleteFeature extends ProductEvent {
+  final int idFeatureToDelete;
+
+  OnDeleteFeature({@required this.idFeatureToDelete});
 }

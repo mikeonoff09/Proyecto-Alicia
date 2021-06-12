@@ -68,3 +68,11 @@ Sat Jun 12 2021 [12:14:04 GMT-0500 (Ecuador Time)] Log file started
 [12:45:02 PM] [FlutterDaemon] [Info] <== [{"id":"16","result":{"platforms":["windows","ios","android","web"]}}]
 [12:45:02 PM] [FlutterDaemon] [Info] ==> [{"id":"17","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
 [12:45:02 PM] [FlutterDaemon] [Info] <== [{"id":"17","result":{"platforms":["windows","ios","android","web"]}}]
+[1:11:48 PM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[2:09:04 PM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[2:22:25 PM] [FlutterDaemon] [Info] ==> [{"id":"18","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[2:22:25 PM] [FlutterDaemon] [Info] <== [{"id":"18","result":{"platforms":["windows","ios","android","web"]}}]
+[2:22:25 PM] [FlutterDaemon] [Info] ==> [{"id":"19","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[2:22:25 PM] [FlutterDaemon] [Info] <== [{"id":"19","result":{"platforms":["windows","ios","android","web"]}}]
+[2:22:26 PM] [General] [Warn] Did not find session 337689b1-3cb7-44a7-878c-50ea16fc861a to handle dart.progressStart. There were 0 sessions:
+[2:22:26 PM] [General] [Warn] Event will be queued and processed when the session start event fires

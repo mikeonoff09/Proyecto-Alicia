@@ -261,14 +261,15 @@ class PsImage extends Equatable {
 }
 
 class PsFeatureProduct extends Equatable {
-  PsFeatureProduct(
-      {this.idfeaturevalue,
-      this.ordenfeaturesuper,
-      this.ordenfeature,
-      this.orderfeaturevalue,
-      this.nombrefeaturesuper,
-      this.nombrefeature,
-      this.nombrefeacturevalue});
+  PsFeatureProduct({
+    this.idfeaturevalue,
+    this.ordenfeaturesuper,
+    this.ordenfeature,
+    this.orderfeaturevalue,
+    this.nombrefeaturesuper,
+    this.nombrefeature,
+    this.nombrefeacturevalue,
+  });
 
   int idfeaturevalue;
   int ordenfeaturesuper;
