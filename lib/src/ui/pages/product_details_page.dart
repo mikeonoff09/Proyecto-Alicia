@@ -6,6 +6,7 @@ import 'package:alicia/src/models/product_details.dart' as product_details;
 import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/table_filter_dialog.dart';
+import 'package:alicia/src/ui/pages/feature_selector_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_products_page.dart';
@@ -165,99 +166,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             ),
             Row(
               children: [
-                Expanded(
-                  child: MyTextField(
-                    labelText: "Fabricante",
-                    controller: idmanufacturerController,
-                    readOnly: true,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      fontFamily: "Century Gothic",
-                    ),
-                    suffixWidget: IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => TableFilterDialog(
-                            campoId: "id_manufacturer",
-                            campoToShow: "name",
-                            campofiltro: "name",
-                            /*   originalList: this
-                                                        .productDetails
-                                                        .manufactures, */
-                            title: "Búsqueda de fabricante",
-                            widgetBuilder: (int index) {
-                              return Image.network(
-                                  "https://www.mueblesextraordinarios.com/img/m/$index-small_default.jpg");
-                            },
-                            /*   onResult: (result) {
-                                                      print(result);
-                                                      idmanufacturerController
-                                                              .text =
-                                                          result.label;
-                                                      final producto =
-                                                          productDetails
-                                                              .product
-                                                              .first;
-
-                                                      producto[
-                                                              "id_manufacturer"] =
-                                                          result.id;
-                                                    }, */
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: MyTextField(
-                    labelText: "Proveedor",
-                    controller: idsupplierController,
-                    readOnly: true,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      fontFamily: "Century Gothic",
-                    ),
-                    suffixWidget: IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) => TableFilterDialog(
-                                    campoId: "id_supplier",
-                                    campoToShow: "name",
-                                    campofiltro: "name",
-                                    widgetBuilder: (int index) {
-                                      return Image.network(
-                                          "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
-                                    },
-                                    /*   originalList: this
-                                                        .productDetails
-                                                        .suppliers,
-                                                    title:
-                                                        "Búsqueda de proveedor",
-                                                    onResult: (result) {
-                                                      print(result);
-                                                      idsupplierController
-                                                              .text =
-                                                          result.label;
-                                                      final producto =
-                                                          productDetails
-                                                              .product
-                                                              .first;
-
-                                                      producto[
-                                                              "id_supplier"] =
-                                                          result.id;
-                                                    }, */
-                                  ));
-                        }),
-                  ),
-                ),
+                fabricanteTextEditor(context),
+                proveedorTextEditor(context),
               ],
             ),
             Row(
@@ -420,87 +330,23 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 campoId: "id_category",
                                 campoToShow: "name",
                                 campofiltro: "name",
-                                /*  originalList: this
-                                                            .productDetails
-                                                            .categoriesWithName,
-                                                        title:
-                                                            "Búsqueda de categoría",
-                                                        widgetBuilder:
-                                                            (int index) {
-                                                          return Image.network(
-                                                              "https://www.mueblesextraordinarios.com/img/c/$index" +
-                                                                  "_thumb.jpg");
-                                                        },
-                                                        onResult: (result) {
-                                                          print(result);
-                                                          idcategoryController
-                                                                  .text =
-                                                              result.label;
-                                                          final producto =
-                                                              productDetails
-                                                                  .product
-                                                                  .first;
-                                                          producto[
-                                                                  "id_category_default"] =
-                                                              result.id;
-                                                        }, */
                               ),
                             );
                           },
                         ),
                       ),
-                      MyTextField(
-                        labelText: "Meta Descripción",
-                        controller: metadescriptionController,
-                        maxLines: 1,
-                        estextoPrestashop: true,
-                        requiredField: true,
-                        maxLength: 512,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: "Century Gothic",
-                        ),
-                      ),
-                      MyTextField(
-                        labelText: "Meta Título",
-                        controller: metatitleController,
-                        estextoPrestashop: true,
-                        requiredField: true,
-                        maxLines: 1,
-                        maxLength: 128,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: "Century Gothic",
-                        ),
-                      ),
-                      MyTextField(
-                        labelText: "Key Words",
-                        controller: metakeywordsController,
-                        estextoPrestashop: true,
-                        requiredField: true,
-                        maxLines: 1,
-                        maxLength: 128,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: "Century Gothic",
-                        ),
-                      ),
-                      MyTextField(
-                        labelText: "URL Enlace",
-                        controller: linkrewriteController,
-                        maxLines: 1,
-                        maxLength: 128,
-                        esUrl: true,
-                        requiredField: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: "Century Gothic",
-                        ),
-                      ),
+                      customTextField1(
+                          controller: metadescriptionController,
+                          textLabel: "Meta Descripción"),
+                      customTextField1(
+                          controller: metatitleController,
+                          textLabel: "Meta Título"),
+                      customTextField1(
+                          controller: metakeywordsController,
+                          textLabel: "Key Words"),
+                      customTextField1(
+                          controller: linkrewriteController,
+                          textLabel: "URL Enlace"),
                     ],
                   ),
                 ),
@@ -568,6 +414,88 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  MyTextField customTextField1(
+      {TextEditingController controller, String textLabel}) {
+    return MyTextField(
+      labelText: textLabel,
+      controller: linkrewriteController,
+      maxLines: 1,
+      maxLength: 128,
+      esUrl: true,
+      requiredField: true,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 14,
+        fontFamily: "Century Gothic",
+      ),
+    );
+  }
+
+  Expanded proveedorTextEditor(BuildContext context) {
+    return Expanded(
+      child: MyTextField(
+        labelText: "Proveedor",
+        controller: idsupplierController,
+        readOnly: true,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+          fontFamily: "Century Gothic",
+        ),
+        suffixWidget: IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => TableFilterDialog(
+                campoId: "id_supplier",
+                campoToShow: "name",
+                campofiltro: "name",
+                widgetBuilder: (int index) {
+                  return Image.network(
+                      "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
+                },
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget fabricanteTextEditor(BuildContext context) {
+    return Expanded(
+      child: MyTextField(
+        labelText: "Fabricante",
+        controller: idmanufacturerController,
+        readOnly: true,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+          fontFamily: "Century Gothic",
+        ),
+        suffixWidget: IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => TableFilterDialog(
+                campoId: "id_manufacturer",
+                campoToShow: "name",
+                campofiltro: "name",
+                title: "Búsqueda de fabricante",
+                widgetBuilder: (int index) {
+                  return Image.network(
+                      "https://www.mueblesextraordinarios.com/img/m/$index-small_default.jpg");
+                },
+              ),
+            );
+          },
         ),
       ),
     );
@@ -728,8 +656,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
                 IconButton(
                   onPressed: () {
-                    // _showFeaturesDialog(context);
-                    // _showDatos();
+                    showDialog(
+                        context: context,
+                        builder: (context) => FeatureSelectorPage());
                   },
                   icon: Icon(Icons.edit),
                 )
@@ -930,7 +859,17 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         : ListView.builder(
             itemCount: features.length,
             itemBuilder: (BuildContext context, int index) {
-              return Text(features[index].name);
+              return Dismissible(
+                child: ListTile(
+                  title: Text(features[index].name),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: null,
+                  ),
+                ),
+                key: Key(features[index].idFeatureValue.toString()),
+                background: Container(color: Colors.red,),
+              );
             },
           );
 

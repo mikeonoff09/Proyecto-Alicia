@@ -42,9 +42,7 @@ class _TableFilterDialogState extends State<TableFilterDialog> {
         height: MediaQuery.of(context).size.height * 0.8,
         child: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             MyTextField(
               controller: controller,
               labelText: "Búsqueda en ${widget.campofiltro}",
