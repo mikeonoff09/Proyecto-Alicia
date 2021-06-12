@@ -1,5 +1,6 @@
+
 import 'package:alicia/src/datasources/http_handler.dart';
-import 'package:alicia/src/models/caracteristicas_data.dart';
+// import 'package:alicia/src/models/caracteristicas_data.dart';
 import 'package:alicia/src/models/initial_data.dart';
 import 'package:alicia/src/models/product.dart';
 import 'package:alicia/src/models/product_details.dart' as product_details;
@@ -66,10 +67,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   ProductDetailsMode productData;
 
-  CaracteriscasData caracteristicas;
+  // CaracteriscasData caracteristicas;
 
   List<PsImage> images;
   List<PsFeatureProduct> caracteristicasProducto;
+  List<PsFeatureSuper> psFeatureSuper;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -128,7 +130,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget smallScreenWidgets(Size size, BuildContext context) {
     return Column(
       // mainAxisAlignment: CrossAxisAlignment.start,
-      children: [imagesSection(size, context), dataSection(size, context)],
+      children: [
+        imagesSection(size, context),
+        dataSection(size, context),
+      ],
     );
   }
 
@@ -790,7 +795,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         await HttpHandler.instance.getProductData(widget.product.id_product);
     print('==============================================================');
     print(productData.psFeatureProduct.toString());
-    caracteristicas = await HttpHandler.instance.getCaracteristicas();
+    // caracteristicas = await HttpHandler.instance.getCaracteristicas();
     images = productData.psImage;
 
     nameController.text = productData.psProduct.first.name;
@@ -901,18 +906,60 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   Widget featuresWidget(BuildContext context) {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
-    
+    List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
+    List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
+    List<PsFeature> psFeatureList = productData.psFeature;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
-    return Container(
-      child: ListView.builder(
-        itemCount: psFeatureProduct.length,
-        itemBuilder: (BuildContext context, int index) {
-        return Container(child: Text('${psFeatureProduct[index].idfeaturevalue}'),);
-       },
-      ),
-    );
+    List<PsFeatureValue> features = [];
+
+    for (var featureProduct in psFeatureProduct) {
+      for (var featureValue in psFeatureValueList) {
+        if (featureProduct.idfeaturevalue == featureValue.idFeatureValue) {
+          features.add(featureValue);
+        }
+      }
+    }
+
+    return features.length > 0
+        ? Container(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('idFeatureValue'),
+                    Text('name'),
+                    Text('position'),
+                  ],
+                ),
+                ListView.builder(
+                  itemCount: psFeatureProduct.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('${features[index].idFeatureValue}'),
+                          Text('${features[index].name}'),
+                          Text('${features[index].position}'),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          )
+        : Container(
+            child: Center(
+              child: Text(
+                'No existen caracteristicas para este producto',
+                overflow: TextOverflow.clip,
+              ),
+            ),
+          );
 
     // productData.
 
