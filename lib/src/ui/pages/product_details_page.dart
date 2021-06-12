@@ -1,4 +1,3 @@
-
 import 'package:alicia/src/datasources/http_handler.dart';
 // import 'package:alicia/src/models/caracteristicas_data.dart';
 import 'package:alicia/src/models/initial_data.dart';
@@ -908,13 +907,15 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
     List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
     List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
-    List<PsFeature> psFeatureList = productData.psFeature;
+    List<PsFeatureProduct> psFeatureList = productData.psFeatureProduct;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
+    if (psFeatureList.length == 0) return SizedBox();
+
     List<PsFeatureValue> features = [];
 
-    for (var featureProduct in psFeatureProduct) {
+    for (var featureProduct in psFeatureList) {
       for (var featureValue in psFeatureValueList) {
         if (featureProduct.idfeaturevalue == featureValue.idFeatureValue) {
           features.add(featureValue);
