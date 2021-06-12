@@ -1,4 +1,3 @@
-
 import 'package:alicia/src/datasources/http_handler.dart';
 // import 'package:alicia/src/models/caracteristicas_data.dart';
 import 'package:alicia/src/models/initial_data.dart';
@@ -138,439 +137,437 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   Widget dataSection(Size size, BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.only(left: 10),
-        width: size.width * 0.35,
-        child: Scrollbar(
+    return Container(
+      margin: EdgeInsets.only(left: 10),
+      width: size.width * 0.35,
+      child: Scrollbar(
+        controller: _controller2,
+        child: ListView(
+          padding: EdgeInsets.only(left: 10, right: 10, bottom: 40),
           controller: _controller2,
-          child: ListView(
-            padding: EdgeInsets.only(left: 10, right: 10, bottom: 40),
-            controller: _controller2,
-            children: [
-              Text(
-                "Datos generales del producto",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          children: [
+            Text(
+              "Datos generales del producto",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+            MyTextField(
+              labelText: "Nombre",
+              controller: nameController,
+              estextoPrestashop: true,
+              requiredField: true,
+              maxLength: 128,
+              maxLines: 1,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                fontFamily: "Century Gothic",
               ),
-              MyTextField(
-                labelText: "Nombre",
-                controller: nameController,
-                estextoPrestashop: true,
-                requiredField: true,
-                maxLength: 128,
-                maxLines: 1,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  fontFamily: "Century Gothic",
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Fabricante",
+                    controller: idmanufacturerController,
+                    readOnly: true,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontFamily: "Century Gothic",
+                    ),
+                    suffixWidget: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => TableFilterDialog(
+                            campoId: "id_manufacturer",
+                            campoToShow: "name",
+                            campofiltro: "name",
+                            /*   originalList: this
+                                                        .productDetails
+                                                        .manufactures, */
+                            title: "Búsqueda de fabricante",
+                            widgetBuilder: (int index) {
+                              return Image.network(
+                                  "https://www.mueblesextraordinarios.com/img/m/$index-small_default.jpg");
+                            },
+                            /*   onResult: (result) {
+                                                      print(result);
+                                                      idmanufacturerController
+                                                              .text =
+                                                          result.label;
+                                                      final producto =
+                                                          productDetails
+                                                              .product
+                                                              .first;
+
+                                                      producto[
+                                                              "id_manufacturer"] =
+                                                          result.id;
+                                                    }, */
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Fabricante",
-                      controller: idmanufacturerController,
-                      readOnly: true,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        fontFamily: "Century Gothic",
-                      ),
-                      suffixWidget: IconButton(
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Proveedor",
+                    controller: idsupplierController,
+                    readOnly: true,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontFamily: "Century Gothic",
+                    ),
+                    suffixWidget: IconButton(
                         icon: Icon(Icons.edit),
                         onPressed: () {
                           showDialog(
-                            context: context,
-                            builder: (context) => TableFilterDialog(
-                              campoId: "id_manufacturer",
-                              campoToShow: "name",
-                              campofiltro: "name",
-                              /*   originalList: this
-                                                          .productDetails
-                                                          .manufactures, */
-                              title: "Búsqueda de fabricante",
-                              widgetBuilder: (int index) {
-                                return Image.network(
-                                    "https://www.mueblesextraordinarios.com/img/m/$index-small_default.jpg");
-                              },
-                              /*   onResult: (result) {
-                                                        print(result);
-                                                        idmanufacturerController
-                                                                .text =
-                                                            result.label;
-                                                        final producto =
-                                                            productDetails
-                                                                .product
-                                                                .first;
+                              context: context,
+                              builder: (context) => TableFilterDialog(
+                                    campoId: "id_supplier",
+                                    campoToShow: "name",
+                                    campofiltro: "name",
+                                    widgetBuilder: (int index) {
+                                      return Image.network(
+                                          "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
+                                    },
+                                    /*   originalList: this
+                                                        .productDetails
+                                                        .suppliers,
+                                                    title:
+                                                        "Búsqueda de proveedor",
+                                                    onResult: (result) {
+                                                      print(result);
+                                                      idsupplierController
+                                                              .text =
+                                                          result.label;
+                                                      final producto =
+                                                          productDetails
+                                                              .product
+                                                              .first;
 
-                                                        producto[
-                                                                "id_manufacturer"] =
-                                                            result.id;
-                                                      }, */
-                            ),
-                          );
-                        },
-                      ),
+                                                      producto[
+                                                              "id_supplier"] =
+                                                          result.id;
+                                                    }, */
+                                  ));
+                        }),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Precio Coste",
+                    controller: pricecostwithouttaxController,
+                    textAlign: TextAlign.right,
+                    keyboardType: TextInputType.number,
+                    requiredField: true,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: "Century Gothic",
                     ),
                   ),
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Proveedor",
-                      controller: idsupplierController,
-                      readOnly: true,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        fontFamily: "Century Gothic",
-                      ),
-                      suffixWidget: IconButton(
+                ),
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Precio Sin IVA",
+                    controller: pricewithouttaxController,
+                    textAlign: TextAlign.right,
+                    keyboardType: TextInputType.number,
+                    requiredField: true,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: "Century Gothic",
+                    ),
+                    onChanged: (value) {
+                      final sinIva = double.tryParse(value) ?? 0;
+                      final nValue = sinIva * (1 + _iva);
+                      priceController.text = nValue.toStringAsFixed(2);
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: MyTextField(
+                    labelText: "PVP con IVA ",
+                    controller: priceController,
+                    requiredField: true,
+                    textAlign: TextAlign.right,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      fontFamily: "Century Gothic",
+                    ),
+                    onChanged: (value) {
+                      final conIva = double.tryParse(value) ?? 0;
+                      final nValue = (conIva / (1 + _iva));
+                      pricewithouttaxController.text =
+                          nValue.toStringAsFixed(3);
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: MyTextField(
+                    labelText: "ID",
+                    readOnly: true,
+                    controller: idproductController,
+                    maxLines: 1,
+                    textAlign: TextAlign.right,
+                    keyboardType: TextInputType.number,
+                    requiredField: true,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontFamily: "Century Gothic",
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CheckboxListTile(
+                    title: Text("Online"),
+                    value: stateController.text == "1",
+                    onChanged: (value) {
+                      if (value) {
+                        stateController.text = "1";
+                      } else {
+                        stateController.text = "0";
+                      }
+                      setState(() {});
+                    },
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Envio sin stock",
+                    controller: deliveryoutstockController,
+                    estextoPrestashop: true,
+                    requiredField: true,
+                    maxLines: 1,
+                    maxLength: 255,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontFamily: "Century Gothic",
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: MyTextField(
+                    labelText: "Envio con stock",
+                    estextoPrestashop: true,
+                    requiredField: true,
+                    controller: deliveryinstockController,
+                    maxLines: 1,
+                    maxLength: 255,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontFamily: "Century Gothic",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            MyTextField(
+              labelText: "Descripción corta",
+              controller: descriptionShortController,
+              maxLines: 3,
+              maxLength: 900,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                fontFamily: "Century Gothic",
+              ),
+              suffixWidget: IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () =>
+                      this.openHtmlEditor(descriptionShortController, context)),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      MyTextField(
+                        labelText: "Categoría",
+                        controller: idcategoryController,
+                        readOnly: true,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
+                        suffixWidget: IconButton(
                           icon: Icon(Icons.edit),
                           onPressed: () {
                             showDialog(
-                                context: context,
-                                builder: (context) => TableFilterDialog(
-                                      campoId: "id_supplier",
-                                      campoToShow: "name",
-                                      campofiltro: "name",
-                                      widgetBuilder: (int index) {
-                                        return Image.network(
-                                            "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
-                                      },
-                                      /*   originalList: this
-                                                          .productDetails
-                                                          .suppliers,
-                                                      title:
-                                                          "Búsqueda de proveedor",
-                                                      onResult: (result) {
-                                                        print(result);
-                                                        idsupplierController
-                                                                .text =
-                                                            result.label;
-                                                        final producto =
-                                                            productDetails
-                                                                .product
-                                                                .first;
-
-                                                        producto[
-                                                                "id_supplier"] =
-                                                            result.id;
-                                                      }, */
-                                    ));
-                          }),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Precio Coste",
-                      controller: pricecostwithouttaxController,
-                      textAlign: TextAlign.right,
-                      keyboardType: TextInputType.number,
-                      requiredField: true,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                        fontFamily: "Century Gothic",
+                              context: context,
+                              builder: (context) => TableFilterDialog(
+                                campoId: "id_category",
+                                campoToShow: "name",
+                                campofiltro: "name",
+                                /*  originalList: this
+                                                            .productDetails
+                                                            .categoriesWithName,
+                                                        title:
+                                                            "Búsqueda de categoría",
+                                                        widgetBuilder:
+                                                            (int index) {
+                                                          return Image.network(
+                                                              "https://www.mueblesextraordinarios.com/img/c/$index" +
+                                                                  "_thumb.jpg");
+                                                        },
+                                                        onResult: (result) {
+                                                          print(result);
+                                                          idcategoryController
+                                                                  .text =
+                                                              result.label;
+                                                          final producto =
+                                                              productDetails
+                                                                  .product
+                                                                  .first;
+                                                          producto[
+                                                                  "id_category_default"] =
+                                                              result.id;
+                                                        }, */
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  ),
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Precio Sin IVA",
-                      controller: pricewithouttaxController,
-                      textAlign: TextAlign.right,
-                      keyboardType: TextInputType.number,
-                      requiredField: true,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                        fontFamily: "Century Gothic",
+                      MyTextField(
+                        labelText: "Meta Descripción",
+                        controller: metadescriptionController,
+                        maxLines: 1,
+                        estextoPrestashop: true,
+                        requiredField: true,
+                        maxLength: 512,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
                       ),
-                      onChanged: (value) {
-                        final sinIva = double.tryParse(value) ?? 0;
-                        final nValue = sinIva * (1 + _iva);
-                        priceController.text = nValue.toStringAsFixed(2);
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "PVP con IVA ",
-                      controller: priceController,
-                      requiredField: true,
-                      textAlign: TextAlign.right,
-                      keyboardType: TextInputType.number,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                        fontFamily: "Century Gothic",
+                      MyTextField(
+                        labelText: "Meta Título",
+                        controller: metatitleController,
+                        estextoPrestashop: true,
+                        requiredField: true,
+                        maxLines: 1,
+                        maxLength: 128,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
                       ),
-                      onChanged: (value) {
-                        final conIva = double.tryParse(value) ?? 0;
-                        final nValue = (conIva / (1 + _iva));
-                        pricewithouttaxController.text =
-                            nValue.toStringAsFixed(3);
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "ID",
-                      readOnly: true,
-                      controller: idproductController,
-                      maxLines: 1,
-                      textAlign: TextAlign.right,
-                      keyboardType: TextInputType.number,
-                      requiredField: true,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        fontFamily: "Century Gothic",
+                      MyTextField(
+                        labelText: "Key Words",
+                        controller: metakeywordsController,
+                        estextoPrestashop: true,
+                        requiredField: true,
+                        maxLines: 1,
+                        maxLength: 128,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
                       ),
-                    ),
-                  ),
-                  Expanded(
-                    child: CheckboxListTile(
-                      title: Text("Online"),
-                      value: stateController.text == "1",
-                      onChanged: (value) {
-                        if (value) {
-                          stateController.text = "1";
-                        } else {
-                          stateController.text = "0";
-                        }
-                        setState(() {});
-                      },
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Envio sin stock",
-                      controller: deliveryoutstockController,
-                      estextoPrestashop: true,
-                      requiredField: true,
-                      maxLines: 1,
-                      maxLength: 255,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        fontFamily: "Century Gothic",
+                      MyTextField(
+                        labelText: "URL Enlace",
+                        controller: linkrewriteController,
+                        maxLines: 1,
+                        maxLength: 128,
+                        esUrl: true,
+                        requiredField: true,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                  Expanded(
-                    child: MyTextField(
-                      labelText: "Envio con stock",
-                      estextoPrestashop: true,
-                      requiredField: true,
-                      controller: deliveryinstockController,
-                      maxLines: 1,
-                      maxLength: 255,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        fontFamily: "Century Gothic",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              MyTextField(
-                labelText: "Descripción corta",
-                controller: descriptionShortController,
-                maxLines: 3,
-                maxLength: 900,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  fontFamily: "Century Gothic",
                 ),
-                suffixWidget: IconButton(
-                    icon: Icon(Icons.edit),
-                    onPressed: () => this
-                        .openHtmlEditor(descriptionShortController, context)),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        MyTextField(
-                          labelText: "Categoría",
-                          controller: idcategoryController,
-                          readOnly: true,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                          suffixWidget: IconButton(
-                            icon: Icon(Icons.edit),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => TableFilterDialog(
-                                  campoId: "id_category",
-                                  campoToShow: "name",
-                                  campofiltro: "name",
-                                  /*  originalList: this
-                                                              .productDetails
-                                                              .categoriesWithName,
-                                                          title:
-                                                              "Búsqueda de categoría",
-                                                          widgetBuilder:
-                                                              (int index) {
-                                                            return Image.network(
-                                                                "https://www.mueblesextraordinarios.com/img/c/$index" +
-                                                                    "_thumb.jpg");
-                                                          },
-                                                          onResult: (result) {
-                                                            print(result);
-                                                            idcategoryController
-                                                                    .text =
-                                                                result.label;
-                                                            final producto =
-                                                                productDetails
-                                                                    .product
-                                                                    .first;
-                                                            producto[
-                                                                    "id_category_default"] =
-                                                                result.id;
-                                                          }, */
-                                ),
-                              );
-                            },
-                          ),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      MyTextField(
+                        labelText: "EAN",
+                        codigoEan: true,
+                        controller: ean13Controller,
+                        requiredField: true,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
                         ),
-                        MyTextField(
-                          labelText: "Meta Descripción",
-                          controller: metadescriptionController,
-                          maxLines: 1,
-                          estextoPrestashop: true,
-                          requiredField: true,
-                          maxLength: 512,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
+                      ),
+                      MyTextField(
+                        labelText: "Refrencia", //admite -_#.
+                        controller: referenceController,
+                        estextoPrestashop: true,
+                        requiredField: true,
+                        maxLines: 1,
+                        maxLength: 64,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
                         ),
-                        MyTextField(
-                          labelText: "Meta Título",
-                          controller: metatitleController,
-                          estextoPrestashop: true,
-                          requiredField: true,
-                          maxLines: 1,
-                          maxLength: 128,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
+                      ),
+                      MyTextField(
+                        labelText: "Referencia Proveedor",
+                        estextoPrestashop: true,
+                        requiredField: true,
+                        maxLength: 64,
+                        controller: supplierreferenceController,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
                         ),
-                        MyTextField(
-                          labelText: "Key Words",
-                          controller: metakeywordsController,
-                          estextoPrestashop: true,
-                          requiredField: true,
-                          maxLines: 1,
-                          maxLength: 128,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                        ),
-                        MyTextField(
-                          labelText: "URL Enlace",
-                          controller: linkrewriteController,
-                          maxLines: 1,
-                          maxLength: 128,
-                          esUrl: true,
-                          requiredField: true,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      MyTextField(
+                        labelText: "Stock",
+                        soloentero: true,
+                        requiredField: true,
+                        controller: quantityController,
+                        maxLines: 1,
+                        textAlign: TextAlign.right,
+                      ),
+                      MyTextField(
+                        labelText: "Pedido Mínimo",
+                        soloentero: true,
+                        requiredField: true,
+                        controller: minimalquantityController,
+                        maxLines: 1,
+                        textAlign: TextAlign.right,
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        MyTextField(
-                          labelText: "EAN",
-                          codigoEan: true,
-                          controller: ean13Controller,
-                          requiredField: true,
-                          maxLines: 1,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                        ),
-                        MyTextField(
-                          labelText: "Refrencia", //admite -_#.
-                          controller: referenceController,
-                          estextoPrestashop: true,
-                          requiredField: true,
-                          maxLines: 1,
-                          maxLength: 64,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                        ),
-                        MyTextField(
-                          labelText: "Referencia Proveedor",
-                          estextoPrestashop: true,
-                          requiredField: true,
-                          maxLength: 64,
-                          controller: supplierreferenceController,
-                          maxLines: 1,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Century Gothic",
-                          ),
-                        ),
-                        MyTextField(
-                          labelText: "Stock",
-                          soloentero: true,
-                          requiredField: true,
-                          controller: quantityController,
-                          maxLines: 1,
-                          textAlign: TextAlign.right,
-                        ),
-                        MyTextField(
-                          labelText: "Pedido Mínimo",
-                          soloentero: true,
-                          requiredField: true,
-                          controller: minimalquantityController,
-                          maxLines: 1,
-                          textAlign: TextAlign.right,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -647,15 +644,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     child: Stack(
                       children: [
                         if (images.isNotEmpty)
-                          Expanded(
-                            child: Center(
-                              child: Image.network(
-                                calcImageUrlFromId(
-                                    images[selectedImage].idImage,
-                                    quality: ".jpg"),
-                                height: double.infinity,
-                                width: size.height * 0.785,
-                              ),
+                          Center(
+                            child: Image.network(
+                              calcImageUrlFromId(images[selectedImage].idImage,
+                                  quality: ".jpg"),
+                              height: double.infinity,
+                              width: size.height * 0.785,
                             ),
                           ),
                         Align(
@@ -907,8 +901,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget featuresWidget(BuildContext context) {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
     List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
-    List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
-    List<PsFeature> psFeatureList = productData.psFeature;
+    // List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
+    // List<PsFeature> psFeatureList = productData.psFeature;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
@@ -922,43 +916,20 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       }
     }
 
-    return features.length > 0
+    print(features.length);
+    print(features);
+
+    return features.isEmpty
         ? Container(
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('idFeatureValue'),
-                    Text('name'),
-                    Text('position'),
-                  ],
-                ),
-                ListView.builder(
-                  itemCount: psFeatureProduct.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('${features[index].idFeatureValue}'),
-                          Text('${features[index].name}'),
-                          Text('${features[index].position}'),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ],
+            child: Center(
+              child: Text('No hay Caracteristicas'),
             ),
           )
-        : Container(
-            child: Center(
-              child: Text(
-                'No existen caracteristicas para este producto',
-                overflow: TextOverflow.clip,
-              ),
-            ),
+        : ListView.builder(
+            itemCount: features.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Text(features[index].name);
+            },
           );
 
     // productData.
