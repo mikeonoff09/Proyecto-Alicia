@@ -22,7 +22,7 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             children: [
               mainSearch(),
               searchSection(),
-              featuresLists(),
+              Expanded(child: featuresLists()),
             ],
           ),
         ),
