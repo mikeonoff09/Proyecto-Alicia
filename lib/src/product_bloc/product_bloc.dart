@@ -24,9 +24,24 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
           _deleteFeature(event.idFeatureToDelete);
       yield state.copyWith(featureProductlist: newFeatureList);
     }
+    if(event is OnAddFeature){
+      List<PsFeatureProduct> newFeatureList =
+          _addFeature(event.idFeatureValueToAdd);
+
+
+    }
   }
 
   List<PsFeatureProduct> _deleteFeature(int idFeatureToDelete) {
+    List<PsFeatureProduct> newFeatureList = [];
+    for (var item in this.state.psFeatureProductList) {
+      if (item.idfeaturevalue != idFeatureToDelete) {
+        newFeatureList.add(item);
+      }
+    }
+    return newFeatureList;
+  }
+  List<PsFeatureProduct> _addFeature(int idFeatureToDelete) {
     List<PsFeatureProduct> newFeatureList = [];
     for (var item in this.state.psFeatureProductList) {
       if (item.idfeaturevalue != idFeatureToDelete) {

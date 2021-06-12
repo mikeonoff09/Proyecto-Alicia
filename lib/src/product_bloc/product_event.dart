@@ -14,3 +14,8 @@ class OnDeleteFeature extends ProductEvent {
 
   OnDeleteFeature({@required this.idFeatureToDelete});
 }
+class OnAddFeature extends ProductEvent {
+  final int idFeatureValueToAdd;
+
+  OnAddFeature({@required this.idFeatureValueToAdd});
+}

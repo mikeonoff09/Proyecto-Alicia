@@ -654,11 +654,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     child: featuresWidget(context),
                   ),
                 ),
+                // =======================================================================
                 IconButton(
                   onPressed: () {
                     showDialog(
                         context: context,
-                        builder: (context) => FeatureSelectorPage());
+                        builder: (context) =>
+                            FeatureSelectorPage(productData: productData));
                   },
                   icon: Icon(Icons.edit),
                 )
@@ -868,7 +870,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   ),
                 ),
                 key: Key(features[index].idFeatureValue.toString()),
-                background: Container(color: Colors.red,),
+                background: Container(
+                  color: Colors.red,
+                ),
               );
             },
           );
