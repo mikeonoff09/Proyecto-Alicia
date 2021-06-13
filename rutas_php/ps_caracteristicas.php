@@ -509,18 +509,27 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 	try {
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
-		
-		/*
-		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature_value where id_feature_value in ( :varios_id )';		
-		$statement = $db->prepare($sql);
-		$statement->bindParam(":varios_id", $varios_id, PDO::PARAM_STR);
-		$statement->execute();
-		$data = $statement->fetch();
-		$contador = $data['contador'];
 
-		if ($contador != count($id_feature_values)) {
-			return sendResponse(404, null, '{"error":"No existe todos los id_feature_value: "} para insertar:'. $para_insert.' Para comprobar:'.$varios_id . " .Contador:".$contador ." Cuenta:". count($id_feature_values), $response);
-		}  */
+		$sql = 'SELECT id_feature_value FROM a_tabla_feature_value where id_feature_value in ( ';		
+
+		$inQuery =array();
+		$inData =array();
+		$insertQuery = array();
+		$insertData = array();
+		foreach($id_feature_values as $valor){
+			$inQuery[] = '?';
+			$insertQuery[] = '(?, ?)';
+			$insertData[] = $id_product;
+			$insertData[] = $valor;
+			$inData[]= $valor;
+		}
+		$sql .= implode(', ', $inQuery) .")";
+		$statement = $db->prepare($sql);
+		$statement->execute($inData);
+
+		if ($statement->rowCount() != count($id_feature_values)) {
+			return sendResponse(404, null, '{"error":"No existe todos los id_feature_value(envias:'.count($id_feature_values).' y existen: '.$statement->rowCount().'"}'  , $response);
+		}
 
 		//al eliminar un feature hay que corregir la posicion del resto de features
 		$sql = 'select id_product from a_tabla_product where id_product = :id_product';
@@ -537,14 +546,6 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 		$statement->execute();
 
 		$sql = "insert into a_tabla_feature_product(id_product,id_feature_value) values ";
-
-		$insertQuery = array();
-		$insertData = array();
-		foreach($id_feature_values as $valor){
-			$insertQuery[] = '(?, ?)';
-			$insertData[] = $id_product;
-			$insertData[] = $valor;
-		}
 		$sql .= implode(', ', $insertQuery);
 		$statement = $db->prepare($sql);
 		$statement->execute($insertData);
