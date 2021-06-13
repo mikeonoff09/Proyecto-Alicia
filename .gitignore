@@ -51,3 +51,9 @@ logs/flutter_run.txt
 logs/observatory.txt
 *.txt
 logs/analyzer.txt
+*.txt
+logs/observatory.txt
+logs/flutter_run.txt
+logs/flutter_daemon.txt
+logs/extension.txt
+logs/analyzer.txt
