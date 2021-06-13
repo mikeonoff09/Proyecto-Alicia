@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('Gestor Alicia');
-    setWindowMinSize(const Size(1054, 800));
+    setWindowMinSize(const Size(1200, 800));
     setWindowMaxSize(Size.infinite);
   }
   runApp(MyApp());
