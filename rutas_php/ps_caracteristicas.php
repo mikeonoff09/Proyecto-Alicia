@@ -151,7 +151,7 @@ $app->post('/ps_feature/add', function (Request $request, Response $response) {
 
 		if ($statement->rowCount() > 0) {
 			$id_nuevo = $db->lastInsertId();
-			return sendResponse(201, null, '{"id_feature": $id_nuevo, "position": $position}', $response);
+			return sendResponse(201, null, '{"id_feature": '.$id_nuevo.', "position": '.$position.'}', $response);
 		}else{
 			return sendResponse(404, null, '{"id_feature":"Error añadiendo feature"}', $response);
 		}
@@ -212,7 +212,7 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, '{"id_feature": $id_feature,"actualizar":"ok"}', $response);
+            return sendResponse(200, null, '{"id_feature": '.$id_feature.',"actualizar":"ok"}', $response);
         } else {
             return sendResponse(404, null, '{"error":"No se pudo actualizar"}', $response);
         }
@@ -241,7 +241,7 @@ $app->post('/ps_feature/delete', function (Request $request, Response $response)
 
 	if(borrar_feature($id_feature,$data["position"],$db)){
 		$db = null;
-		return sendResponse(200, null,  '{"id_feature": $id_feature,  "borrar":"ok"}', $response);
+		return sendResponse(200, null,  '{"id_feature": '.$id_feature.',  "borrar":"ok"}', $response);
     }else{
         return sendResponse(500, "", $e->getMessage(), $response);
     }
@@ -289,7 +289,7 @@ $app->post('/ps_feature_value/add', function (Request $request, Response $respon
 
 		if ($statement->rowCount() > 0) {
 			$id_nuevo = $db->lastInsertId();
-			return sendResponse(201, null, '{"id_feature_value": $id_nuevo, "position": $position}', $response);
+			return sendResponse(201, null, '{"id_feature_value": '.$id_nuevo.', "position": '.$position.'}', $response);
 		}else{
 			return sendResponse(404, null, '{"error":"Error añadiendo feature_value"}', $response);
 		}
@@ -351,7 +351,7 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, '{"id_feature_value": $id_feature_value, "actualizar": "ok"}', $response);
+            return sendResponse(200, null, '{"id_feature_value": '.$id_feature_value.', "actualizar": "ok"}', $response);
         } else {
             return sendResponse(404, null, "No se pudo actualizar", $response);
         }
@@ -380,7 +380,7 @@ $app->post('/ps_feature_value/delete', function (Request $request, Response $res
 	$position = $data['position'];
 
 	if (borrar_feature_value($id_feature_value,$position,$db)){
-		return sendResponse(200, null, '{"id_feature_value": $id_feature, "borrar": "ok"}', $response);
+		return sendResponse(200, null, '{"id_feature_value": '.$id_feature.', "borrar": "ok"}', $response);
 	}else{
 		return sendResponse(500, "", $e->getMessage(), $response);
 	}
@@ -418,7 +418,7 @@ $app->post('/ps_feature_super/add', function (Request $request, Response $respon
 
 		if ($statement->rowCount() > 0) {
 			$id_nuevo = $db->lastInsertId();
-			return sendResponse(201, null, '{"id_feature_super": $id_nuevo,  "position": $position}', $response);
+			return sendResponse(201, null, '{"id_feature_super": '.$id_nuevo.',  "position": '.$position.'}', $response);
 		}else{
 			return sendResponse(404, null, "Error añadiendo feature_super", $response);
 		}
@@ -478,7 +478,7 @@ $app->post('/ps_feature_super/update', function (Request $request, Response $res
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, null, '{"id_feature_super": $id_feature, "actualizar":"ok"}', $response);
+            return sendResponse(200, null, '{"id_feature_super": '.$id_feature.', "actualizar":"ok"}', $response);
         } else {
             return sendResponse(404, null, "No se pudo actualizar", $response);
         }
@@ -498,22 +498,20 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 	$id_feature_values = $request->getParam("id_feature_values");
 	//$array = json_decode($id_feature_values);
 	$varios_id="";
-	$para_insert = "";
 	foreach($id_feature_values as $nombre => $valor){
 		if(!is_numeric($valor)){
 			return sendResponse(404, null, '{"error":"id_feature_value '.$id_feature_values.' no es numero"}', $response);
 		}
 		$varios_id .= $valor.",";
-		$para_insert .="($id_product,$valor),";
 	}
 	$varios_id = substr($varios_id,0,-1);
-	$para_insert = substr($para_insert,0,-1);
 
 	try {
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
+		
+		/*
 		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature_value where id_feature_value in ( :varios_id )';		
-
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":varios_id", $varios_id, PDO::PARAM_STR);
 		$statement->execute();
@@ -522,15 +520,15 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 
 		if ($contador != count($id_feature_values)) {
 			return sendResponse(404, null, '{"error":"No existe todos los id_feature_value: "} para insertar:'. $para_insert.' Para comprobar:'.$varios_id . " .Contador:".$contador ." Cuenta:". count($id_feature_values), $response);
-		}
+		}  */
 
 		//al eliminar un feature hay que corregir la posicion del resto de features
-		$sql = 'select id_product from  a_tabla_product where id_product = :id_product';
+		$sql = 'select id_product from a_tabla_product where id_product = :id_product';
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 		if ($statement->rowCount()==0){
-			return sendResponse(404, null, '{"error":"No existe el producto con id_product= $id_product"}', $response);			
+			return sendResponse(404, null, '{"error":"No existe el producto con id_product= '.$id_product .'"}', $response);			
 		}
 
 		$sql = 'DELETE a_tabla_feature_product.* FROM a_tabla_feature_product WHERE id_product=:id_product';
@@ -538,13 +536,21 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
 		$statement->execute();
 
-		$sql = "insert into a_tabla_feature_product(id_product,id_feature_value) values :para_insert";
+		$sql = "insert into a_tabla_feature_product(id_product,id_feature_value) values ";
+
+		$insertQuery = array();
+		$insertData = array();
+		foreach($id_feature_values as $valor){
+			$insertQuery[] = '(?, ?)';
+			$insertData[] = $id_product;
+			$insertData[] = $valor;
+		}
+		$sql .= implode(', ', $insertQuery);
 		$statement = $db->prepare($sql);
-		$statement->bindParam(":para_insert", $para_insert, PDO::PARAM_INT);
-		$statement->execute();
+		$statement->execute($insertData);
 
         $db = null;
-		return sendResponse(200, null, '{"feature_product": $id_product, "add":"ok"}', $response);
+		return sendResponse(200, null, '{"feature_product":'. $id_product.', "add":"ok"}', $response);
     } catch (PDOException $e) {
         return sendResponse(500, "", $e->getMessage(), $response);
     }
@@ -589,7 +595,7 @@ $app->post('/ps_feature_super/delete', function (Request $request, Response $res
 		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
 		$statement->execute();
         $db = null;
-		return sendResponse(200, null, '{"id_feature_super": $id_feature_super, "borrar":"ok"}', $response);
+		return sendResponse(200, null, '{"id_feature_super": '.$id_feature_super.', "borrar":"ok"}', $response);
     } catch (PDOException $e) {
         return sendResponse(500, "", $e->getMessage(), $response);
     }
