@@ -114,13 +114,7 @@ $app->post('/ps_attribute_todas/get', function (Request $request, Response $resp
 });
 
 $app->post('/ps_attribute/add', function (Request $request, Response $response) {
-    $name = trim($request->getParam("name"));
-
-	if(strlen($name)< 1){   //minimo debe tener 1 letra
-		return sendResponse(404, null, '{"error":"No has enviado el nombre"}', $response);
-	}
-	$id_attribute_group =$request->getParam("id_attribute_group");
-	if (!is_numeric($id_attribute_group)){
+    if (!is_numeric($id_attribute_group)){
 		return sendResponse(404, null, '{"error":"'. $id_attribute_group .' no es numero"}', $response);
 	}
 	$color =$request->getParam("color");
@@ -128,7 +122,7 @@ $app->post('/ps_attribute/add', function (Request $request, Response $response) 
 		return sendResponse(404, null, '{"error":"color no es numero hexadecimal"}', $response);
 	}
 
-	$sql = 'SELECT id_attribute_group FROM a_tabla_attribute_group where id_attribute_group = :id_attribute_group';
+	$sql = 'SELECT id_attribute_group,is_color_group FROM a_tabla_attribute_group where id_attribute_group = :id_attribute_group';
 	$dbInstance = new Db();
 	$db = $dbInstance->connectDB();
 	$statement = $db->prepare($sql);
@@ -139,6 +133,19 @@ $app->post('/ps_attribute/add', function (Request $request, Response $response) 
 	}
 
     try {
+		$color ="";  //asigno un valor predeterminado
+		$data = $statement->fetch();
+		if($data['is_color_group']==1){
+			$color =$request->getParam("color");
+			if (!ctype_xdigit($color) && $color!=""){
+				return sendResponse(404, null, '{"error":"color no es numero hexadecimal"}', $response);
+			}else{
+				$textura = $request->getParam("textura");
+				//file_put_contents($id_product.'_recorte_flutter.jpg', base64_decode($textura));
+				$imagen_attribute = imagecreatefromstring($textura);
+				echo hash("md5",$textura)."<br>";
+			}
+		}
 		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_attribute where id_attribute_group= :id_attribute_group'; //al añadir siempre es el último en "position"
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_attribute_group", $id_attribute_group, PDO::PARAM_INT);

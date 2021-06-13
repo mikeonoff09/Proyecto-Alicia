@@ -140,7 +140,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget dataSection(Size size, BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 10),
-      width: size.width * 0.35,
+      width: size.width * 0.46,
       child: Scrollbar(
         controller: _controller2,
         child: ListView(
@@ -504,7 +504,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   SizedBox imagesSection(Size size, BuildContext context) {
     return SizedBox(
       height: size.height,
-      width: size.width * 0.55, // 55% de la pantalla para imagenes
+      width: size.width * 0.52, // 55% de la pantalla para imagenes
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -829,10 +829,49 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
 
+  PsFeatureSuper getfeatureSuperbyID(int id) {
+    final _resultado = productData.psFeatureSuper.firstWhere(
+      (psFeatureSuper) => psFeatureSuper.idFeatureSuper == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return _resultado;
+    } else {
+      return _resultado;
+    }
+  }
+
+  PsFeature getfeaturebyID(int id) {
+    final _resultado = productData.psFeature.firstWhere(
+      (psFeature) => psFeature.idFeature == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return _resultado;
+    } else {
+      return _resultado;
+    }
+  }
+
+  PsFeatureValue getfeatureValuebyID(int id) {
+    final _resultado = productData.psFeatureValue.firstWhere(
+      (psFeatureValue) => psFeatureValue.idFeatureValue == id,
+      orElse: () => null,
+    );
+
+    if (_resultado == null) {
+      return _resultado;
+    } else {
+      return _resultado;
+    }
+  }
+
   Widget featuresWidget(BuildContext context) {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
     List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
-    // List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
+    List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
     List<PsFeature> psFeatureList = productData.psFeature;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
@@ -842,6 +881,41 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     List<PsFeatureValue> features = [];
 
     for (var featureProduct in psFeatureProduct) {
+      PsFeatureValue unfeaturevalue =
+          getfeatureValuebyID(featureProduct.idfeaturevalue);
+      if (unfeaturevalue == null) {
+        print("Value no encontrado");
+      } else {
+        PsFeature unfeature = getfeaturebyID(unfeaturevalue.idFeature);
+        if (unfeature == null) {
+          print("Feature no encontrado");
+        } else {
+          PsFeatureSuper unfeaturesuper =
+              getfeatureSuperbyID(unfeature.idFeatureSuper);
+          if (unfeaturesuper == null) {
+            print("Super no encontrado");
+          } else {
+            print("Super  id:" +
+                unfeaturesuper.idFeatureSuper.toString() +
+                " orden:" +
+                unfeaturesuper.position.toString() +
+                " valor:" +
+                unfeaturesuper.name +
+                " Feature  id:" +
+                unfeature.idFeature.toString() +
+                " orden:" +
+                unfeature.position.toString() +
+                " name:" +
+                unfeature.name +
+                " Value  id:" +
+                unfeaturevalue.idFeatureValue.toString() +
+                " orden:" +
+                unfeaturevalue.position.toString() +
+                " name:" +
+                unfeaturevalue.name);
+          }
+        }
+      }
       for (var featureValue in psFeatureValueList) {
         if (featureProduct.idfeaturevalue == featureValue.idFeatureValue) {
           features.add(featureValue);

@@ -9,7 +9,7 @@ import 'package:window_size/window_size.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('App title');
+    setWindowTitle('Gestor Alicia');
     setWindowMinSize(const Size(1054, 800));
     setWindowMaxSize(Size.infinite);
   }
