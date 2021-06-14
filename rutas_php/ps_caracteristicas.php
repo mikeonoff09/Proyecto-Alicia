@@ -108,6 +108,114 @@ $app->post('/ps_feature_todas/get', function (Request $request, Response $respon
     }
 });*/
 
+$app->post('/ps_feature_value/pre_delete', function (Request $request, Response $response) {
+	$id_feature_value = $request->getParam("id_feature_value");
+    if (!is_numeric($id_feature_value)){
+		return sendResponse(404, '{"error":"id_feature_value no es numero"}',null, $response);
+	}
+	$sql = 'SELECT id_feature_value,name FROM a_tabla_feature_value where id_feature_value = :id_feature_value';
+	$dbInstance = new Db();
+	$db = $dbInstance->connectDB();
+	$statement = $db->prepare($sql);
+	$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
+	$statement->execute();
+	if ($statement->rowCount() == 0) {
+		return sendResponse(404, '{"error":"No existe el id_feature_value en la tabla a_tabla_feature_value"}',null, $response);
+	}
+
+    try {
+		$datosproducto = $statement->fetch();
+	
+		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature_product where id_feature_value= :id_feature_value';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
+		$statement->execute();
+		$data = $statement->fetch();
+		$db = null;
+		return sendResponse(201, 'La Característica Valor:'. $datosproducto["name"]. ' está en '.$data["contador"]. ' productos',$data["contador"], $response);
+    } catch (PDOException $e) {
+        return sendResponse(500, $e->getMessage(), null,$response);
+    }
+});
+
+$app->post('/ps_feature/pre_delete', function (Request $request, Response $response) {
+	$id_feature = $request->getParam("id_feature");
+    if (!is_numeric($id_feature)){
+		return sendResponse(404, '{"error":"id_feature no es numero"}',null, $response);
+	}
+	$sql = 'SELECT id_feature,name FROM a_tabla_feature where id_feature = :id_feature';
+	$dbInstance = new Db();
+	$db = $dbInstance->connectDB();
+	$statement = $db->prepare($sql);
+	$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+	$statement->execute();
+	if ($statement->rowCount() == 0) {
+		return sendResponse(404, '{"error":"No existe el id_feature en la tabla a_tabla_feature"}',null, $response);
+	}
+
+    try {
+		$datosproducto = $statement->fetch();
+	
+		$sql = 'SELECT COUNT(*) as contador  FROM (a_tabla_feature INNER JOIN a_tabla_feature_value ON a_tabla_feature.id_feature = a_tabla_feature_value.id_feature) 
+		INNER JOIN a_tabla_feature_product ON a_tabla_feature_value.id_feature_value = a_tabla_feature_product.id_feature_value WHERE a_tabla_feature.id_feature=:id_feature';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+		$statement->execute();
+		$registros_feature_product = $statement->fetch();
+
+		$sql = 'SELECT COUNT(*) as contador  FROM (a_tabla_feature INNER JOIN a_tabla_feature_value ON a_tabla_feature.id_feature = a_tabla_feature_value.id_feature) 
+		 WHERE a_tabla_feature.id_feature=:id_feature';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+		$statement->execute();
+		$registros_feature = $statement->fetch();
+		$db = null;
+		return sendResponse(201, $registros_feature.["contador"] . ' Caracteristicas Valor pertenecen a la Característica:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. 
+		,$data["contador"], $response);
+    } catch (PDOException $e) {
+        return sendResponse(500, $e->getMessage(), null,$response);
+    }
+});
+
+$app->post('/ps_feature_super/pre_delete', function (Request $request, Response $response) {
+	$id_feature_super = $request->getParam("id_feature_super");
+    if (!is_numeric($id_feature)){
+		return sendResponse(404, '{"error":"id_feature no es numero"}',null, $response);
+	}
+	$sql = 'SELECT id_feature_super,name FROM a_tabla_feature_super where id_feature_super = :id_feature_super';
+	$dbInstance = new Db();
+	$db = $dbInstance->connectDB();
+	$statement = $db->prepare($sql);
+	$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+	$statement->execute();
+	if ($statement->rowCount() == 0) {
+		return sendResponse(404, '{"error":"No existe el id_feature en la tabla a_tabla_feature"}',null, $response);
+	}
+
+    try {
+		$datosproducto = $statement->fetch();
+	
+		$sql = 'SELECT COUNT(*) as contador  FROM (a_tabla_feature INNER JOIN a_tabla_feature_value ON a_tabla_feature.id_feature = a_tabla_feature_value.id_feature) 
+		INNER JOIN a_tabla_feature_product ON a_tabla_feature_value.id_feature_value = a_tabla_feature_product.id_feature_value INNER JOIN a_tabla_feature_super ON a_tabla_feature.id_feature_super = a_tabla_feature_super.id_feature_super WHERE a_tabla_feature_super.id_feature_super=:id_feature_super';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+		$statement->execute();
+		$registros_feature_product = $statement->fetch();
+
+		$sql = 'SELECT COUNT(*) as contador  FROM (a_tabla_feature INNER JOIN a_tabla_feature_value ON a_tabla_feature.id_feature = a_tabla_feature_value.id_feature) 
+		  INNER JOIN a_tabla_feature_super ON a_tabla_feature.id_feature_super = a_tabla_feature_super.id_feature_super WHERE a_tabla_feature_super.id_feature_super=:id_feature_super';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+		$statement->execute();
+		$registros_feature = $statement->fetch();
+		$db = null;
+		return sendResponse(201, $registros_feature.["contador"] . ' Caracteristicas Valor pertenecen a la Característica Super:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. 
+		,$data["contador"], $response);
+    } catch (PDOException $e) {
+        return sendResponse(500, $e->getMessage(), null,$response);
+    }
+});
+
 $app->post('/ps_feature/add', function (Request $request, Response $response) {
     $name = trim($request->getParam("name"));
 
