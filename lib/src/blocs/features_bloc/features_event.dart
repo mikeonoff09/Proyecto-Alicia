@@ -17,10 +17,10 @@ class OnListsUpdate extends FeaturesEvent {
 
 // Update
 
-class OnFeaturesListUpdate extends FeaturesEvent {
+class OnFeatureUpdate extends FeaturesEvent {
   final PsFeature psFeatureUpdated;
 
-  OnFeaturesListUpdate({@required this.psFeatureUpdated});
+  OnFeatureUpdate({@required this.psFeatureUpdated});
 }
 
 class OnFeatureSuperUpdate extends FeaturesEvent {
@@ -33,25 +33,6 @@ class OnFeatureValueUpdate extends FeaturesEvent {
   final PsFeatureSuper psFeatureValueUpdated;
 
   OnFeatureValueUpdate({@required this.psFeatureValueUpdated});
-}
-
-// Search
-class OnFeatureSearch extends FeaturesEvent {
-  String textToSearch;
-
-  OnFeatureSearch({@required this.textToSearch});
-}
-
-class OnFeatureSuperSearch extends FeaturesEvent {
-  String textToSearch;
-
-  OnFeatureSuperSearch({@required this.textToSearch});
-}
-
-class OnFeatureValueSearch extends FeaturesEvent {
-  String textToSearch;
-
-  OnFeatureValueSearch({@required this.textToSearch});
 }
 
 // Delete
