@@ -7,6 +7,7 @@ import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/table_filter_dialog.dart';
 import 'package:alicia/src/ui/pages/feature_selector_page.dart';
+import 'package:alicia/src/ui/pages/photo_editor_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_products_page.dart';
@@ -801,21 +802,17 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   void openImage(PsImage imageData, int index, BuildContext context) {
-    // final route = MaterialPageRoute(
-    //   builder: (context) => PhotoEditorPage(
-    //     index,
-    //     images: images,
-    //     product: widget.product,
-    //   ),
-    // );
-    // Navigator.push(
-    //   context,
-    //   route,
-    // ).then((value) => Future.microtask(() async {
-    //       // productDetails.imagenes =
-    //       //     await MysqlSeverDataSource.instance.getImages(widget.product.id);
-    //       setState(() {});
-    //     }));
+    final route = MaterialPageRoute(
+      builder: (context) => PhotoEditorPage(
+        index,
+        images: productData.psImage,
+        product: productData.psProduct[0].idProduct,
+      ),
+    );
+    Navigator.push(
+      context,
+      route,
+    );
   }
 
   void openHtmlEditor(TextEditingController controller, BuildContext context) {
