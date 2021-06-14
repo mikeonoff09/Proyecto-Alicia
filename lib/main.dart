@@ -1,7 +1,8 @@
-import 'package:alicia/src/product_bloc/product_bloc.dart';
 import 'package:alicia/src/ui/pages/home_products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'src/blocs/features_bloc/features_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ProductBloc(),
+      create: (_) => FeaturesBloc(),
       child: MaterialApp(
         title: 'Alicia - Gestor Contenido',
         debugShowCheckedModeBanner: false,

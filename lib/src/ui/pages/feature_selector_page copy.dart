@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:alicia/src/blocs/product_bloc/product_bloc.dart';
 import 'package:alicia/src/models/product_details_model.dart';
-import 'package:alicia/src/product_bloc/product_bloc.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

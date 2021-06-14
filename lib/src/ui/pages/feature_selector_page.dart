@@ -1,11 +1,9 @@
 import 'package:alicia/src/datasources/http_handler.dart';
 import 'package:alicia/src/models/product_details_model.dart';
-import 'package:alicia/src/product_bloc/product_bloc.dart';
 import 'package:alicia/src/ui/components/error_dialog.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/show_loading_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeatureSelectorPage extends StatefulWidget {
   final ProductDetailsMode productData;
@@ -33,7 +31,6 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
 
   @override
   Widget build(BuildContext context) {
-    final featureProductBloc = BlocProvider.of<ProductBloc>(context);
     return AlertDialog(
       content: Container(
         height: MediaQuery.of(context).size.height * 0.8,
@@ -68,17 +65,31 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             child: ListView.builder(
               itemCount: psFeatureSuperList.length,
               itemBuilder: (BuildContext context, int index) {
-                return RadioListTile(
-                    title: Text(psFeatureSuperList[index].name),
-                    value: psFeatureSuperList[index],
-                    groupValue: selectedSuper,
-                    secondary: IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () =>
-                          _editPsFeatureSuper(psFeatureSuperList[index]),
-                    ),
-                    onChanged: (value) =>
-                        _newFeatureSuperSelected(psFeatureSuperList[index]));
+                return Dismissible(
+                  key: Key(psFeatureSuperList[index].idFeatureSuper.toString()),
+                  onDismissed: (direction) {
+                    showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        content: Container(
+                          child: Text("texto"),
+                        ),
+                      ),
+                    );
+                  },
+                  child: RadioListTile(
+                      title: Text(psFeatureSuperList[index].name),
+                      value: psFeatureSuperList[index],
+                      groupValue: selectedSuper,
+                      secondary: IconButton(
+                        icon: Icon(Icons.edit),
+                        onPressed: () =>
+                            _editPsFeatureSuper(psFeatureSuperList[index]),
+                      ),
+                      onChanged: (value) {
+                        _newFeatureSuperSelected(psFeatureSuperList[index]);
+                      }),
+                );
               },
             ),
           ),
@@ -87,18 +98,21 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             child: ListView.builder(
               itemCount: psFeatureList.length,
               itemBuilder: (BuildContext context, int index) {
-                return RadioListTile(
-                    title: Text(psFeatureList[index].name),
-                    value: psFeatureList[index],
-                    groupValue: selectedFeature,
-                    secondary: IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () {
-                        // TODO: Agregar edicion
-                      },
-                    ),
-                    onChanged: (_) =>
-                        _newFeatureSelected(psFeatureList[index]));
+                return Dismissible(
+                  key: Key(psFeatureList[index].idFeature.toString()),
+                  child: RadioListTile(
+                      title: Text(psFeatureList[index].name),
+                      value: psFeatureList[index],
+                      groupValue: selectedFeature,
+                      secondary: IconButton(
+                        icon: Icon(Icons.edit),
+                        onPressed: () {
+                          // TODO: Agregar edicion
+                        },
+                      ),
+                      onChanged: (_) =>
+                          _newFeatureSelected(psFeatureList[index])),
+                );
               },
             ),
           ),
@@ -140,10 +154,19 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
         }
       }
     }
+    _cleanControllers();
     setState(() {});
   }
 
+  _cleanControllers() {
+    searchController.clear();
+    featureSuperController.clear();
+    featureController.clear();
+    featureValueController.clear();
+  }
+
   _newFeatureSelected(PsFeature feature) {
+    
     print("New Feature Clicked ");
     psFeatureValueList = [];
     selectedFeature = feature;
@@ -154,6 +177,7 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
         psFeatureValueList.add(featureValue);
       }
     }
+    _cleanControllers();
     setState(() {});
   }
 
