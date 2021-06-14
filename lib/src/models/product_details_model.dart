@@ -98,6 +98,12 @@ class PsFeatureSuper extends Equatable {
   int position;
   String name;
 
+  PsFeatureSuper copyWith({int idFeatureSuper, int position, String name}) =>
+      new PsFeatureSuper(
+          name: name ?? this.name,
+          position: position ?? this.position,
+          idFeatureSuper: idFeatureSuper ?? this.idFeatureSuper);
+
   factory PsFeatureSuper.fromMap(Map<String, dynamic> json) {
     return PsFeatureSuper(
       idFeatureSuper: json["id_feature_super"],

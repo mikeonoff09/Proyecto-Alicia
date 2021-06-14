@@ -72,6 +72,11 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     title: Text(psFeatureSuperList[index].name),
                     value: psFeatureSuperList[index],
                     groupValue: selectedSuper,
+                    secondary: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () =>
+                          _editPsFeatureSuper(psFeatureSuperList[index]),
+                    ),
                     onChanged: (value) =>
                         _newFeatureSuperSelected(psFeatureSuperList[index]));
               },
@@ -86,6 +91,12 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     title: Text(psFeatureList[index].name),
                     value: psFeatureList[index],
                     groupValue: selectedFeature,
+                    secondary: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () {
+                        // TODO: Agregar edicion
+                      },
+                    ),
                     onChanged: (_) =>
                         _newFeatureSelected(psFeatureList[index]));
               },
@@ -250,6 +261,60 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     );
   }
 
+  void _editPsFeatureSuper(PsFeatureSuper psFeatureSuper) {
+    TextEditingController textController = new TextEditingController();
+    textController.value = TextEditingValue(text: psFeatureSuper.name);
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Container(
+            height: 100,
+            width: 200,
+            child: Column(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    controller: textController,
+                    hintText: "Nuevo Nombre",
+                    labelText: "Nuevo Nombre",
+                  ),
+                ),
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.stretch,
+                  // mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            //TODO: solicitud de UPDATE
+                            HttpHandler.instance.updateSuperFeature(
+                                psFeatureSuper.copyWith(
+                                    name: textController.value.text));
+                          },
+                          child: Text("Aceptar")),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("Cancelar"),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // BUSQUEDAS
+
   _searchFeatureSuper(String value) {
     psFeatureSuperList = [];
     for (var featureSuper in widget.productData.psFeatureSuper) {
@@ -279,6 +344,8 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     }
     setState(() {});
   }
+
+  // GUARDAR FEATURES
 
   Future _saveSuperFeature() async {
     final superValue = PsFeatureSuper(
