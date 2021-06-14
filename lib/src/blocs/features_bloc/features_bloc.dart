@@ -15,7 +15,8 @@ class FeaturesBloc extends Bloc<FeaturesEvent, FeaturesState> {
   Stream<FeaturesState> mapEventToState(
     FeaturesEvent event,
   ) async* {
-    if (event is OnListsUpdate) { // Inicializa los estados
+    if (event is OnListsUpdate) {
+      // Inicializa los estados
       yield state.copyWith(
           psFeatureList: event.psFeatureList,
           psFeatureSuperList: event.psFeatureSuperList,
@@ -37,6 +38,54 @@ class FeaturesBloc extends Bloc<FeaturesEvent, FeaturesState> {
       if (newList.remove(event.psFeatureSuperDelete)) {
         yield state.copyWith(psFeatureSuperList: newList);
       }
+    } else if (event is OnFeatureSearch) {
+      yield state.copyWith(
+          psFeatureListSearch: _searchFeature(event.textToSearch));
+    } else if (event is OnFeatureValueSearch) {
+      yield state.copyWith(
+          psFeatureValueListSearch: _searchFeatureValue(event.textToSearch));
+    }else if (event is OnFeatureValueSearch) {
+      yield state.copyWith(
+          psFeatureValueListSearch: _searchFeatureValue(event.textToSearch));
     }
+  }
+
+  List<PsFeature> _searchFeature(String value) {
+    if (value.isNotEmpty) {
+      List<PsFeature> list = [];
+      for (var feature in state.psFeatureList) {
+        if (feature.name.toLowerCase().contains(value.toLowerCase())) {
+          list.add(feature);
+        }
+      }
+      return list;
+    } else
+      return state.psFeatureList;
+  }
+
+  List<PsFeatureSuper> _searchFeatureSuper(String value) {
+    if (value.isNotEmpty) {
+      List<PsFeatureSuper> list = [];
+      for (var feature in state.psFeatureSuperList) {
+        if (feature.name.toLowerCase().contains(value.toLowerCase())) {
+          list.add(feature);
+        }
+      }
+      return list;
+    } else
+      return state.psFeatureSuperList;
+  }
+
+  List<PsFeatureValue> _searchFeatureValue(String value) {
+    if (value.isNotEmpty) {
+      List<PsFeatureValue> list = [];
+      for (var feature in state.psFeatureValueList) {
+        if (feature.name.toLowerCase().contains(value.toLowerCase())) {
+          list.add(feature);
+        }
+      }
+      return list;
+    } else
+      return state.psFeatureValueList;
   }
 }

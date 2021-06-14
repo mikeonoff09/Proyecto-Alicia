@@ -50,29 +50,34 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     );
   }
 
-  Container featuresLists() {
-    psFeatureValueList =
-        psFeatureValueList ?? widget.productData.psFeatureValue;
-    psFeatureSuperList =
-        psFeatureSuperList ?? widget.productData.psFeatureSuper;
-    psFeatureList = psFeatureList ?? widget.productData.psFeature;
-    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
+  Widget featuresLists() {
+    // psFeatureValueList =
+    //     psFeatureValueList ?? widget.productData.psFeatureValue;
+    // psFeatureSuperList =
+    //     psFeatureSuperList ?? widget.productData.psFeatureSuper;
+    // psFeatureList = psFeatureList ?? widget.productData.psFeature;
+    //final featureProductBloc = BlocProvider.of<ProductBloc>(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          StreamBuilder<Object>(
-            stream: null,
-            builder: (context, snapshot) {
-              return Expanded(
-                flex: 1,
-                child: ListView.builder(
-                  itemCount: psFeatureSuperList.length,
+          Expanded(
+            flex: 1,
+            child: BlocBuilder<FeaturesBloc, FeaturesState>(
+              builder: (context, state) {
+                if (state.psFeatureSuperListSearch == null) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                return ListView.builder(
+                  itemCount: state.psFeatureSuperListSearch.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Dismissible(
-                      key: Key(
-                          psFeatureSuperList[index].idFeatureSuper.toString()),
+                      key: Key(state
+                          .psFeatureSuperListSearch[index].idFeatureSuper
+                          .toString()),
                       onDismissed: (direction) {
                         showDialog(
                           context: context,
@@ -84,64 +89,80 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                         );
                       },
                       child: RadioListTile(
-                        title: Text(psFeatureSuperList[index].name),
-                        value: psFeatureSuperList[index],
+                        title: Text(state.psFeatureSuperListSearch[index].name),
+                        value: state.psFeatureSuperListSearch[index],
                         groupValue: selectedSuper,
                         secondary: IconButton(
                           icon: Icon(Icons.edit),
-                          onPressed: () =>
-                              _editPsFeatureSuper(psFeatureSuperList[index]),
+                          onPressed: () => _editPsFeatureSuper(
+                              state.psFeatureSuperListSearch[index]),
                         ),
                         onChanged: (value) {
-                          _newFeatureSuperSelected(psFeatureSuperList[index]);
+                          _newFeatureSuperSelected(
+                              state.psFeatureSuperListSearch[index]);
                         },
                       ),
                     );
                   },
-                ),
-              );
-            },
-          ),
-          Expanded(
-            flex: 1,
-            child: ListView.builder(
-              itemCount: psFeatureList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Dismissible(
-                  key: Key(psFeatureList[index].idFeature.toString()),
-                  child: RadioListTile(
-                      title: Text(psFeatureList[index].name),
-                      value: psFeatureList[index],
-                      groupValue: selectedFeature,
-                      secondary: IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () =>
-                            // TODO: Agregar edicion
-                            _editPsFeature(psFeatureList[index]),
-                      ),
-                      onChanged: (_) =>
-                          _newFeatureSelected(psFeatureList[index])),
                 );
               },
             ),
           ),
           Expanded(
             flex: 1,
-            child: ListView.builder(
-              itemCount: psFeatureValueList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Dismissible(
-                  key: Key(psFeatureValueList[index].idFeatureValue.toString()),
-                  child: RadioListTile(
-                    title: Text(psFeatureValueList[index].name),
-                    value: psFeatureValueList[index],
-                    secondary: IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () =>
-                          // TODO: Agregar edicion
-                          _editPsFeatureValue(psFeatureValueList[index]),
-                    ),
-                  ),
+            child: BlocBuilder<FeaturesBloc, FeaturesState>(
+              builder: (context, state) {
+                if (state.psFeatureSuperList == null) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                psFeatureList = state.psFeatureList;
+                return ListView.builder(
+                  itemCount: psFeatureList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Dismissible(
+                      key: Key(psFeatureList[index].idFeature.toString()),
+                      child: RadioListTile(
+                          title: Text(psFeatureList[index].name),
+                          value: psFeatureList[index],
+                          groupValue: selectedFeature,
+                          secondary: IconButton(
+                            icon: Icon(Icons.edit),
+                            onPressed: () {
+                              // TODO: Agregar edicion
+                            },
+                          ),
+                          onChanged: (_) =>
+                              _newFeatureSelected(psFeatureList[index])),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: BlocBuilder<FeaturesBloc, FeaturesState>(
+              builder: (context, state) {
+                if (state.psFeatureSuperList == null) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                psFeatureValueList = state.psFeatureValueList;
+                return ListView.builder(
+                  itemCount: psFeatureValueList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      title: Text(psFeatureValueList[index].name),
+                      onTap: () {
+                        // TODO: Marcar la propiedad como seleccionada
+                      },
+                      trailing:
+                          IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+                    );
+                  },
                 );
               },
             ),
@@ -201,15 +222,16 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
         controller: searchController,
         labelText: "Busqueda General",
         onChanged: (value) {
-          _searchFeature(value);
-          _searchFeatureSuper(value);
-          _searchFeatureValue(value);
+          // _searchFeature(value);
+          // _searchFeatureSuper(value);
+          // _searchFeatureValue(value);
         },
       ),
     );
   }
 
   Container searchSection() {
+    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
     return Container(
       child: Row(
         // direction: Axis.horizontal,
@@ -223,7 +245,8 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                   child: MyTextField(
                     controller: featureSuperController,
                     labelText: "Busqueda en Feature Super",
-                    onChanged: (value) => _searchFeatureSuper(value),
+                    onChanged: (value) => featuresBloc
+                        .add(OnFeatureSuperSearch(textToSearch: value)),
                   ),
                 ),
                 SizedBox(
@@ -472,33 +495,39 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
   // BUSQUEDAS
 
   _searchFeatureSuper(String value) {
-    psFeatureSuperList = [];
-    for (var featureSuper in widget.productData.psFeatureSuper) {
-      if (featureSuper.name.toLowerCase().contains(value.toLowerCase())) {
-        psFeatureSuperList.add(featureSuper);
-      }
-    }
-    setState(() {});
+    // psFeatureSuperList = [];
+    // for (var featureSuper in widget.productData.psFeatureSuper) {
+    //   if (featureSuper.name.toLowerCase().contains(value.toLowerCase())) {
+    //     psFeatureSuperList.add(featureSuper);
+    //   }
+    // }
+    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
+    featuresBloc.add(OnFeatureSuperSearch(textToSearch: value));
+    // setState(() {});
   }
 
   _searchFeature(String value) {
-    psFeatureList = [];
-    for (var feature in widget.productData.psFeature) {
-      if (feature.name.toLowerCase().contains(value.toLowerCase())) {
-        psFeatureList.add(feature);
-      }
-    }
-    setState(() {});
+    // psFeatureList = [];
+    // for (var feature in widget.productData.psFeature) {
+    //   if (feature.name.toLowerCase().contains(value.toLowerCase())) {
+    //     psFeatureList.add(feature);
+    //   }
+    // }
+    // setState(() {});
+    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
+    featuresBloc.add(OnFeatureSearch(textToSearch: value));
   }
 
   _searchFeatureValue(String value) {
-    psFeatureValueList = [];
-    for (var featureValue in widget.productData.psFeatureValue) {
-      if (featureValue.name.toLowerCase().contains(value.toLowerCase())) {
-        psFeatureValueList.add(featureValue);
-      }
-    }
-    setState(() {});
+    // psFeatureValueList = [];
+    // for (var featureValue in widget.productData.psFeatureValue) {
+    //   if (featureValue.name.toLowerCase().contains(value.toLowerCase())) {
+    //     psFeatureValueList.add(featureValue);
+    //   }
+    // }
+    // setState(() {});
+    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
+    featuresBloc.add(OnFeatureSuperSearch(textToSearch: value));
   }
 
   // GUARDAR FEATURES

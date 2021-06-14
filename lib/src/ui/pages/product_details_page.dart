@@ -732,7 +732,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     productData =
         await HttpHandler.instance.getProductData(widget.product.id_product);
 
-    featuresBloc.mapEventToState(OnListsUpdate(
+    featuresBloc.add(OnListsUpdate(
       psFeatureSuperList: productData.psFeatureSuper,
       psFeatureList: productData.psFeature,
       psFeatureValueList: productData.psFeatureValue,
