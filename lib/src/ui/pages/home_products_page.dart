@@ -60,7 +60,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     List<List<dynamic>> data = getListData();
     return Scaffold(
       // drawer: getDrawer(context),
@@ -77,6 +77,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _filtros(),
                 Divider(),
@@ -107,7 +108,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 200,
+            width: 150,
             child: Center(
               child: Text(
                 "Filtros",
@@ -118,7 +119,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 200,
+            width: 100,
             child: TextFormField(
               decoration: InputDecoration(labelText: "Id Producto"),
               controller: idController,
@@ -180,7 +181,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 200,
+            width: 160,
             child: Transform.translate(
               offset: Offset(0, 0),
               child: SearchableDropdown<Fabricante>.single(

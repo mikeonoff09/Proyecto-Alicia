@@ -1,762 +1,257 @@
-[11:35:29 PM]: Spawning C:\src\flutter\bin\flutter.bat with args ["run","--machine","--target","lib\\main.dart","-d","windows","--dart-define=flutter.inspector.structuredErrors=true","--start-paused","--web-server-debug-protocol","ws","--web-allow-expose-url","--devtools-server-address","http://127.0.0.1:9100/"]
-[11:35:29 PM]: ..  in C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
-[11:35:29 PM]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[11:35:29 PM]: PID: 2664
-[11:35:32 PM]: <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":12292}}]
-[11:35:32 PM]: <== [{"event":"app.start","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","deviceId":"windows","directory":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","supportsRestart":true,"launchMode":"run"}}]
-[11:35:32 PM]: <== Launching lib\main.dart on Windows in debug mode...
-[11:35:32 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"0","progressId":null,"message":"Building Windows application...","finished":false}}]
-[11:35:52 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"0","progressId":null,"finished":true}}]
-[11:35:53 PM]: <== [{"event":"app.debugPort","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","port":49738,"wsUri":"ws://127.0.0.1:49738/j-Ga9_DNbss=/ws","baseUri":"file:///C:/Users/jairo/AppData/Local/Temp/Proyecto-Aliciacd914840/Proyecto-Alicia/"}}]
-[11:35:53 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"1","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:35:53 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"1","progressId":null,"finished":true}}]
-[11:35:53 PM]: <== [{"event":"app.started","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335"}}]
-[11:35:54 PM]: ==> [{"id":"1","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[11:35:54 PM]: ==> [{"id":"2","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[11:35:54 PM]: ==> [{"id":"3","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[11:35:54 PM]: ==> [{"id":"4","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/1316073847292547","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[11:35:54 PM]: ==> [{"id":"5","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:35:54 PM]: <== [{"id":"1","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[11:35:54 PM]: <== [{"id":"2","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[11:35:54 PM]: <== [{"id":"3","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[11:35:54 PM]: <== [{"id":"4","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[11:35:54 PM]: <== [{"id":"5","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:35:56 PM]: <== flutter: =============================================
-[11:35:58 PM]: <== flutter: 0
-[11:35:58 PM]: <== flutter: ====================
-[11:35:58 PM]: <== flutter: {"id_product":970}
-[11:35:59 PM]: <== flutter: ==============================================================
-[11:35:59 PM]: <== flutter: [PsFeatureProduct(696)]
-[11:35:59 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:35:59 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:35:59 PM]: <== flutter: 1
-[11:35:59 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:36:01 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:36:01 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:36:01 PM]: <== flutter: 1
-[11:36:01 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:37:12 PM]: ==> [{"id":"6","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:37:12 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:37:12 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"3","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:37:12 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"3","progressId":null,"finished":true}}]
-[11:37:12 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:37:12 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:37:12 PM]: <== flutter: 1
-[11:37:12 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:37:13 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"2","progressId":"hot.reload","finished":true}}]
-[11:37:13 PM]: <== Reloaded 1 of 816 libraries in 662ms.
-[11:37:13 PM]: <== [{"id":"6","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:37:30 PM]: ==> [{"id":"7","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:37:30 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"4","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:37:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"5","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:37:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"5","progressId":null,"finished":true}}]
-[11:37:31 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:37:31 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:37:31 PM]: <== flutter: 1
-[11:37:31 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:37:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"4","progressId":"hot.reload","finished":true}}]
-[11:37:31 PM]: <== Reloaded 1 of 816 libraries in 563ms.
-[11:37:31 PM]: <== [{"id":"7","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:37:34 PM]: <== flutter: New Feature Super Clicked
-[11:37:47 PM]: ==> [{"id":"8","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:37:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"6","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:37:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"7","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:37:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"7","progressId":null,"finished":true}}]
-[11:37:47 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:37:47 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:37:47 PM]: <== flutter: 1
-[11:37:47 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:37:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"6","progressId":"hot.reload","finished":true}}]
-[11:37:47 PM]: <== Reloaded 1 of 816 libraries in 567ms.
-[11:37:47 PM]: <== [{"id":"8","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:37:50 PM]: <== flutter: New Feature Super Clicked
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:50 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: New Feature Clicked
-[11:37:56 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: adding
-[11:37:56 PM]: <== flutter: adding
-[11:38:31 PM]: ==> [{"id":"9","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:38:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"8","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:38:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"9","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:38:31 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"9","progressId":null,"finished":true}}]
-[11:38:31 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:38:31 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:38:31 PM]: <== flutter: 1
-[11:38:31 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:38:32 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"8","progressId":"hot.reload","finished":true}}]
-[11:38:32 PM]: <== Reloaded 1 of 816 libraries in 902ms.
-[11:38:32 PM]: <== [{"id":"9","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:38:56 PM]: ==> [{"id":"10","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:38:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"10","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:38:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"11","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:38:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"11","progressId":null,"finished":true}}]
-[11:38:56 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:38:56 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:38:56 PM]: <== flutter: 1
-[11:38:56 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:38:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"10","progressId":"hot.reload","finished":true}}]
-[11:38:56 PM]: <== Reloaded 1 of 816 libraries in 525ms.
-[11:38:56 PM]: <== [{"id":"10","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:39:04 PM]: <== flutter: New Feature Super Clicked
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:04 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: New Feature Super Clicked
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: New Feature Clicked
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:06 PM]: <== flutter: adding
-[11:39:07 PM]: <== flutter: New Feature Clicked
-[11:39:07 PM]: <== flutter: adding
-[11:39:07 PM]: <== flutter: adding
-[11:39:07 PM]: <== flutter: adding
-[11:39:07 PM]: <== flutter: adding
-[11:39:07 PM]: <== flutter: New Feature Clicked
-[11:39:07 PM]: <== flutter: adding
-[11:39:08 PM]: <== flutter: New Feature Clicked
-[11:42:27 PM]: ==> [{"id":"11","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:42:27 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"12","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:42:27 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"13","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:42:28 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"13","progressId":null,"finished":true}}]
-[11:42:28 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:42:28 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:42:28 PM]: <== flutter: 1
-[11:42:28 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:42:28 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"12","progressId":"hot.reload","finished":true}}]
-[11:42:28 PM]: <== Reloaded 1 of 816 libraries in 583ms.
-[11:42:28 PM]: <== [{"id":"11","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:42:37 PM]: ==> [{"id":"12","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":true,"pause":true,"reason":"manual"}}]
-[11:42:37 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"14","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
-[11:42:37 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"15","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:42:37 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"15","progressId":null,"finished":true}}]
-[11:42:38 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"14","progressId":"hot.restart","finished":true}}]
-[11:42:38 PM]: <== Restarted application in 406ms.
-[11:42:38 PM]: <== [{"id":"12","result":{"code":0,"message":""}}]
-[11:42:38 PM]: ==> [{"id":"13","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[11:42:38 PM]: ==> [{"id":"14","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[11:42:38 PM]: ==> [{"id":"15","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[11:42:38 PM]: ==> [{"id":"16","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:42:38 PM]: ==> [{"id":"17","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/947274498400539","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[11:42:38 PM]: <== [{"id":"13","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[11:42:38 PM]: <== [{"id":"14","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[11:42:38 PM]: <== [{"id":"15","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[11:42:38 PM]: <== [{"id":"16","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:42:38 PM]: <== [{"id":"17","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[11:42:41 PM]: <== flutter: =============================================
-[11:42:45 PM]: <== flutter: 0
-[11:42:45 PM]: <== flutter: ====================
-[11:42:45 PM]: <== flutter: {"id_product":970}
-[11:42:46 PM]: <== flutter: ==============================================================
-[11:42:46 PM]: <== flutter: [PsFeatureProduct(696)]
-[11:42:46 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:42:46 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:42:46 PM]: <== flutter: 1
-[11:42:46 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:42:51 PM]: <== flutter: New Feature Super Clicked
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:51 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: New Feature Super Clicked
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:52 PM]: <== flutter: adding
-[11:42:53 PM]: <== flutter: New Feature Clicked
-[11:42:53 PM]: <== flutter: adding
-[11:42:53 PM]: <== flutter: adding
-[11:42:53 PM]: <== flutter: adding
-[11:42:53 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: New Feature Super Clicked
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:43 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: New Feature Super Clicked
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:45 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: New Feature Clicked
-[11:43:46 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: adding
-[11:43:46 PM]: <== flutter: adding
-[11:52:56 PM]: ==> [{"id":"18","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:52:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"16","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:52:56 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"17","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:52:57 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"17","progressId":null,"finished":true}}]
-[11:52:57 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:52:57 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:52:57 PM]: <== flutter: 1
-[11:52:57 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:52:57 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"16","progressId":"hot.reload","finished":true}}]
-[11:52:57 PM]: <== Reloaded 4 of 816 libraries in 659ms.
-[11:52:57 PM]: <== [{"id":"18","result":{"code":0,"message":"Reloaded 4 of 816 libraries"}}]
-[11:53:20 PM]: ==> [{"id":"19","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:53:20 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"18","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:53:20 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"19","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:53:20 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"19","progressId":null,"finished":true}}]
-[11:53:20 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:53:20 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:53:20 PM]: <== flutter: 1
-[11:53:20 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:53:20 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"18","progressId":"hot.reload","finished":true}}]
-[11:53:20 PM]: <== Reloaded 1 of 816 libraries in 528ms.
-[11:53:20 PM]: <== [{"id":"19","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:54:41 PM]: ==> [{"id":"20","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:54:41 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"20","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:54:41 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"21","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:54:41 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"21","progressId":null,"finished":true}}]
-[11:54:41 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:54:41 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:54:41 PM]: <== flutter: 1
-[11:54:41 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:54:41 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"20","progressId":"hot.reload","finished":true}}]
-[11:54:41 PM]: <== Reloaded 1 of 816 libraries in 564ms.
-[11:54:41 PM]: <== [{"id":"20","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:54:47 PM]: ==> [{"id":"21","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:54:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"22","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:54:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"23","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:54:47 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"23","progressId":null,"finished":true}}]
-[11:54:47 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:54:47 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:54:47 PM]: <== flutter: 1
-[11:54:47 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:54:48 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"22","progressId":"hot.reload","finished":true}}]
-[11:54:48 PM]: <== Reloaded 1 of 816 libraries in 497ms.
-[11:54:48 PM]: <== [{"id":"21","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:55:12 PM]: ==> [{"id":"22","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":true,"pause":true,"reason":"manual"}}]
-[11:55:13 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"24","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
-[11:55:13 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"25","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:55:13 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"25","progressId":null,"finished":true}}]
-[11:55:13 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"24","progressId":"hot.restart","finished":true}}]
-[11:55:13 PM]: <== Restarted application in 413ms.
-[11:55:13 PM]: <== [{"id":"22","result":{"code":0,"message":""}}]
-[11:55:13 PM]: ==> [{"id":"23","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[11:55:13 PM]: ==> [{"id":"24","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[11:55:13 PM]: ==> [{"id":"25","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[11:55:13 PM]: ==> [{"id":"26","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:55:13 PM]: ==> [{"id":"27","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/1348858151720071","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[11:55:14 PM]: <== [{"id":"23","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[11:55:14 PM]: <== [{"id":"24","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[11:55:14 PM]: <== [{"id":"25","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[11:55:14 PM]: <== [{"id":"26","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:55:14 PM]: <== [{"id":"27","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[11:55:15 PM]: <== flutter: =============================================
-[11:55:17 PM]: <== flutter: 0
-[11:55:17 PM]: <== flutter: ====================
-[11:55:17 PM]: <== flutter: {"id_product":970}
-[11:55:19 PM]: <== flutter: ==============================================================
-[11:55:19 PM]: <== flutter: [PsFeatureProduct(696)]
-[11:55:19 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:55:19 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:55:19 PM]: <== flutter: 1
-[11:55:19 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:55:24 PM]: <== flutter: New Feature Super Clicked
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:24 PM]: <== flutter: adding
-[11:55:26 PM]: <== flutter: New Feature Clicked
-[11:55:26 PM]: <== flutter: adding
-[11:55:26 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: New Feature Super Clicked
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:30 PM]: <== flutter: adding
-[11:55:31 PM]: <== flutter: New Feature Clicked
-[11:55:58 PM]: ==> [{"id":"28","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:55:58 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"26","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:55:58 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"27","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:55:58 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"27","progressId":null,"finished":true}}]
-[11:55:59 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:55:59 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:55:59 PM]: <== flutter: 1
-[11:55:59 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:55:59 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"26","progressId":"hot.reload","finished":true}}]
-[11:55:59 PM]: <== Reloaded 1 of 816 libraries in 574ms.
-[11:55:59 PM]: <== [{"id":"28","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:56:03 PM]: <== flutter: New Feature Super Clicked
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:03 PM]: <== flutter: adding
-[11:56:05 PM]: <== flutter: New Feature Clicked
-[11:56:05 PM]: <== flutter: adding
-[11:56:05 PM]: <== flutter: adding
-[11:56:05 PM]: <== flutter: adding
-[11:56:05 PM]: <== flutter: adding
-[11:56:07 PM]: <== flutter: New Feature Clicked
-[11:56:07 PM]: <== flutter: adding
-[11:56:08 PM]: <== flutter: New Feature Clicked
-[11:56:09 PM]: <== flutter: New Feature Clicked
-[11:56:10 PM]: <== flutter: New Feature Clicked
-[11:56:10 PM]: <== flutter: New Feature Clicked
-[11:56:10 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: New Feature Clicked
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: New Feature Clicked
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:11 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: New Feature Super Clicked
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:12 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: New Feature Super Clicked
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:13 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: New Feature Super Clicked
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: New Feature Super Clicked
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:14 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: New Feature Super Clicked
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:15 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: New Feature Clicked
-[11:56:16 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: adding
-[11:56:16 PM]: <== flutter: adding
-[11:56:17 PM]: <== flutter: New Feature Clicked
-[11:56:17 PM]: <== flutter: adding
-[11:56:17 PM]: <== flutter: adding
-[11:56:18 PM]: <== flutter: New Feature Clicked
-[11:56:18 PM]: <== flutter: New Feature Clicked
-[11:56:18 PM]: <== flutter: adding
-[11:56:18 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: New Feature Clicked
-[11:56:19 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: adding
-[11:56:19 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: New Feature Super Clicked
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: New Feature Super Clicked
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:20 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: New Feature Super Clicked
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:21 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: New Feature Super Clicked
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:56:23 PM]: <== flutter: adding
-[11:57:07 PM]: ==> [{"id":"29","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:57:07 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"28","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:57:07 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"29","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:57:07 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"29","progressId":null,"finished":true}}]
-[11:57:08 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:57:08 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:57:08 PM]: <== flutter: 1
-[11:57:08 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:57:08 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"28","progressId":"hot.reload","finished":true}}]
-[11:57:08 PM]: <== Reloaded 1 of 816 libraries in 545ms.
-[11:57:08 PM]: <== [{"id":"29","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:57:26 PM]: ==> [{"id":"30","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[11:57:26 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"30","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[11:57:26 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"31","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:57:26 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"31","progressId":null,"finished":true}}]
-[11:57:26 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:57:26 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:57:26 PM]: <== flutter: 1
-[11:57:26 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:57:26 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"30","progressId":"hot.reload","finished":true}}]
-[11:57:26 PM]: <== Reloaded 1 of 816 libraries in 609ms.
-[11:57:26 PM]: <== [{"id":"30","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[11:57:34 PM]: ==> [{"id":"31","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":true,"pause":true,"reason":"manual"}}]
-[11:57:34 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"32","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
-[11:57:34 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"33","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[11:57:34 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"33","progressId":null,"finished":true}}]
-[11:57:35 PM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"32","progressId":"hot.restart","finished":true}}]
-[11:57:35 PM]: <== Restarted application in 351ms.
-[11:57:35 PM]: <== [{"id":"31","result":{"code":0,"message":""}}]
-[11:57:35 PM]: ==> [{"id":"32","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[11:57:35 PM]: ==> [{"id":"33","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[11:57:35 PM]: ==> [{"id":"34","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[11:57:35 PM]: ==> [{"id":"35","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/3037188862278219","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[11:57:35 PM]: ==> [{"id":"36","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:57:35 PM]: <== [{"id":"32","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[11:57:35 PM]: <== [{"id":"33","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[11:57:35 PM]: <== [{"id":"34","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[11:57:35 PM]: <== [{"id":"35","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[11:57:35 PM]: <== [{"id":"36","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[11:57:37 PM]: <== flutter: =============================================
-[11:57:40 PM]: <== flutter: 0
-[11:57:40 PM]: <== flutter: ====================
-[11:57:40 PM]: <== flutter: {"id_product":970}
-[11:57:41 PM]: <== flutter: ==============================================================
-[11:57:41 PM]: <== flutter: [PsFeatureProduct(696)]
-[11:57:41 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[11:57:41 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[11:57:41 PM]: <== flutter: 1
-[11:57:41 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[11:57:47 PM]: <== flutter: New Feature Super Clicked
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:47 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: New Feature Super Clicked
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: adding
-[11:57:48 PM]: <== flutter: New Feature Clicked
-[11:57:48 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: New Feature Clicked
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: New Feature Clicked
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:50 PM]: <== flutter: adding
-[11:57:51 PM]: <== flutter: New Feature Clicked
-[11:57:51 PM]: <== flutter: adding
-[11:57:51 PM]: <== flutter: New Feature Clicked
-[11:57:52 PM]: <== flutter: New Feature Clicked
-[11:57:52 PM]: <== flutter: adding
-[11:57:52 PM]: <== flutter: adding
-[11:57:52 PM]: <== flutter: adding
-[11:57:52 PM]: <== flutter: adding
-[11:57:52 PM]: <== flutter: adding
-[11:57:52 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: New Feature Super Clicked
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:53 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: New Feature Super Clicked
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: New Feature Super Clicked
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:54 PM]: <== flutter: adding
-[11:57:55 PM]: <== flutter: New Feature Clicked
-[11:57:55 PM]: <== flutter: adding
-[11:57:55 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: New Feature Clicked
-[11:57:56 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: adding
-[11:57:56 PM]: <== flutter: adding
-[12:15:32 AM]: ==> [{"id":"37","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:15:32 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"34","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:15:32 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"35","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:15:32 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"35","progressId":null,"finished":true}}]
-[12:15:32 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:15:32 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:15:32 AM]: <== flutter: 1
-[12:15:32 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:15:32 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"34","progressId":"hot.reload","finished":true}}]
-[12:15:32 AM]: <== Reloaded 4 of 816 libraries in 621ms.
-[12:15:32 AM]: <== [{"id":"37","result":{"code":0,"message":"Reloaded 4 of 816 libraries"}}]
-[12:16:18 AM]: ==> [{"id":"38","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:16:18 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"36","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:16:18 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"37","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:16:18 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"37","progressId":null,"finished":true}}]
-[12:16:18 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:16:18 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:16:18 AM]: <== flutter: 1
-[12:16:18 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:16:18 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"36","progressId":"hot.reload","finished":true}}]
-[12:16:18 AM]: <== Reloaded 4 of 816 libraries in 644ms.
-[12:16:18 AM]: <== [{"id":"38","result":{"code":0,"message":"Reloaded 4 of 816 libraries"}}]
-[12:18:26 AM]: ==> [{"id":"39","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:18:26 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"38","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:18:26 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"39","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:18:26 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"39","progressId":null,"finished":true}}]
-[12:18:26 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:18:26 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:18:26 AM]: <== flutter: 1
-[12:18:26 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:18:26 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"38","progressId":"hot.reload","finished":true}}]
-[12:18:26 AM]: <== Reloaded 1 of 816 libraries in 497ms.
-[12:18:26 AM]: <== [{"id":"39","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[12:18:47 AM]: ==> [{"id":"40","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":true,"pause":true,"reason":"manual"}}]
-[12:18:47 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"40","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
-[12:18:47 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"41","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:18:47 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"41","progressId":null,"finished":true}}]
-[12:18:47 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"40","progressId":"hot.restart","finished":true}}]
-[12:18:47 AM]: <== Restarted application in 415ms.
-[12:18:47 AM]: <== [{"id":"40","result":{"code":0,"message":""}}]
-[12:18:47 AM]: ==> [{"id":"41","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[12:18:47 AM]: ==> [{"id":"42","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[12:18:47 AM]: ==> [{"id":"43","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[12:18:47 AM]: ==> [{"id":"44","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[12:18:47 AM]: ==> [{"id":"45","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/2753849219374315","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[12:18:48 AM]: <== [{"id":"41","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[12:18:48 AM]: <== [{"id":"42","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[12:18:48 AM]: <== [{"id":"43","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[12:18:48 AM]: <== [{"id":"44","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[12:18:48 AM]: <== [{"id":"45","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[12:18:49 AM]: <== flutter: =============================================
-[12:18:53 AM]: <== flutter: 0
-[12:18:53 AM]: <== flutter: ====================
-[12:18:53 AM]: <== flutter: {"id_product":970}
-[12:18:54 AM]: <== flutter: ==============================================================
-[12:18:54 AM]: <== flutter: [PsFeatureProduct(696)]
-[12:18:54 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:18:54 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:18:54 AM]: <== flutter: 1
-[12:18:54 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:19:27 AM]: ==> [{"id":"46","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:19:27 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"42","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:19:27 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"43","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:19:27 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"43","progressId":null,"finished":true}}]
-[12:19:27 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:19:27 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:19:27 AM]: <== flutter: 1
-[12:19:27 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:19:27 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"42","progressId":"hot.reload","finished":true}}]
-[12:19:27 AM]: <== Reloaded 1 of 816 libraries in 553ms.
-[12:19:27 AM]: <== [{"id":"46","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[12:19:31 AM]: <== flutter: New Feature Clicked
-[12:19:31 AM]: <== flutter: adding
-[12:19:31 AM]: <== flutter: adding
-[12:19:31 AM]: <== flutter: adding
-[12:19:31 AM]: <== flutter: adding
-[12:19:31 AM]: <== flutter: adding
-[12:19:31 AM]: <== flutter: adding
-[12:21:03 AM]: ==> [{"id":"47","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:21:03 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"44","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:21:03 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"45","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:21:03 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"45","progressId":null,"finished":true}}]
-[12:21:03 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:21:03 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:21:03 AM]: <== flutter: 1
-[12:21:03 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:21:03 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"44","progressId":"hot.reload","finished":true}}]
-[12:21:03 AM]: <== Reloaded 1 of 816 libraries in 498ms.
-[12:21:03 AM]: <== [{"id":"47","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[12:22:51 AM]: ==> [{"id":"48","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
-[12:22:51 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"46","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
-[12:22:51 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"47","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:22:51 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"47","progressId":null,"finished":true}}]
-[12:22:51 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:22:51 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:22:51 AM]: <== flutter: 1
-[12:22:51 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:22:52 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"46","progressId":"hot.reload","finished":true}}]
-[12:22:52 AM]: <== Reloaded 1 of 816 libraries in 549ms.
-[12:22:52 AM]: <== [{"id":"48","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
-[12:22:53 AM]: ==> [{"id":"49","method":"app.restart","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","fullRestart":true,"pause":true,"reason":"manual"}}]
-[12:22:53 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"48","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
-[12:22:53 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"49","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
-[12:22:53 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"49","progressId":null,"finished":true}}]
-[12:22:53 AM]: <== [{"event":"app.progress","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","id":"48","progressId":"hot.restart","finished":true}}]
-[12:22:53 AM]: <== Restarted application in 371ms.
-[12:22:53 AM]: <== [{"id":"49","result":{"code":0,"message":""}}]
-[12:22:53 AM]: ==> [{"id":"50","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.platformOverride"}}]
-[12:22:53 AM]: ==> [{"id":"51","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.brightnessOverride"}}]
-[12:22:53 AM]: ==> [{"id":"52","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
-[12:22:53 AM]: ==> [{"id":"53","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[12:22:53 AM]: ==> [{"id":"54","method":"app.callServiceExtension","params":{"appId":"9ac0d61c-7b4b-4f2a-bd92-ae513c1f9335","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/1061469531588635","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
-[12:22:54 AM]: <== [{"id":"50","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
-[12:22:54 AM]: <== [{"id":"51","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
-[12:22:54 AM]: <== [{"id":"52","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
-[12:22:54 AM]: <== [{"id":"53","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
-[12:22:54 AM]: <== [{"id":"54","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
-[12:22:55 AM]: <== flutter: =============================================
-[12:22:58 AM]: <== flutter: 0
-[12:22:58 AM]: <== flutter: ====================
-[12:22:58 AM]: <== flutter: {"id_product":970}
-[12:22:59 AM]: <== flutter: ==============================================================
-[12:22:59 AM]: <== flutter: [PsFeatureProduct(696)]
-[12:22:59 AM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
-[12:22:59 AM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
-[12:22:59 AM]: <== flutter: 1
-[12:22:59 AM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
-[12:23:05 AM]: <== flutter: New Feature Clicked
-[12:23:05 AM]: <== flutter: adding
-[12:23:05 AM]: <== flutter: adding
-[12:23:05 AM]: <== flutter: adding
-[12:23:05 AM]: <== flutter: adding
-[12:23:05 AM]: <== flutter: adding
-[12:23:05 AM]: <== flutter: adding
+[4:32:32 PM]: Spawning C:\src\flutter\bin\flutter.bat with args ["run","--machine","--target","lib\\main.dart","-d","windows","--dart-define=flutter.inspector.structuredErrors=true","--start-paused","--web-server-debug-protocol","ws","--web-allow-expose-url","--devtools-server-address","http://127.0.0.1:9100/"]
+[4:32:32 PM]: ..  in C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[4:32:32 PM]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[4:32:32 PM]: PID: 17432
+[4:32:34 PM]: <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":3804}}]
+[4:32:34 PM]: <== [{"event":"app.start","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","deviceId":"windows","directory":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","supportsRestart":true,"launchMode":"run"}}]
+[4:32:34 PM]: <== Launching lib\main.dart on Windows in debug mode...
+[4:32:34 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"0","progressId":null,"message":"Building Windows application...","finished":false}}]
+[4:32:53 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"0","progressId":null,"finished":true}}]
+[4:32:54 PM]: <== [{"event":"app.debugPort","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","port":49240,"wsUri":"ws://127.0.0.1:49240/5--eZtHHJ00=/ws","baseUri":"file:///C:/Users/jairo/AppData/Local/Temp/Proyecto-Alicia8f1f4098/Proyecto-Alicia/"}}]
+[4:32:54 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"1","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[4:32:54 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"1","progressId":null,"finished":true}}]
+[4:32:54 PM]: <== [{"event":"app.started","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b"}}]
+[4:32:54 PM]: ==> [{"id":"1","method":"app.callServiceExtension","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","methodName":"ext.flutter.inspector.structuredErrors","params":{"enabled":true}}}]
+[4:32:54 PM]: ==> [{"id":"2","method":"app.callServiceExtension","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","methodName":"ext.flutter.platformOverride"}}]
+[4:32:54 PM]: ==> [{"id":"3","method":"app.callServiceExtension","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","methodName":"ext.flutter.brightnessOverride"}}]
+[4:32:54 PM]: ==> [{"id":"4","method":"app.callServiceExtension","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","methodName":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[4:32:54 PM]: ==> [{"id":"5","method":"app.callServiceExtension","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","methodName":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/2020384211119531","arg0":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia","arg1":"file:///C:/Users/jairo/Documents/PCToDriveBackup/GitHub/Proyecto-Alicia"}}}]
+[4:32:55 PM]: <== [{"id":"1","result":{"enabled":"true","type":"_extensionType","method":"ext.flutter.inspector.structuredErrors"}}]
+[4:32:55 PM]: <== [{"id":"2","result":{"value":"windows","type":"_extensionType","method":"ext.flutter.platformOverride"}}]
+[4:32:55 PM]: <== [{"id":"3","result":{"value":"Brightness.light","type":"_extensionType","method":"ext.flutter.brightnessOverride"}}]
+[4:32:55 PM]: <== [{"id":"4","result":{"result":true,"type":"_extensionType","method":"ext.flutter.inspector.isWidgetCreationTracked"}}]
+[4:32:55 PM]: <== [{"id":"5","result":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"}}]
+[4:32:57 PM]: <== flutter: =============================================
+[5:08:19 PM]: <== flutter: 0
+[5:08:19 PM]: <== flutter: ====================
+[5:08:19 PM]: <== flutter: {"id_product":970}
+[5:08:20 PM]: <== flutter: ==============================================================
+[5:08:20 PM]: <== flutter: [PsFeatureProduct(696)]
+[5:08:20 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:20 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:20 PM]: <== flutter: 1
+[5:08:20 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:24 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:24 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:24 PM]: <== flutter: 1
+[5:08:24 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:24 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:24 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:24 PM]: <== flutter: 1
+[5:08:24 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:24 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:24 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:24 PM]: <== flutter: 1
+[5:08:24 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:24 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:24 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:24 PM]: <== flutter: 1
+[5:08:24 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:25 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:25 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:25 PM]: <== flutter: 1
+[5:08:25 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:26 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:26 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:26 PM]: <== flutter: 1
+[5:08:26 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:26 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:26 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:26 PM]: <== flutter: 1
+[5:08:26 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:26 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:26 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:26 PM]: <== flutter: 1
+[5:08:26 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:27 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:27 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:27 PM]: <== flutter: 1
+[5:08:27 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:28 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:28 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:28 PM]: <== flutter: 1
+[5:08:28 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:29 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:29 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:29 PM]: <== flutter: 1
+[5:08:29 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:36 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:36 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:36 PM]: <== flutter: 1
+[5:08:36 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:36 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:36 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:36 PM]: <== flutter: 1
+[5:08:36 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:36 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:36 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:36 PM]: <== flutter: 1
+[5:08:36 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:36 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:36 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:36 PM]: <== flutter: 1
+[5:08:36 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:37 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:37 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:37 PM]: <== flutter: 1
+[5:08:37 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:38 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:38 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:38 PM]: <== flutter: 1
+[5:08:38 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:39 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:39 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:39 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:39 PM]: <== flutter: 1
+[5:08:40 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:40 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:40 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:40 PM]: <== flutter: 1
+[5:08:40 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:08:40 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:08:40 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:08:40 PM]: <== flutter: 1
+[5:08:40 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:09:27 PM]: <== flutter: New Feature Super Clicked
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:27 PM]: <== flutter: adding
+[5:09:28 PM]: <== flutter: New Feature Clicked
+[5:09:28 PM]: <== flutter: adding
+[5:09:28 PM]: <== flutter: adding
+[5:09:36 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:09:36 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:09:36 PM]: <== flutter: 1
+[5:09:36 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:09:57 PM]: <== flutter: 0
+[5:09:57 PM]: <== flutter: ====================
+[5:09:57 PM]: <== flutter: {"id_product":970}
+[5:09:58 PM]: <== flutter: ==============================================================
+[5:09:58 PM]: <== flutter: [PsFeatureProduct(696)]
+[5:09:58 PM]: <== flutter: PsFeatureProduct: [PsFeatureProduct(696)]
+[5:09:58 PM]: <== flutter: Super  id:1 orden:1 valor:Primera a mano Feature  id:10 orden:0 name:Garantía Value  id:696 orden:682 name:2 años
+[5:09:58 PM]: <== flutter: 1
+[5:09:58 PM]: <== flutter: [PsFeatureValue(696, 10, 682, 2 años)]
+[5:11:00 PM]: ==> [{"id":"6","method":"app.restart","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[5:11:00 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[5:11:00 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"3","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[5:11:00 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"3","progressId":null,"finished":true}}]
+[5:11:00 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"2","progressId":"hot.reload","finished":true}}]
+[5:11:00 PM]: <== Reloaded 1 of 816 libraries in 550ms.
+[5:11:00 PM]: <== [{"id":"6","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
+[5:11:16 PM]: ==> [{"id":"7","method":"app.restart","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[5:11:16 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"4","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[5:11:16 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"5","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[5:11:16 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"5","progressId":null,"finished":true}}]
+[5:11:16 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"4","progressId":"hot.reload","finished":true}}]
+[5:11:16 PM]: <== Reloaded 1 of 816 libraries in 405ms.
+[5:11:16 PM]: <== [{"id":"7","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
+[5:11:21 PM]: ==> [{"id":"8","method":"app.restart","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[5:11:21 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"6","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[5:11:21 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"7","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[5:11:21 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"7","progressId":null,"finished":true}}]
+[5:11:21 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"6","progressId":"hot.reload","finished":true}}]
+[5:11:21 PM]: <== Reloaded 1 of 816 libraries in 370ms.
+[5:11:21 PM]: <== [{"id":"8","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
+[5:13:15 PM]: ==> [{"id":"9","method":"app.restart","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[5:13:15 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"8","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[5:13:15 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"9","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[5:13:15 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"9","progressId":null,"finished":true}}]
+[5:13:16 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"8","progressId":"hot.reload","finished":true}}]
+[5:13:16 PM]: <== Reloaded 1 of 816 libraries in 359ms.
+[5:13:16 PM]: <== [{"id":"9","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
+[5:13:49 PM]: ==> [{"id":"10","method":"app.restart","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[5:13:49 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"10","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[5:13:50 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"11","progressId":null,"message":"Syncing files to device Windows...","finished":false}}]
+[5:13:50 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"11","progressId":null,"finished":true}}]
+[5:13:50 PM]: <== [{"event":"app.progress","params":{"appId":"6e685b97-15a0-4cdd-a5b4-e5b609a6f90b","id":"10","progressId":"hot.reload","finished":true}}]
+[5:13:50 PM]: <== Reloaded 1 of 816 libraries in 350ms.
+[5:13:50 PM]: <== [{"id":"10","result":{"code":0,"message":"Reloaded 1 of 816 libraries"}}]
