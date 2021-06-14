@@ -5,8 +5,8 @@ class FeaturesEvent {}
 
 class OnListsUpdate extends FeaturesEvent {
   final List<PsFeatureSuper> psFeatureSuperList;
-  final List<PsFeatureSuper> psFeatureList;
-  final List<PsFeatureSuper> psFeatureValueList;
+  final List<PsFeature> psFeatureList;
+  final List<PsFeatureValue> psFeatureValueList;
 
   OnListsUpdate({
     @required this.psFeatureSuperList,

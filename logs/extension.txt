@@ -303,3 +303,65 @@ NO_PROXY: undefined
 [10:25:29 PM] [General] [Warn] Did not find session 985bb3bd-2558-4d38-ab53-7a5d5973fce8 to handle dart.progressStart. There were 0 sessions:
 [10:25:29 PM] [General] [Warn] Event will be queued and processed when the session start event fires
 [10:25:29 PM] [General] [Info] Processing delayed event dart.progressStart for session 985bb3bd-2558-4d38-ab53-7a5d5973fce8
+[12:01:55 AM] [General] [Info] Debugger:SessionDuration timing: 5786746ms (Flutter)
+[12:32:04 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[1:31:26 AM] [General] [Info] Starting debug session...
+[1:31:26 AM] [General] [Info]     workspace: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[1:31:26 AM] [General] [Info] Using found common entry point: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia\lib\main.dart
+[1:31:26 AM] [General] [Info] Using workspace as cwd: C:\Users\jairo\Documents\PCToDriveBackup\GitHub\Proyecto-Alicia
+[1:31:26 AM] [General] [Info] Detected launch project as Flutter
+[1:31:26 AM] [General] [Info] Using Flutter debug adapter for this session
+[1:31:26 AM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:31:26 AM] [General] [Info] Checking for errors before launching
+[1:31:26 AM] [General] [Info] Debug session starting...
+    {
+        "name": "Alicia",
+        "request": "launch",
+        "type": "dart",
+        "__configurationTarget": 5,
+        "program": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\lib\\main.dart",
+        "cwd": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": true,
+        "args": [
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmAdditionalArgs": [],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "pubTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\pub_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "globalFlutterArgs": [],
+        "useFlutterStructuredErrors": true,
+        "useInspectorNotificationsForWidgetErrors": true,
+        "debugExtensionBackendProtocol": "ws",
+        "injectedClientProtocol": "ws",
+        "forceFlutterVerboseMode": false,
+        "flutterTrackWidgetCreation": true,
+        "flutterMode": "debug",
+        "flutterPlatform": "default",
+        "workspaceConfig": {
+            "startDevToolsServerEagerly": true,
+            "useLsp": false
+        },
+        "flutterRunLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia\\logs\\flutter_test.tx…
+[1:31:26 AM] [General] [Info] Using flutter debugger for Flutter
+[1:31:26 AM] [General] [Info] Running debugger via node with c:\Users\jairo\.vscode\extensions\dart-code.dart-code-3.23.0\out\dist\debug.js    flutter
+[1:31:27 AM] [General] [Warn] Did not find session 0994a77b-fda2-4f68-a3b4-8c977cb7ac4e to handle dart.progressStart. There were 0 sessions:
+[1:31:27 AM] [General] [Warn] Event will be queued and processed when the session start event fires
+[1:31:27 AM] [General] [Info] Processing delayed event dart.progressStart for session 0994a77b-fda2-4f68-a3b4-8c977cb7ac4e
+[4:32:28 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[4:32:31 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+[4:50:49 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.

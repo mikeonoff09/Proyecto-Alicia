@@ -11,12 +11,16 @@ part 'features_state.dart';
 class FeaturesBloc extends Bloc<FeaturesEvent, FeaturesState> {
   FeaturesBloc() : super(FeaturesState());
 
-
   @override
   Stream<FeaturesState> mapEventToState(
     FeaturesEvent event,
   ) async* {
-    if (event is OnFeatureDelete) {
+    if (event is OnListsUpdate) { // Inicializa los estados
+      yield state.copyWith(
+          psFeatureList: event.psFeatureList,
+          psFeatureSuperList: event.psFeatureSuperList,
+          psFeatureValueList: event.psFeatureValueList);
+    } else if (event is OnFeatureDelete) {
       List<PsFeature> newList = state.psFeatureList;
       if (newList.remove(event.psFeatureDelete)) {
         yield state.copyWith(psFeatureList: newList);

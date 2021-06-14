@@ -1,9 +1,11 @@
+import 'package:alicia/src/blocs/features_bloc/features_bloc.dart';
 import 'package:alicia/src/datasources/http_handler.dart';
 import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/error_dialog.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/show_loading_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeatureSelectorPage extends StatefulWidget {
   final ProductDetailsMode productData;
@@ -54,44 +56,51 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     psFeatureSuperList =
         psFeatureSuperList ?? widget.productData.psFeatureSuper;
     psFeatureList = psFeatureList ?? widget.productData.psFeature;
-    //final featureProductBloc = BlocProvider.of<ProductBloc>(context);
+    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Expanded(
-            flex: 1,
-            child: ListView.builder(
-              itemCount: psFeatureSuperList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Dismissible(
-                  key: Key(psFeatureSuperList[index].idFeatureSuper.toString()),
-                  onDismissed: (direction) {
-                    showDialog(
-                      context: context,
-                      builder: (_) => AlertDialog(
-                        content: Container(
-                          child: Text("texto"),
+          StreamBuilder<Object>(
+            stream: null,
+            builder: (context, snapshot) {
+              return Expanded(
+                flex: 1,
+                child: ListView.builder(
+                  itemCount: psFeatureSuperList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Dismissible(
+                      key: Key(
+                          psFeatureSuperList[index].idFeatureSuper.toString()),
+                      onDismissed: (direction) {
+                        showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            content: Container(
+                              child: Text("texto"),
+                            ),
+                          ),
+                        );
+                      },
+                      child: RadioListTile(
+                        title: Text(psFeatureSuperList[index].name),
+                        value: psFeatureSuperList[index],
+                        groupValue: selectedSuper,
+                        secondary: IconButton(
+                          icon: Icon(Icons.edit),
+                          onPressed: () =>
+                              _editPsFeatureSuper(psFeatureSuperList[index]),
                         ),
+                        onChanged: (value) {
+                          _newFeatureSuperSelected(psFeatureSuperList[index]);
+                        },
                       ),
                     );
                   },
-                  child: RadioListTile(
-                      title: Text(psFeatureSuperList[index].name),
-                      value: psFeatureSuperList[index],
-                      groupValue: selectedSuper,
-                      secondary: IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () =>
-                            _editPsFeatureSuper(psFeatureSuperList[index]),
-                      ),
-                      onChanged: (value) {
-                        _newFeatureSuperSelected(psFeatureSuperList[index]);
-                      }),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
           Expanded(
             flex: 1,
@@ -166,7 +175,6 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
   }
 
   _newFeatureSelected(PsFeature feature) {
-    
     print("New Feature Clicked ");
     psFeatureValueList = [];
     selectedFeature = feature;
