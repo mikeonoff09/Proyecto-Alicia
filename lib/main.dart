@@ -1,18 +1,15 @@
-import 'dart:io';
-
 import 'package:alicia/src/product_bloc/product_bloc.dart';
 import 'package:alicia/src/ui/pages/home_products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:window_size/window_size.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+/*   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('Gestor Alicia');
     setWindowMinSize(const Size(1054, 800));
     setWindowMaxSize(Size.infinite);
-  }
+  } */
   runApp(MyApp());
 }
 
@@ -28,8 +25,8 @@ class MyApp extends StatelessWidget {
         title: 'Alicia - Gestor Contenido',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            primarySwatch: Colors.blue,
+            snackBarTheme: SnackBarThemeData(elevation: 6)),
         home: HomeProductsPage(),
       ),
     );

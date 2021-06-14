@@ -64,7 +64,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
     List<List<dynamic>> data = getListData();
     return Scaffold(
       // drawer: getDrawer(context),
-      appBar: AppBar(),
+
       floatingActionButton: FloatingActionButton(
         key: Key("addproduct"),
         child: Icon(Icons.add),
@@ -101,7 +101,8 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.end,
         crossAxisAlignment: WrapCrossAlignment.start,
-        alignment: WrapAlignment.center,
+        alignment: WrapAlignment.end,
+        runAlignment: WrapAlignment.start,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),

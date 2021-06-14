@@ -1,6 +1,9 @@
+import 'package:alicia/src/datasources/http_handler.dart';
 import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/product_bloc/product_bloc.dart';
+import 'package:alicia/src/ui/components/error_dialog.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
+import 'package:alicia/src/ui/components/show_loading_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +26,10 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
   List<PsFeatureValue> psFeatureValueList;
   List<PsFeatureSuper> psFeatureSuperList;
   List<PsFeature> psFeatureList;
+
+  PsFeatureSuper selectedSuper;
+
+  PsFeature selectedFeature;
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +57,10 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     psFeatureSuperList =
         psFeatureSuperList ?? widget.productData.psFeatureSuper;
     psFeatureList = psFeatureList ?? widget.productData.psFeature;
-    final featureProductBloc = BlocProvider.of<ProductBloc>(context);
+    //final featureProductBloc = BlocProvider.of<ProductBloc>(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
       child: Row(
-        // direction: Axis.horizontal,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
@@ -62,10 +68,12 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             child: ListView.builder(
               itemCount: psFeatureSuperList.length,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
+                return RadioListTile(
                     title: Text(psFeatureSuperList[index].name),
-                    onTap: () => _newFeatureSuperSelected(
-                        psFeatureSuperList[index].idFeatureSuper));
+                    value: psFeatureSuperList[index],
+                    groupValue: selectedSuper,
+                    onChanged: (value) =>
+                        _newFeatureSuperSelected(psFeatureSuperList[index]));
               },
             ),
           ),
@@ -74,10 +82,12 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             child: ListView.builder(
               itemCount: psFeatureList.length,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
+                return RadioListTile(
                     title: Text(psFeatureList[index].name),
-                    onTap: () =>
-                        _newFeatureSelected(psFeatureList[index].idFeature));
+                    value: psFeatureList[index],
+                    groupValue: selectedFeature,
+                    onChanged: (_) =>
+                        _newFeatureSelected(psFeatureList[index]));
               },
             ),
           ),
@@ -102,13 +112,14 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     );
   }
 
-  _newFeatureSuperSelected(int idFeatureSuper) {
+  _newFeatureSuperSelected(PsFeatureSuper featureSuper) {
     print("New Feature Super Clicked ");
     psFeatureValueList = [];
     psFeatureList = [];
+    selectedSuper = featureSuper;
 
     for (var feature in widget.productData.psFeature) {
-      if (feature.idFeatureSuper == idFeatureSuper) {
+      if (feature.idFeatureSuper == featureSuper.idFeatureSuper) {
         psFeatureList.add(feature);
         for (var featureValue in widget.productData.psFeatureValue) {
           if (featureValue.idFeature == feature.idFeature) {
@@ -121,12 +132,13 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     setState(() {});
   }
 
-  _newFeatureSelected(int idFeature) {
+  _newFeatureSelected(PsFeature feature) {
     print("New Feature Clicked ");
     psFeatureValueList = [];
+    selectedFeature = feature;
 
     for (var featureValue in widget.productData.psFeatureValue) {
-      if (featureValue.idFeature == idFeature) {
+      if (featureValue.idFeature == feature.idFeature) {
         print("adding");
         psFeatureValueList.add(featureValue);
       }
@@ -166,7 +178,18 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     onChanged: (value) => _searchFeatureSuper(value),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                SizedBox(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _saveSuperFeature();
+                    },
+                    child: Icon(Icons.add),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                  ),
+                  height: 55,
+                ),
               ],
             ),
           ),
@@ -181,7 +204,18 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     onChanged: (value) => _searchFeature(value),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                SizedBox(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _saveFeature();
+                    },
+                    child: Icon(Icons.add),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                  ),
+                  height: 55,
+                ),
               ],
             ),
           ),
@@ -196,7 +230,18 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     onChanged: (value) => _searchFeatureValue(value),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                SizedBox(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                    onPressed: () {
+                      _saveFeatureValue();
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                  height: 55,
+                ),
               ],
             ),
           ),
@@ -233,5 +278,79 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
       }
     }
     setState(() {});
+  }
+
+  Future _saveSuperFeature() async {
+    final superValue = PsFeatureSuper(
+        idFeatureSuper: null,
+        name: this.featureSuperController.text,
+        position: null);
+    showLoading(context);
+    final result = await HttpHandler.instance.saveSuperFeature(superValue);
+    Navigator.pop(context);
+    if (result != null) {
+      widget.productData.psFeatureSuper.add(result);
+      //featureSuperController.clear();
+      _searchFeatureSuper(featureSuperController.text);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Característica principal agregada"),
+      ));
+    } else {
+      showError(context,
+          "Ocurrió un error al intentar guardar, profavor intentelo nuevamente");
+    }
+  }
+
+  Future _saveFeature() async {
+    if (selectedSuper?.idFeatureSuper == null) {
+      showError(
+          context, "NO se ha seleccionado ninguna Característica principal");
+      return;
+    }
+    final superValue = PsFeature(
+        idFeatureSuper: selectedSuper?.idFeatureSuper,
+        name: this.featureController.text,
+        position: null);
+    showLoading(context);
+    final result = await HttpHandler.instance.saveFeature(superValue);
+    Navigator.pop(context);
+    if (result != null) {
+      widget.productData.psFeature.add(result);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Característica agregada"),
+        ),
+      );
+      _searchFeature(featureController.text);
+    } else {
+      showError(context,
+          "Ocurrió un error al intentar guardar, profavor intentelo nuevamente");
+    }
+  }
+
+  Future _saveFeatureValue() async {
+    if (selectedFeature?.idFeature == null) {
+      showError(context, "NO se ha seleccionado ninguna Característica");
+      return;
+    }
+    final feaValue = PsFeatureValue(
+        idFeature: selectedFeature?.idFeature,
+        name: this.featureValueController.text,
+        position: null);
+    showLoading(context);
+    final result = await HttpHandler.instance.saveFeatureValue(feaValue);
+    Navigator.pop(context);
+    if (result != null) {
+      widget.productData.psFeatureValue.add(result);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Valor agregado"),
+        ),
+      );
+      _searchFeatureValue(featureValueController.text);
+    } else {
+      showError(context,
+          "Ocurrió un error al intentar guardar, profavor intentelo nuevamente");
+    }
   }
 }

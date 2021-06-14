@@ -265,45 +265,95 @@ $app->post('/productos/add_update', function (Request $request, Response $respon
 
 
 $app->post('/productos/add_category', function (Request $request, Response $response) {
-	// attachment ps_product_attachment attributes ps_product_attribute ps_product_attribute_combination ps_product_attribute_image
-
     $id_product = $request->getParam("id_product");
-	$id_category = $request->getParam("id_category");
-	if (!is_numeric($id_category)){
-		return sendResponse(404, null, "No has indicado la id_category $id_category", $response);
-	}
+	$categories = $request->getParam("categories");
 	if (!is_numeric($id_product)){
 		return sendResponse(404, null, "No has indicado el id_product $id_product", $response);
 	}
 
+	$inQuery =array();
+	$inData=array();
+	foreach($categories as $valor){
+		if (is_numeric($valor["id_category"])){
+			if ($valor["nuevo"]==1 && $valor["borrar"]==1){
+				return sendResponse(404, null, "No puedes añadir y borrar a la vez una categoria: ".$valor["id_category"], $response);
+			}else{
+				if ($valor["nuevo"]==1 || $valor["nuevo"]==0){
+					if ($valor["borrar"]==1 || $valor["borrar"]==0){
+						$inQuery[] = '?';
+						$inData[]= $valor["id_category"];
+					}else{
+						return sendResponse(404, null, "No has indicado si categoria es borrar o no: ".$valor["borrar"], $response);
+					}
+				}else{
+					return sendResponse(404, null, "No has indicado si categoria es nueva o no: ".$valor["nuevo"], $response);
+				}
+			}
+		}else{
+			return sendResponse(404, null, "No has indicado número para id_category: ".$valor["id_category"], $response);
+		}
+	}
+	$sql = 'SELECT id_category FROM ps_category where id_category in ( ';	
+	$sql .= implode(', ', $inQuery) .")";
+
 	try {
-		$sql = 'SELECT * FROM a_tabla_category_product where id_product = :id_product and id_category = :id_category';
 		$dbInstance = new Db();
 		$db = $dbInstance->connectDB();
 		$statement = $db->prepare($sql);
-		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-		$statement->bindParam(":id_category", $id_category, PDO::PARAM_INT);
-		$statement->execute();
-
-		if ($statement->rowCount() == 0) {
-			$sql = 'SELECT COUNT(*) as contador FROM a_tabla_category_product where id_category= :id_category'; //al añadir siempre es el último en "position"
-			$statement = $db->prepare($sql);
-			
-			$statement->bindParam(":id_category", $id_category, PDO::PARAM_INT);
-			$statement->execute();
-			$data = $statement->fetch();
-			$position = $data['contador'];
-			
-			$sql = 'insert into a_tabla_category_product(id_category,id_product,position) values(:id_category, :id_product, :position)'; //al añadir siempre es el último en "position"
-			$statement = $db->prepare($sql);
-			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-			$statement->bindParam(":id_category", $id_category, PDO::PARAM_INT);
-			$statement->bindParam(":position", $position, PDO::PARAM_INT);
-			$statement->execute();
-		}else{
-			return sendResponse(404, null, "El producto ya está en la categoría $id_category", $response);
+		$statement->execute($inData);
+		if ($statement->rowCount() != count($categories)) {
+			return sendResponse(404,'{"error":"No existe todos los id_category que envias:'.count($categories).' y existen: '.$statement->rowCount().'"}',null, $response);
 		}
-		return sendResponse(200, "añadido a $id_category correctamente", "resultado_añadir_categoria_a_producto", $response);
+
+		foreach($categories as $valor){
+			if ($valor["nuevo"]==1){
+				$sql = 'select position FROM a_tabla_category_product where id_category= :id_category and id_product = :id_product'; 
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+				$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+				$statement->execute();
+				if ($statement->rowCount() == 1) {
+					return sendResponse(404, "Error al meter un producto en una categoria, ya estaba incluida", '{"id_product": '.$id_product.',"id_category": '.$valor["id_category"].'}', $response);
+				}
+				
+				$sql = 'SELECT COUNT(*) as contador FROM a_tabla_category_product where id_category= :id_category';
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+				$statement->execute();
+				$data = $statement->fetch();
+				$position = $data['contador'];
+
+				$sql = 'insert into a_tabla_category_product(id_category,id_product,position) values(:id_category, :id_product, :position)'; 
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+				$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+				$statement->bindParam(":position", $position, PDO::PARAM_INT);
+				$statement->execute();
+			}else{
+				if ($valor["borrar"]==1){
+					$sql = 'select position FROM a_tabla_category_product where id_category= :id_category and id_product = :id_product'; 
+					$statement = $db->prepare($sql);
+					$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+					$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+					$statement->execute();
+					$data = $statement->fetch();
+
+					$sql = 'delete a_tabla_category_product.* from a_tabla_category_product where id_category= :id_category and id_product = :id_product';
+					$statement = $db->prepare($sql);
+					$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+					$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+					$statement->execute();
+
+					$sql = 'update a_tabla_category_product set position = position -1 where id_category= :id_category and position > :position';
+					$statement = $db->prepare($sql);
+					$statement->bindParam(":id_category", $valor["id_category"], PDO::PARAM_INT);
+					$statement->bindParam(":position", $data['position'], PDO::PARAM_INT);
+					$statement->execute();
+				}
+			}
+		}
+		return sendResponse(200,'{"id_product": '.$id_product.'}', "categorias ok",$response);
+
 		$db = null;
     } catch (PDOException $e) {
         return sendResponse(500, "", $e->getMessage(), $response);

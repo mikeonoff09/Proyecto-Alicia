@@ -7,18 +7,20 @@ class CaracteriscasData {
     this.psFeatureValue,
   });
 
-  List<PsFeatureSuper> psFeatureSuper;
-  List<PsFeature> psFeature;
-  List<PsFeatureValue> psFeatureValue;
+  List<CarDataPsFeatureSuper> psFeatureSuper;
+  List<CardDataPsFeature> psFeature;
+  List<CardDataPsFeatureValue> psFeatureValue;
 
   factory CaracteriscasData.fromMap(Map<String, dynamic> json) =>
       CaracteriscasData(
-        psFeatureSuper: List<PsFeatureSuper>.from(
-            json["ps_feature_super"].map((x) => PsFeatureSuper.fromMap(x))),
-        psFeature: List<PsFeature>.from(
-            json["ps_feature"].map((x) => PsFeature.fromMap(x))),
-        psFeatureValue: List<PsFeatureValue>.from(
-            json["ps_feature_value"].map((x) => PsFeatureValue.fromMap(x))),
+        psFeatureSuper: List<CarDataPsFeatureSuper>.from(
+            json["ps_feature_super"]
+                .map((x) => CarDataPsFeatureSuper.fromMap(x))),
+        psFeature: List<CardDataPsFeature>.from(
+            json["ps_feature"].map((x) => CardDataPsFeature.fromMap(x))),
+        psFeatureValue: List<CardDataPsFeatureValue>.from(
+            json["ps_feature_value"]
+                .map((x) => CardDataPsFeatureValue.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
@@ -35,8 +37,8 @@ class CaracteriscasData {
   }
 }
 
-class PsFeatureSuper extends Equatable {
-  PsFeatureSuper({
+class CarDataPsFeatureSuper extends Equatable {
+  CarDataPsFeatureSuper({
     this.idFeatureSuper,
     this.position,
     this.name,
@@ -46,7 +48,8 @@ class PsFeatureSuper extends Equatable {
   int position;
   String name;
 
-  factory PsFeatureSuper.fromMap(Map<String, dynamic> json) => PsFeatureSuper(
+  factory CarDataPsFeatureSuper.fromMap(Map<String, dynamic> json) =>
+      CarDataPsFeatureSuper(
         idFeatureSuper:
             json["id_feature_super"] == null ? null : json["id_feature_super"],
         position: json["position"],
@@ -68,8 +71,8 @@ class PsFeatureSuper extends Equatable {
   }
 }
 
-class PsFeature extends Equatable {
-  PsFeature({
+class CardDataPsFeature extends Equatable {
+  CardDataPsFeature({
     this.idFeature,
     this.idFeatureSuper,
     this.position,
@@ -81,7 +84,8 @@ class PsFeature extends Equatable {
   int position;
   String name;
 
-  factory PsFeature.fromMap(Map<String, dynamic> json) => PsFeature(
+  factory CardDataPsFeature.fromMap(Map<String, dynamic> json) =>
+      CardDataPsFeature(
         idFeature: json["id_feature"] == null ? null : json["id_feature"],
         idFeatureSuper: json["id_feature_super"],
         position: json["position"],
@@ -104,8 +108,8 @@ class PsFeature extends Equatable {
   }
 }
 
-class PsFeatureValue extends Equatable {
-  PsFeatureValue({
+class CardDataPsFeatureValue extends Equatable {
+  CardDataPsFeatureValue({
     this.idFeatureValue,
     this.idFeature,
     this.position,
@@ -117,7 +121,8 @@ class PsFeatureValue extends Equatable {
   int position;
   String name;
 
-  factory PsFeatureValue.fromMap(Map<String, dynamic> json) => PsFeatureValue(
+  factory CardDataPsFeatureValue.fromMap(Map<String, dynamic> json) =>
+      CardDataPsFeatureValue(
         idFeatureValue: json["id_feature_value"],
         idFeature: json["id_feature"],
         position: json["position"],
