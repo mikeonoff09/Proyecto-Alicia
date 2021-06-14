@@ -1,12 +1,6 @@
 <?php
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
-		//$sql = 'SELECT * FROM Organization WHERE City = :City AND State= :State';
-		//$stmt = $db->prepare($sql);
-		//$params = array(':City' => 'string1', ':State' => 'string2');
-		//foreach ($params as $key => &$val) {
-		//	$stmt->bindParam($key, $val);
-		//}
 
 function borrar_feature($id_feature,$position,$db){
 	try {
@@ -74,7 +68,7 @@ function borrar_feature_value($id_feature_value,$position,$db){
     }
 }
 
-
+/*
 $app->post('/ps_feature_todas/get', function (Request $request, Response $response) {
 	try {
 		$dbInstance = new Db();
@@ -112,7 +106,7 @@ $app->post('/ps_feature_todas/get', function (Request $request, Response $respon
     } catch (PDOException $e) {
         return sendResponse(500, "", $e->getMessage(), $response);
     }
-});
+});*/
 
 $app->post('/ps_feature/add', function (Request $request, Response $response) {
     $name = trim($request->getParam("name"));
@@ -212,7 +206,7 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name.'","id_feature_super": '.$id_feature_super.',"position": '.$position.',"actualizar":"ok"}',null, $response);
+            return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name.'","id_feature_super": '.$id_feature_super.',"position": '.$position.'}',"actualizar ok", $response);
         } else {
             return sendResponse(404, '{"error":"No se pudo actualizar"}',null, $response);
         }
@@ -224,7 +218,7 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
 
 
 $app->post('/ps_feature/delete', function (Request $request, Response $response) {
-    $id_feature = $request->getParam('id_feature');
+    $id_feature = $request->getParam("id_feature");
 	if(!is_numeric($id_feature)){   //debe ser un número
 		return sendResponse(404, "id_feature no es numero", null,$response);
 	}
@@ -351,7 +345,7 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200,'{"id_feature_value": '.$id_feature_value.',id_feature": '.$id_feature.',name":"'.$name.'",position": '.$position.', "actualizar": "ok"}', null,$response);
+            return sendResponse(200,'{"id_feature_value": '.$id_feature_value.',"id_feature": '.$id_feature.',"name":"'.$name.'","position": '.$position.'}',"actualizar ok",$response);
         } else {
             return sendResponse(404,"No se pudo actualizar", null,$response);
         }
@@ -363,7 +357,7 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
 
 
 $app->post('/ps_feature_value/delete', function (Request $request, Response $response) {
-    $id_feature_value = $request->getParam('id_feature_value');
+    $id_feature_value = $request->getParam("id_feature_value");
 	if(!is_numeric($id_feature_value)){   //debe ser un número
 		return sendResponse(404, "id_feature no es numero", null,$response);
 	}
@@ -414,7 +408,7 @@ $app->post('/ps_feature_super/add', function (Request $request, Response $respon
 
 		if ($statement->rowCount() > 0) {
 			$id_nuevo = $db->lastInsertId();
-			return sendResponse(201,'{"id_feature_super": '.$id_nuevo.',"name":"'.$name.'",  "position": '.$position.'}', null,$response);
+			return sendResponse(201,'{"id_feature_super": '.$id_nuevo.',"name":"'.$name.'","position": '.$position.'}', null,$response);
 		}else{
 			return sendResponse(404,"Error añadiendo feature_super", null,$response);
 		}
@@ -474,7 +468,7 @@ $app->post('/ps_feature_super/update', function (Request $request, Response $res
         $statement->execute();
 
 		if ($statement->rowCount() > 0) {
-            return sendResponse(200, '{"id_feature_super": '.$id_feature.',name":"'.$name.'",position": '.$position.', "actualizar":"ok"}',null,  $response);
+            return sendResponse(200, '{"id_feature_super": '.$id_feature_super.',"name":"'.$name.'","position": '.$position.'}',"actualizar ok",  $response);
         } else {
             return sendResponse(404, "No se pudo actualizar",null,  $response);
         }
@@ -546,7 +540,7 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 		$statement->execute($insertData);
 
         $db = null;
-		return sendResponse(200, null, '{"feature_product":'. $id_product.', "add":"ok"}', $response);
+		return sendResponse(200,'{"feature_product":'. $id_product.', "add":"ok"}',null, $response);
     } catch (PDOException $e) {
         return sendResponse(500,$e->getMessage(), null,$response);
     }
@@ -555,7 +549,7 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 
 
 $app->post('/ps_feature_super/delete', function (Request $request, Response $response) {
-    $id_feature_super = $request->getParam('id_feature_super');
+    $id_feature_super = $request->getParam("id_feature_super");
 	if(!is_numeric($id_feature_super)){   //debe ser un número 
 		return sendResponse(404,'{"error":"id_feature_super no es numero"}', null,$response);
 	}
@@ -591,7 +585,7 @@ $app->post('/ps_feature_super/delete', function (Request $request, Response $res
 		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
 		$statement->execute();
         $db = null;
-		return sendResponse(200,'{"id_feature_super": '.$id_feature_super.', "borrar":"ok"}', null,$response);
+		return sendResponse(200,'{"id_feature_super": '.$id_feature_super.'}', "borrar ok",$response);
     } catch (PDOException $e) {
         return sendResponse(500,$e->getMessage(),null,$response);
     }

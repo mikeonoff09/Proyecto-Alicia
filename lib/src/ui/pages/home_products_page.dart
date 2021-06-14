@@ -60,7 +60,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
+    //final size = MediaQuery.of(context).size;
     List<List<dynamic>> data = getListData();
     return Scaffold(
       // drawer: getDrawer(context),
@@ -108,7 +108,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 150,
+            width: 100,
             child: Center(
               child: Text(
                 "Filtros",
@@ -169,7 +169,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 200,
+            width: 120,
             child: TextFormField(
               decoration: InputDecoration(labelText: "Referencia"),
               controller: referenceController,
@@ -181,7 +181,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             height: 84,
-            width: 160,
+            width: 200,
             child: Transform.translate(
               offset: Offset(0, 0),
               child: SearchableDropdown<Fabricante>.single(
@@ -297,7 +297,7 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
             1: 0.08,
             2: 0.08,
             3: 0.2,
-            4: 0.15,
+            4: 0.10,
             5: 0.08,
             6: 0.07,
             7: 0.07,
@@ -546,9 +546,8 @@ class _HomeProductsPageState extends State<HomeProductsPage> {
 //   ); */
 // }
 
-String calcImageUrl(Map<String, dynamic> imagenData,
-    {String quality = "-cart_default.jpg"}) {
-  final id = imagenData["id_image"];
+String calcImageUrl(int imagenData, {String quality = "-cart_default.jpg"}) {
+  final id = imagenData;
   List<String> list = [];
   id.toString().runes.forEach((element) {
     var character = new String.fromCharCode(element);

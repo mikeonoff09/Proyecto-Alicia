@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:alicia/src/datasources/mysql_server.dart';
+import 'package:alicia/src/models/product_details_model.dart';
 import 'package:crop_your_image/crop_your_image.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:http/http.dart' as http;
@@ -14,8 +15,8 @@ import 'package:image/image.dart' as image;
 import '../components/result_canvas_image.dart';
 
 class PhotoEditorPage extends StatefulWidget {
-  final Map<String, dynamic> product;
-  final List<Map<String, dynamic>> images;
+  final int product;
+  final List<PsImage> images;
   final int selectedImage;
   const PhotoEditorPage(
     this.selectedImage, {
@@ -85,9 +86,8 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
       }
     });
     for (var i = 0; i < widget.images.length; i++) {
-      final element = widget.images[i];
       if (/* element["cover"] == 1 || */ i == widget.selectedImage) {
-        Future.microtask(() => openImage(element, i, context));
+        Future.microtask(() => openImage(widget.images[i].idImage, i, context));
       }
     }
 
@@ -136,38 +136,39 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                         for (var i = 0; i < widget.images.length; i++) {
                           final itemValue = widget.images[i];
                           if (i == 0) {
-                            itemValue["cover"] = 1;
+                            itemValue.cover = 1;
                           } else {
-                            itemValue["cover"] = null;
+                            itemValue.cover = null;
                           }
-                          itemValue["position"] = (i + 1);
+                          itemValue.position = (i + 1);
                         }
                       });
-
+                      // TODO: reordenar y guardar
+/*
                       MysqlSeverDataSource.instance
                           .updateImages(widget.images)
                           .then((value) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text("Imágenes actualizadas correctamente"),
                         ));
-                      });
+                      });*/
                     },
                     scrollController: leftController,
                     itemBuilder: (context, index) {
                       final imageData = widget.images[index];
                       final url = calcImageUrl(
-                        imageData,
+                        imageData.idImage,
                       );
 
                       return Container(
-                        key: Key(imageData["id_image"].toString()),
+                        key: Key(imageData.idImage.toString()),
                         child: InkWell(
                           child: Stack(
                             alignment: Alignment.bottomRight,
                             children: <Widget>[
-                              if (imageData["id_image"] != addingImage)
+                              if (imageData.idImage != addingImage)
                                 new Image.network(url),
-                              if (imageData["id_image"] == addingImage)
+                              if (imageData.idImage == addingImage)
                                 Image.file(downloadedImage),
                               Positioned(
                                 bottom: 0,
@@ -175,7 +176,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                                     color: Colors.black.withOpacity(0.65),
                                     width: 130,
                                     child: Text(
-                                      imageData["resolucionorigen"] ?? "",
+                                      imageData.resolucionorigen ?? "",
                                       style: TextStyle(
                                         color: Colors.white70,
                                         fontWeight: FontWeight.bold,
@@ -198,7 +199,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                                         },
                                 ),
                               ),
-                              if (imageData["descartada"] == 1)
+                              if (imageData.descartada == 1)
                                 Positioned(
                                   top: 10,
                                   left: 0,
@@ -212,7 +213,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                           onTap: selectedImage == index || loading
                               ? null
                               : () {
-                                  openImage(imageData, index, context);
+                                  openImage(imageData.idImage, index, context);
                                 },
                         ),
                         height: 130,
@@ -484,8 +485,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
     );
   }
 
-  Future openImage(
-      Map<String, dynamic> imageData, int index, BuildContext context) async {
+  Future openImage(int imageData, int index, BuildContext context) async {
     setState(() {
       loading = true;
       topMargin = 0;
@@ -496,21 +496,19 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
     areaValue.value = Rect.fromLTWH(240, 212, 800, 600);
     final url = calcImageUrl(imageData, quality: ".jpg");
     final response = await http.get(Uri.parse(url));
-    final productDir = Directory("./products/${widget.product["ID"]}/images");
-    final resultDir = Directory("./products/${widget.product["ID"]}/result");
+    /////////////////////////////////////////////////////////////////
+    final productDir = Directory("./products/${widget.product}/images");
+    final resultDir = Directory("./products/${widget.product}/result");
     productDir.createSync(recursive: true);
     resultDir.createSync(recursive: true);
     print(productDir.absolute);
-    resultImage = File(resultDir.path + "/${imageData["id_image"]}.png");
-    resultImage2 =
-        File(resultDir.path + "/${imageData["id_image"]}-cart_default.png");
-    resultImageJpg = File(resultDir.path + "/${imageData["id_image"]}.jpg");
-    resultImageJpg2 =
-        File(resultDir.path + "/${imageData["id_image"]}-cart_default.jpg");
-    resultOriginalCropImage =
-        File(resultDir.path + "/${imageData["id_image"]}-crop.jpg");
+    resultImage = File(resultDir.path + "/${imageData}.png");
+    resultImage2 = File(resultDir.path + "/${imageData}-cart_default.png");
+    resultImageJpg = File(resultDir.path + "/${imageData}.jpg");
+    resultImageJpg2 = File(resultDir.path + "/${imageData}-cart_default.jpg");
+    resultOriginalCropImage = File(resultDir.path + "/${imageData}-crop.jpg");
 
-    downloadedImage = File(productDir.path + "/${imageData["id_image"]}.jpg");
+    downloadedImage = File(productDir.path + "/${imageData}.jpg");
     downloadedImage.writeAsBytesSync(response.bodyBytes);
     this._imageData = response.bodyBytes;
 
@@ -581,8 +579,8 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
       }
       final body = {
         "imgbase64": imgbase64,
-        "id_product": widget.product["ID"].toString(),
-        "id_image": widget.images[selectedImage]["id_image"].toString(),
+        "id_product": widget.product.toString(),
+        "id_image": widget.images[selectedImage].idImage.toString(),
         "original_crop": orignalCrop64,
         "equipo": equipo,
         "derecha": areaValue.value.right.toString(),
@@ -652,10 +650,10 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
 
   void _descartadarImage(int index) async {
     final image = widget.images[index];
-    image["descartada"] = image["descartada"] == 1 ? 0 : 1;
+    image.descartada = image.descartada == 1 ? 0 : 1;
     setState(() {});
-    await MysqlSeverDataSource.instance.descartadarImage(
-        idImage: image["id_image"], descartada: image["descartada"]);
+    await MysqlSeverDataSource.instance
+        .descartadarImage(idImage: image.idImage, descartada: image.descartada);
   }
 
   Future _addImage(BuildContext context) async {
@@ -677,29 +675,31 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
       final uiImage = fi.image;
       originalSize = Size(uiImage.width.toDouble(), uiImage.height.toDouble());
 
-      final id = (await MysqlSeverDataSource.instance.getLastImageId()) + 1;
+      // TODO:pendiente
+      final id =
+          1; //(await MysqlSeverDataSource.instance.getLastImageId()) + 1;
 
       addingImage = id;
-      widget.images.add(
-        {
-          "id_image": id,
-          "id_product": widget.product["ID"],
-          "position": widget.images.length,
-          "cover": null,
-          "padding": 0,
-          "descartada": 0,
-          "resolucionorigen":
-              "${originalSize.width.toInt()}x${originalSize.height.toInt()}",
-          "resolucionrecorte": "0x0",
-        },
+      PsImage psImage = PsImage(
+        idImage: id,
+        idProduct: widget.product,
+        position: widget.images.length,
+        cover: null,
+        padding: 0,
+        descartada: 0,
+        resolucionorigen:
+            "${originalSize.width.toInt()}x${originalSize.height.toInt()}",
+        resolucionrecorte: "0x0",
       );
+      widget.images.add(psImage);
       selectedImage = widget.images.length - 1;
       final toUpdate = [widget.images.last];
+      /*
       MysqlSeverDataSource.instance.updateImages(toUpdate).then((value) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("Imágenes actualizadas correctamente"),
         ));
-      });
+      });*/
       setState(() {
         downloadedImage = result;
         aspectRatio = null;
