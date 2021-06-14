@@ -7,7 +7,7 @@ typedef OnResult = Function(ResultData result);
 typedef WidgetBuilder = Widget Function(int id);
 
 class TableFilterDialog extends StatefulWidget {
-  final List<Map<String, dynamic>> originalList;
+  final List<dynamic> originalList;
   final String title;
   final String campoToShow;
   final String campoId;

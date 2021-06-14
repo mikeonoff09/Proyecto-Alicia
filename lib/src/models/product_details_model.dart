@@ -23,6 +23,7 @@ class ProductDetailsMode extends Equatable {
 
   factory ProductDetailsMode.fromMap(Map<String, dynamic> json) =>
       ProductDetailsMode(
+        //TODO   la primera linea desaparecería porque no es un array
         psProduct: List<PsProduct>.from(
             json["ps_product"].map((x) => PsProduct.fromMap(x))),
         psCategoryProduct: List<PsCategoryProduct>.from(
@@ -41,6 +42,7 @@ class ProductDetailsMode extends Equatable {
       );
 
   Map<String, dynamic> toMap() => {
+        //TODO   la primera linea desaparecería
         "ps_product": List<dynamic>.from(psProduct.map((x) => x.toMap())),
         "ps_image": List<dynamic>.from(psImage.map((x) => x.toMap())),
         "ps_category_product":

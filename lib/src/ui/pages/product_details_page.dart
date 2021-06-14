@@ -331,6 +331,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 campoId: "id_category",
                                 campoToShow: "name",
                                 campofiltro: "name",
+                                title: "Busqueda de Categoría",
+                                widgetBuilder: (int index) {
+                                  return Image.network(
+                                      "https://www.mueblesextraordinarios.com/img/c/$index-thumb.jpg");
+                                },
                               ),
                             );
                           },
@@ -455,8 +460,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               context: context,
               builder: (context) => TableFilterDialog(
                 campoId: "id_supplier",
+                //TODO   aqui hay que enviar (y despues recoger el id elegido) el listado de distribuidores
+                originalList: widget.generalData.distribuidores,
                 campoToShow: "name",
                 campofiltro: "name",
+                title: "Busqueda de proveedor",
                 widgetBuilder: (int index) {
                   return Image.network(
                       "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
@@ -867,9 +875,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   Widget featuresWidget(BuildContext context) {
     List<PsFeatureProduct> psFeatureProduct = productData.psFeatureProduct;
-    List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
     List<PsFeatureSuper> psFeatureSuperlist = productData.psFeatureSuper;
     List<PsFeature> psFeatureList = productData.psFeature;
+    List<PsFeatureValue> psFeatureValueList = productData.psFeatureValue;
 
     print("PsFeatureProduct: " + psFeatureProduct.toString());
 
