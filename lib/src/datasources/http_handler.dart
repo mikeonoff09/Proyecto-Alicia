@@ -268,12 +268,12 @@ class HttpHandler {
     return null;
   }
 
-  Future<PsFeature> updateFeature(PsFeature featureValue) async {
+  Future<PsFeature> updateFeature(PsFeature feature) async {
     final response = await http.post(
         Uri.parse(
           _baseUrl + "ps_feature/update",
         ),
-        body: json.encode(featureValue.toMap()),
+        body: json.encode(feature.toMap()),
         headers: {
           HttpHeaders.contentTypeHeader: "application/json",
         });

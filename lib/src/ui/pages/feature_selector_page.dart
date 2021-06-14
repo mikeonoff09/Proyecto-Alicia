@@ -115,9 +115,9 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                       groupValue: selectedFeature,
                       secondary: IconButton(
                         icon: Icon(Icons.edit),
-                        onPressed: () {
-                          // TODO: Agregar edicion
-                        },
+                        onPressed: () =>
+                            // TODO: Agregar edicion
+                            _editPsFeature(psFeatureList[index]),
                       ),
                       onChanged: (_) =>
                           _newFeatureSelected(psFeatureList[index])),
@@ -130,13 +130,18 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
             child: ListView.builder(
               itemCount: psFeatureValueList.length,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(psFeatureValueList[index].name),
-                  onTap: () {
-                    // TODO: Marcar la propiedad como seleccionada
-                  },
-                  trailing:
-                      IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+                return Dismissible(
+                  key: Key(psFeatureValueList[index].idFeatureValue.toString()),
+                  child: RadioListTile(
+                    title: Text(psFeatureValueList[index].name),
+                    value: psFeatureValueList[index],
+                    secondary: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () =>
+                          // TODO: Agregar edicion
+                          _editPsFeatureValue(psFeatureValueList[index]),
+                    ),
+                  ),
                 );
               },
             ),
@@ -320,10 +325,15 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                       flex: 1,
                       child: ElevatedButton(
                           onPressed: () {
-                            //TODO: solicitud de UPDATE
+                            //TODO: solicitud de UPDATE ya se realiza hacia el servidor
+                            //si resultado es 200 se cierra la ventana
+                            //en otro caso muestra el mensaje de error enviado por el servidor
                             HttpHandler.instance.updateSuperFeature(
                                 psFeatureSuper.copyWith(
-                                    name: textController.value.text));
+                                    name: textController.value.text,
+                                    idFeatureSuper:
+                                        psFeatureSuper.idFeatureSuper,
+                                    position: psFeatureSuper.position));
                           },
                           child: Text("Aceptar")),
                     ),
@@ -345,6 +355,120 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     );
   }
 
+  void _editPsFeature(PsFeature psFeature) {
+    TextEditingController textController = new TextEditingController();
+    textController.value = TextEditingValue(text: psFeature.name);
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Container(
+            height: 100,
+            width: 200,
+            child: Column(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    controller: textController,
+                    hintText: "Nuevo Nombre",
+                    labelText: "Nuevo Nombre",
+                  ),
+                ),
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.stretch,
+                  // mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            //TODO: solicitud de UPDATE ya se realiza hacia el servidor
+                            //si resultado es 200 se cierra la ventana
+                            //en otro caso muestra el mensaje de error enviado por el servidor
+                            HttpHandler.instance.updateFeature(
+                                psFeature.copyWith(
+                                    idFeatureSuper: psFeature.idFeatureSuper,
+                                    name: textController.value.text,
+                                    idFeature: psFeature.idFeature,
+                                    position: psFeature.position));
+                          },
+                          child: Text("Aceptar")),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("Cancelar"),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _editPsFeatureValue(PsFeatureValue psFeatureValue) {
+    TextEditingController textController = new TextEditingController();
+    textController.value = TextEditingValue(text: psFeatureValue.name);
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Container(
+            height: 100,
+            width: 200,
+            child: Column(
+              children: [
+                Expanded(
+                  child: MyTextField(
+                    controller: textController,
+                    hintText: "Nuevo Nombre",
+                    labelText: "Nuevo Nombre",
+                  ),
+                ),
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.stretch,
+                  // mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            //TODO: solicitud de UPDATE ya se realiza hacia el servidor
+                            //si resultado es 200 se cierra la ventana
+                            //en otro caso muestra el mensaje de error enviado por el servidor
+                            HttpHandler.instance.updateFeatureValue(
+                                psFeatureValue.copyWith(
+                                    idFeatureValue:
+                                        psFeatureValue.idFeatureValue,
+                                    name: textController.value.text,
+                                    idFeature: psFeatureValue.idFeature,
+                                    position: psFeatureValue.position));
+                          },
+                          child: Text("Aceptar")),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text("Cancelar"),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
   // BUSQUEDAS
 
   _searchFeatureSuper(String value) {

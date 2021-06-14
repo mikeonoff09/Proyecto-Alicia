@@ -140,7 +140,13 @@ class PsFeature extends Equatable {
   int idFeatureSuper;
   int position;
   String name;
-
+  PsFeature copyWith(
+          {int idFeature, int idFeatureSuper, int position, String name}) =>
+      new PsFeature(
+          idFeature: idFeature ?? this.idFeature,
+          name: name ?? this.name,
+          position: position ?? this.position,
+          idFeatureSuper: idFeatureSuper ?? this.idFeatureSuper);
   factory PsFeature.fromMap(Map<String, dynamic> json) => PsFeature(
         idFeature: json["id_feature"],
         idFeatureSuper: json["id_feature_super"],
@@ -176,7 +182,13 @@ class PsFeatureValue extends Equatable {
   int idFeature;
   int position;
   String name;
-
+  PsFeatureValue copyWith(
+          {int idFeatureValue, int idFeature, int position, String name}) =>
+      new PsFeatureValue(
+          idFeatureValue: idFeatureValue ?? this.idFeatureValue,
+          name: name ?? this.name,
+          position: position ?? this.position,
+          idFeature: idFeature ?? this.idFeature);
   factory PsFeatureValue.fromMap(Map<String, dynamic> json) => PsFeatureValue(
         idFeatureValue: json["id_feature_value"],
         idFeature: json["id_feature"],

@@ -129,23 +129,30 @@ $app->post('/ps_feature/add', function (Request $request, Response $response) {
 	}
 
     try {
+		$sql = 'SELECT id_feature FROM a_tabla_feature where name = :name and id_feature_super= :id_feature_super';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":name", $name, PDO::PARAM_STR);
+		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+		$statement->execute();
+		if ($statement->rowCount() > 0) {
+			return sendResponse(404, '{"error":"Ya existe Super Caracteristica con el mismo nombre"}',null, $response);
+		}
 		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature where id_feature_super= :id_feature_super'; //al añadir siempre es el último en "position"
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
 		$statement->execute();
 		$data = $statement->fetch();
-		$position = $data['contador'];
 
 		$sql = "insert into a_tabla_feature (position,name,id_feature_super) values (:position, :name, :id_feature_super)";
 		$statement = $db->prepare($sql);
 		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
-		$statement->bindParam(":position", $position, PDO::PARAM_INT);
+		$statement->bindParam(":position", $data['contador'], PDO::PARAM_INT);
 		$statement->bindParam(":name", $name,PDO::PARAM_STR);
 		$statement->execute();
 
 		if ($statement->rowCount() > 0) {
 			$id_nuevo = $db->lastInsertId();
-			return sendResponse(201, '{"id_feature": '.$id_nuevo.',"name": "'.$name.'", "position": '.$position.'}',null, $response);
+			return sendResponse(201, '{"id_feature": '.$id_nuevo.',"name": "'.$name.'", "position": '.$data['contador'].'}',null, $response);
 		}else{
 			return sendResponse(404, '{"id_feature":"Error añadiendo feature"}',null, $response);
 		}
@@ -170,50 +177,70 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
 		return sendResponse(404, "No has enviado el nombre",null, $response);
 	}
 
-	$sql = 'SELECT position,id_feature_super FROM a_tabla_feature where id_feature = :id_feature';
-	$dbInstance = new Db();
-    $db = $dbInstance->connectDB();
-	$statement = $db->prepare($sql);
-	$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
-	$statement->execute();
-	if ($statement->rowCount() == 0) {
-		return sendResponse(404, "No existe el feature",null,  $response);
-	}
-	$data = $statement->fetch();
-	$positionantigua = $data['position'];
-	$id_feature_super = $data['id_feature_super'];
 
-	//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
-	// 0,1,2,3,4,5, etc
-	if ($positionantigua != $position){
-		if ($positionantigua > $position){
-			$sql = "update a_tabla_feature set position=position +1 where id_feature_super = :id_feature_super and position >= :position and position < :positionantigua";
-		}else{
-			$sql = "update a_tabla_feature set position=position -1 where id_feature_super = :id_feature_super and position >= :positionantigua and position <= :position";
-		}
+	try {
+		$dbInstance = new Db();
+		$db = $dbInstance->connectDB();
+		$sql = 'SELECT id_feature_super,name,position FROM a_tabla_feature where id_feature= :id_feature';
 		$statement = $db->prepare($sql);
-		$statement->bindParam(":position", $position, PDO::PARAM_INT);
-		$statement->bindParam(":positionantigua", $positionantigua, PDO::PARAM_INT);
+		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
 		$statement->execute();
+		if ($statement->rowCount() == 0) {
+			return sendResponse(404, '{"error":"No existe el id_feature '.$id_feature.'"}',null, $response);
+		}
+
+		$data = $statement->fetch();
+
+
+		//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
+		// 0,1,2,3,4,5, etc
+		if ($position != $data['position']){
+			if ($data['position'] > $position){
+				$sql = "update a_tabla_feature set position=position +1 where id_feature_super = :id_feature_super and position >= :position and position < :positionantigua";
+			}else{
+				$sql = "update a_tabla_feature set position=position -1 where id_feature_super = :id_feature_super and position >= :positionantigua and position <= :position";
+			}
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":position", $position, PDO::PARAM_INT);
+			$statement->bindParam(":positionantigua", $data['position'], PDO::PARAM_INT);
+			$statement->bindParam(":id_feature_super", $data['id_feature_super'], PDO::PARAM_INT);
+			$statement->execute();
+
+			$sql = "UPDATE a_tabla_feature SET position=:position WHERE id_feature = :id_feature";
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+			$statement->bindParam(":position", $position, PDO::PARAM_INT);
+
+			$statement->execute();
+			return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name."#".$data["name"].'","id_feature_super": '.$data["id_feature_super"].',"position": '.$position.'}',"Cambio Posicion ok", $response);
+		}else{
+			$sql = 'SELECT id_feature FROM a_tabla_feature where name= :name and id_feature_super = :id_feature_super and id_feature <> :id_feature';
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+			$statement->bindParam(":id_feature_super", $data["id_feature_super"], PDO::PARAM_INT);
+			$statement->bindParam(":name", $name, PDO::PARAM_STR);		
+			$statement->execute();
+
+			if ($statement->rowCount() > 0){
+				return sendResponse(404, "Ya existe otra caracteristica con ese nombre",$id_feature .".....". $position ."###". $name,  $response);
+			}else{
+				$sql = "UPDATE a_tabla_feature SET name=:name WHERE id_feature = :id_feature";
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+				$statement->bindParam(":name", $name,PDO::PARAM_STR);
+				$statement->execute();
+
+				if ($statement->rowCount() > 0) {
+					return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name."#".$data["name"].'","id_feature_super": '.$data["id_feature_super"].',"position": '.$position.'}',"actualizar nombre ok", $response);
+				} else {
+					return sendResponse(404, '{"error":"No se pudo actualizar"}',null, $response);
+				}
+				$db = null;
+			}
+		}
+	} catch (PDOException $e) {
+			return sendResponse(500, $e->getMessage(), null,$response);
 	}
-
-    try {
-		$sql = "UPDATE a_tabla_feature SET position=:position, name=:name WHERE id_feature = :id_feature";
-        $statement = $db->prepare($sql);
-        $statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
-        $statement->bindParam(":position", $position, PDO::PARAM_INT);
-        $statement->bindParam(":name", $name,PDO::PARAM_STR);
-        $statement->execute();
-
-		if ($statement->rowCount() > 0) {
-            return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name.'","id_feature_super": '.$id_feature_super.',"position": '.$position.'}',"actualizar ok", $response);
-        } else {
-            return sendResponse(404, '{"error":"No se pudo actualizar"}',null, $response);
-        }
-        $db = null;
-    } catch (PDOException $e) {
-        return sendResponse(500, $e->getMessage(), null,$response);
-    }
 });
 
 
@@ -229,6 +256,7 @@ $app->post('/ps_feature/delete', function (Request $request, Response $response)
 	$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
 	$statement->execute();
 	if ($statement->rowCount() == 0) {
+		$db = null;
 		return sendResponse(404, '{"error":"No existe el feature"}',null, $response);
 	}
 	$data = $statement->fetch();
@@ -237,6 +265,7 @@ $app->post('/ps_feature/delete', function (Request $request, Response $response)
 		$db = null;
 		return sendResponse(200, '{"id_feature": '.$id_feature.',  "borrar":"ok"}',null, $response);
     }else{
+		$db = null;
         return sendResponse(500,$e->getMessage(),null, $response);
     }
 });
@@ -268,11 +297,19 @@ $app->post('/ps_feature_value/add', function (Request $request, Response $respon
 
     try {
 
+		$sql = 'SELECT id_feature_value FROM a_tabla_feature_value where name = :name and id_feature = :id_feature';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":name", $name, PDO::PARAM_STR);
+		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+		$statement->execute();
+		if ($statement->rowCount() > 0) {
+			return sendResponse(404, '{"error":"Ya existe Valor Caracteristica con el mismo nombre"}',null, $response);
+		}
 		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature_value'; //al añadir siempre es el último en "position"
 		$statement = $db->prepare($sql);
 		$statement->execute();
 		$data = $statement->fetch();
-		$position = $data['contador'];
+		$position = $data["contador"];
 
 		$sql = "insert into a_tabla_feature_value (position,name,id_feature) values (:position, :name, :id_feature)";
 		$statement = $db->prepare($sql);
@@ -289,7 +326,7 @@ $app->post('/ps_feature_value/add', function (Request $request, Response $respon
 		}
 		$db = null;
     } catch (PDOException $e) {
-        return sendResponse(500,$e->getMessage(),null, $response);
+        return sendResponse(500,$e->getMessage(),'{"id_feature": '.$id_feature.', "name":"'.$name.'", "position": '.$position.'}', $response);
     }
 });
 
@@ -308,51 +345,69 @@ $app->post('/ps_feature_value/update', function (Request $request, Response $res
 		return sendResponse(404, "No has enviado el name", null,$response);
 	}
 
-	$sql = 'SELECT position,id_feature FROM a_tabla_feature_value where id_feature_value = :id_feature_value';
-	$dbInstance = new Db();
-    $db = $dbInstance->connectDB();
-	$statement = $db->prepare($sql);
-	$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
-	$statement->execute();
-	if ($statement->rowCount() == 0) {
-		return sendResponse(404,"No existe el feature", null, $response);
-	}
-	$data = $statement->fetch();
-	$positionantigua = $data['position'];
-	$id_feature = $data['id_feature'];
-
-	//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
-	// 0,1,2,3,4,5, etc
-	if ($positionantigua != $position){
-		if ($positionantigua > $position){
-			$sql = "update a_tabla_feature_value set position=position +1 where id_feature = :id_feature and position >= :position and position < :positionantigua";
-		}else{
-			$sql = "update a_tabla_feature_value set position=position -1 where id_feature = :id_feature and position >= :positionantigua and position <= :position";
-		}
+	try {
+		$dbInstance = new Db();
+		$db = $dbInstance->connectDB();
+		$sql = 'SELECT id_feature,name,position FROM a_tabla_feature_value where id_feature_value= :id_feature_value';
 		$statement = $db->prepare($sql);
-		$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
-		$statement->bindParam(":position", $position, PDO::PARAM_INT);
-		$statement->bindParam(":positionantigua", $positionantigua, PDO::PARAM_INT);
+		$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
 		$statement->execute();
+		if ($statement->rowCount() == 0) {
+			return sendResponse(404, '{"error":"No existe el id_feature_value '.$id_feature_value.'"}',null, $response);
+		}
+
+		$data = $statement->fetch();
+
+
+		//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
+		// 0,1,2,3,4,5, etc
+		if ($position != $data['position']){
+			if ($data['position'] > $position){
+				$sql = "update a_tabla_feature_value set position=position +1 where id_feature = :id_feature and position >= :position and position < :positionantigua";
+			}else{
+				$sql = "update a_tabla_feature_value set position=position -1 where id_feature = :id_feature and position >= :positionantigua and position <= :position";
+			}
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":position", $position, PDO::PARAM_INT);
+			$statement->bindParam(":positionantigua", $data['position'], PDO::PARAM_INT);
+			$statement->bindParam(":id_feature", $data['id_feature'], PDO::PARAM_INT);
+			$statement->execute();
+
+			$sql = "UPDATE a_tabla_feature SET position=:position WHERE id_feature_value = :id_feature_value";
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":id_feature_value", $id_feature, PDO::PARAM_INT);
+			$statement->bindParam(":position", $position, PDO::PARAM_INT);
+
+			$statement->execute();
+			return sendResponse(200, '{"id_feature_value": '.$id_feature_value.',"name": "'.$name."#".$data["name"].'","id_feature": '.$data["id_feature"].',"position": '.$position.'}',"Cambio Posicion ok", $response);
+		}else{
+			$sql = 'SELECT id_feature_value FROM a_tabla_feature_value where name= :name and id_feature = :id_feature and id_feature_value <> :id_feature_value';
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
+			$statement->bindParam(":id_feature", $data["id_feature"], PDO::PARAM_INT);
+			$statement->bindParam(":name", $name, PDO::PARAM_STR);		
+			$statement->execute();
+
+			if ($statement->rowCount() > 0){
+				return sendResponse(404, "Ya existe otra caracteristica con ese nombre",$id_feature_value .".....". $position ."###". $name,  $response);
+			}else{
+				$sql = "UPDATE a_tabla_feature_value SET name=:name WHERE id_feature_value = :id_feature_value";
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":id_feature_value", $id_feature_value, PDO::PARAM_INT);
+				$statement->bindParam(":name", $name,PDO::PARAM_STR);
+				$statement->execute();
+
+				if ($statement->rowCount() > 0) {
+					return sendResponse(200, '{"id_feature_value": '.$id_feature_value.',"name": "'.$name."#".$data["name"].'","id_feature": '.$data["id_feature"].',"position": '.$position.'}',"actualizar nombre ok", $response);
+				} else {
+					return sendResponse(404, '{"error":"No se pudo actualizar"}',null, $response);
+				}
+				$db = null;
+			}
+		}
+	} catch (PDOException $e) {
+			return sendResponse(500, $e->getMessage(), null,$response);
 	}
-
-    try {
-		$sql = "UPDATE a_tabla_feature_value SET position=:position, name=:name WHERE id_feature_value = :id_feature_value";
-        $statement = $db->prepare($sql);
-        $statement->bindParam(":id_feature_value", $id_feature, PDO::PARAM_INT);
-        $statement->bindParam(":position", $position, PDO::PARAM_INT);
-        $statement->bindParam(":name", $name,PDO::PARAM_STR);
-        $statement->execute();
-
-		if ($statement->rowCount() > 0) {
-            return sendResponse(200,'{"id_feature_value": '.$id_feature_value.',"id_feature": '.$id_feature.',"name":"'.$name.'","position": '.$position.'}',"actualizar ok",$response);
-        } else {
-            return sendResponse(404,"No se pudo actualizar", null,$response);
-        }
-        $db = null;
-    } catch (PDOException $e) {
-        return sendResponse(500, $e->getMessage(), null,$response);
-    }
 });
 
 
@@ -371,7 +426,7 @@ $app->post('/ps_feature_value/delete', function (Request $request, Response $res
 		return sendResponse(404,"No existe el feature", null,$response);
 	}
 	$data = $statement->fetch();
-	$position = $data['position'];
+	$position = $data["position"];
 
 	if (borrar_feature_value($id_feature_value,$position,$db)){
 		return sendResponse(200,'{"id_feature_value": '.$id_feature.', "borrar": "ok"}',null, $response);
@@ -394,11 +449,18 @@ $app->post('/ps_feature_super/add', function (Request $request, Response $respon
         $dbInstance = new Db();
         $db = $dbInstance->connectDB();
 
+		$sql = 'SELECT id_feature_super FROM a_tabla_feature_super where name = :name';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":name", $name, PDO::PARAM_STR);
+		$statement->execute();
+		if ($statement->rowCount() > 0) {
+			return sendResponse(404, '{"error":"Ya existe Super Caracteristica con el mismo nombre"}',null, $response);
+		}
 		$sql = 'SELECT COUNT(*) as contador FROM a_tabla_feature_super'; //al añadir siempre es el último en "position"
 		$statement = $db->prepare($sql);
 		$statement->execute();	   
 		$data = $statement->fetch();
-		$position = $data['contador'];
+		$position = $data["contador"];
 
 		$sql = "insert into a_tabla_feature_super (position,name) values (:position, :name)";
 		$statement = $db->prepare($sql);
@@ -429,50 +491,63 @@ $app->post('/ps_feature_super/update', function (Request $request, Response $res
 	if(!is_numeric($id_feature_super)){   //debe ser un número 
 		return sendResponse(404, '{"error":"id_feature_super no es numero"}',null, $response);
 	}
-	if(strlen($name)< 1){   //minimo debe 
+	if(strlen($name)< 1){   //minimo debe tener 1 caracter
 		return sendResponse(404,"No has enviado el nombre", null,$response);
 	}
-
-	$sql = 'SELECT position FROM a_tabla_feature_super where id_feature_super = :id_feature_super';
-	$dbInstance = new Db();
-    $db = $dbInstance->connectDB();
-	$statement = $db->prepare($sql);
-	$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
-	$statement->execute();
-	if ($statement->rowCount() == 0) {
-		return sendResponse(404,"No existe el feature",null,$response);
-	}
-	$data = $statement->fetch();
-	$positionantigua = $data['position'];
-
-	//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
-	// 0,1,2,3,4,5, etc
-	if ($positionantigua != $position){
-		if ($positionantigua > $position){
-			$sql = "update a_tabla_feature_super set position=position +1 where position >= :position and position < :positionantigua";
-		}else{
-			$sql = "update a_tabla_feature_super set position=position -1 where position >= :positionantigua and position <= :position";
-		}
-		$statement = $db->prepare($sql);
-		$statement->bindParam(":position", $position, PDO::PARAM_INT);
-		$statement->bindParam(":positionantigua", $positionantigua, PDO::PARAM_INT);
-		$statement->execute();
-	}
-
     try {
-		$sql = "UPDATE a_tabla_feature_super SET position=:position, name=:name WHERE id_feature_super = :id_feature_super";
-        $statement = $db->prepare($sql);
-		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
-        $statement->bindParam(":position", $position, PDO::PARAM_INT);
-        $statement->bindParam(":name", $name,PDO::PARAM_STR);
-        $statement->execute();
+		$dbInstance = new Db();
+		$db = $dbInstance->connectDB();
 
-		if ($statement->rowCount() > 0) {
-            return sendResponse(200, '{"id_feature_super": '.$id_feature_super.',"name":"'.$name.'","position": '.$position.'}',"actualizar ok",  $response);
-        } else {
-            return sendResponse(404, "No se pudo actualizar",null,  $response);
-        }
-        $db = null;
+		$sql = 'SELECT position,name FROM a_tabla_feature_super where id_feature_super = :id_feature_super';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+		$statement->execute();
+		if ($statement->rowCount() == 0) {
+			return sendResponse(404,"No existe el feature, avisa a Miguel",null,$response);
+		}
+		$data = $statement->fetch();
+		$positionantigua = $data["position"];
+
+		//si cambia de posicion debe cambiar el resto de registros para que los numeros sean siempre correlativos
+		// 0,1,2,3,4,5, etc
+		if ($positionantigua != $position){
+			if ($positionantigua > $position){
+				$sql = "update a_tabla_feature_super set position=position +1 where position >= :position and position < :positionantigua";
+			}else{
+				$sql = "update a_tabla_feature_super set position=position -1 where position >= :positionantigua and position <= :position";
+			}
+			$statement = $db->prepare($sql);
+			$statement->bindParam(":position", $position, PDO::PARAM_INT);
+			$statement->bindParam(":positionantigua", $positionantigua, PDO::PARAM_INT);
+			$statement->execute();
+		}else{
+			if ($data['position'] == $name){
+				return sendResponse(404, "No hay cambio de orden ni nombre",$id_feature_super .".....". $position ."###". $name,  $response);
+			}else{
+				$sql = 'SELECT id_feature_super FROM a_tabla_feature_super where name = :name and id_feature_super<> :id_feature_super';
+				$statement = $db->prepare($sql);
+				$statement->bindParam(":name", $name, PDO::PARAM_STR);
+				$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+				$statement->execute();
+				if ($statement->rowCount() > 0) {
+					return sendResponse(404, '{"error":"Ya existe Super Caracteristica con el mismo nombre"}',null, $response);
+				}else{
+					$sql = "UPDATE a_tabla_feature_super SET position=:position, name=:name WHERE id_feature_super = :id_feature_super";
+					$statement = $db->prepare($sql);
+					$statement->bindParam(":id_feature_super", $id_feature_super, PDO::PARAM_INT);
+					$statement->bindParam(":position", $position, PDO::PARAM_INT);
+					$statement->bindParam(":name", $name,PDO::PARAM_STR);
+					$statement->execute();
+
+					if ($statement->rowCount() > 0) {
+						return sendResponse(200, '{"id_feature_super": '.$id_feature_super.',"name":"'.$name.'","position": '.$position.'}',"actualizar ok",  $response);
+					} else {
+						return sendResponse(404, "Error al actualizar, avisa a Miguel",$id_feature_super .".....". $position ."###". $name,  $response);
+					}	
+				}	
+			}
+		}
+
     } catch (PDOException $e) {
         return sendResponse(500, $e->getMessage(), null,$response);
     }
@@ -540,7 +615,7 @@ $app->post('/ps_feature_product/add', function (Request $request, Response $resp
 		$statement->execute($insertData);
 
         $db = null;
-		return sendResponse(200,'{"feature_product":'. $id_product.', "add":"ok"}',null, $response);
+		return sendResponse(201,'{"feature_product":'. $id_product.', "add":"ok"}',null, $response);
     } catch (PDOException $e) {
         return sendResponse(500,$e->getMessage(), null,$response);
     }
