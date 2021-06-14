@@ -30,6 +30,7 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
   PsFeatureSuper selectedSuper;
 
   PsFeature selectedFeature;
+  PsFeatureValue selectedFeatureValue;
 
   @override
   Widget build(BuildContext context) {
@@ -141,6 +142,9 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                           // TODO: Agregar edicion
                           _editPsFeatureValue(psFeatureValueList[index]),
                     ),
+                    onChanged: (PsFeatureValue value) =>
+                        _newFeatureValueSelected(value),
+                    groupValue: selectedFeatureValue,
                   ),
                 );
               },
@@ -190,6 +194,21 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
         psFeatureValueList.add(featureValue);
       }
     }
+    _cleanControllers();
+    setState(() {});
+  }
+
+  _newFeatureValueSelected(PsFeatureValue feature) {
+    print("New Feature Value Clicked ");
+    // psFeatureValueList = [];
+    selectedFeatureValue = feature;
+
+    // for (var featureValue in widget.productData.psFeatureValue) {
+    //   if (featureValue.idFeature == feature.idFeature) {
+    //     print("adding");
+    //     psFeatureValueList.add(featureValue);
+    //   }
+    // }
     _cleanControllers();
     setState(() {});
   }
