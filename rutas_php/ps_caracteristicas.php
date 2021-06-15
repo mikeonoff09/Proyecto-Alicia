@@ -170,8 +170,7 @@ $app->post('/ps_feature/pre_delete', function (Request $request, Response $respo
 		$statement->execute();
 		$registros_feature = $statement->fetch();
 		$db = null;
-		return sendResponse(201, $registros_feature.["contador"] . ' Caracteristicas Valor pertenecen a la Característica:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. 
-		,$data["contador"], $response);
+		return sendResponse(200, $registros_feature["contador"] . ' Caracteristicas Valor pertenecen a la Característica:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. $data["contador"], null,$response);
     } catch (PDOException $e) {
         return sendResponse(500, $e->getMessage(), null,$response);
     }
@@ -209,8 +208,7 @@ $app->post('/ps_feature_super/pre_delete', function (Request $request, Response 
 		$statement->execute();
 		$registros_feature = $statement->fetch();
 		$db = null;
-		return sendResponse(201, $registros_feature.["contador"] . ' Caracteristicas Valor pertenecen a la Característica Super:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. 
-		,$data["contador"], $response);
+		return sendResponse(200, $registros_feature["contador"] . ' Caracteristicas Valor pertenecen a la Característica Super:'. $datosproducto["name"]. ' y estos están en '.$registros_feature_product["contador"]. ' productos y en '. $data["contador"],null, $response);
     } catch (PDOException $e) {
         return sendResponse(500, $e->getMessage(), null,$response);
     }
@@ -322,28 +320,33 @@ $app->post('/ps_feature/update', function (Request $request, Response $response)
 			$statement->execute();
 			return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name."#".$data["name"].'","id_feature_super": '.$data["id_feature_super"].',"position": '.$position.'}',"Cambio Posicion ok", $response);
 		}else{
-			$sql = 'SELECT id_feature FROM a_tabla_feature where name= :name and id_feature_super = :id_feature_super and id_feature <> :id_feature';
-			$statement = $db->prepare($sql);
-			$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
-			$statement->bindParam(":id_feature_super", $data["id_feature_super"], PDO::PARAM_INT);
-			$statement->bindParam(":name", $name, PDO::PARAM_STR);		
-			$statement->execute();
-
-			if ($statement->rowCount() > 0){
-				return sendResponse(404, "Ya existe otra caracteristica con ese nombre",$id_feature .".....". $position ."###". $name,  $response);
+			
+			if ($name == $data['name']){
+				return sendResponse(404, '{"error":"No ha cambiado ni el nombre ni la posicion"}',null, $response);
 			}else{
-				$sql = "UPDATE a_tabla_feature SET name=:name WHERE id_feature = :id_feature";
+				$sql = 'SELECT id_feature FROM a_tabla_feature where name= :name and id_feature_super = :id_feature_super and id_feature <> :id_feature';
 				$statement = $db->prepare($sql);
 				$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
-				$statement->bindParam(":name", $name,PDO::PARAM_STR);
+				$statement->bindParam(":id_feature_super", $data["id_feature_super"], PDO::PARAM_INT);
+				$statement->bindParam(":name", $name, PDO::PARAM_STR);		
 				$statement->execute();
 
-				if ($statement->rowCount() > 0) {
-					return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name."#".$data["name"].'","id_feature_super": '.$data["id_feature_super"].',"position": '.$position.'}',"actualizar nombre ok", $response);
-				} else {
-					return sendResponse(404, '{"error":"No se pudo actualizar"}',null, $response);
+				if ($statement->rowCount() > 0){
+					return sendResponse(404, "Ya existe otra caracteristica con ese nombre",$id_feature .".....". $position ."###". $name,  $response);
+				}else{
+					$sql = "UPDATE a_tabla_feature SET name=:name WHERE id_feature = :id_feature";
+					$statement = $db->prepare($sql);
+					$statement->bindParam(":id_feature", $id_feature, PDO::PARAM_INT);
+					$statement->bindParam(":name", $name,PDO::PARAM_STR);
+					$statement->execute();
+
+					if ($statement->rowCount() > 0) {
+						return sendResponse(200, '{"id_feature": '.$id_feature.',"name": "'.$name."#".$data["name"].'","id_feature_super": '.$data["id_feature_super"].',"position": '.$position.'}',"actualizar nombre ok", $response);
+					} else {
+						return sendResponse(404, '{"error":"'.$id_feature.' No se pudo actualizar '.$name.'"}',null, $response);
+					}
+					$db = null;
 				}
-				$db = null;
 			}
 		}
 	} catch (PDOException $e) {
@@ -771,37 +774,6 @@ $app->post('/ps_feature_super/delete', function (Request $request, Response $res
 		return sendResponse(200,'{"id_feature_super": '.$id_feature_super.'}', "borrar ok",$response);
     } catch (PDOException $e) {
         return sendResponse(500,$e->getMessage(),null,$response);
-    }
-});
-
-
-$app->post('/ps_feature/get_todos', function (Request $request, Response $response) {
-	try {
-		$dbInstance = new Db();
-        $db = $dbInstance->connectDB();
-
-		$sql = 'SELECT id_feature_super,position,name FROM a_tabla_feature_super order by position';
-		$statement = $db->prepare($sql);
-		$statement->execute();
-		$a_tabla_feature_super = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-		$sql = 'SELECT id_feature,id_feature_super,position,name FROM a_tabla_feature order by position';
-		$statement = $db->prepare($sql);
-		$statement->execute();
-		$a_tabla_feature = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-		$sql = 'SELECT id_feature_value,id_feature,position,value FROM a_tabla_feature_value';
-		$dbInstance = new Db();
-        $db = $dbInstance->connectDB();
-		$statement = $db->prepare($sql);
-		$statement->execute();
-		$a_tabla_feature_value = $statement->fetchAll(PDO::FETCH_ASSOC);
-		$db = null;
-		
-		return sendResponse(200, ["ps_feature_super"=>$ps_feature_super, "ps_feature"=>$ps_feature,"ps_feature_value"=>$ps_feature_value], "lista_feature_todos", $response);
-
-    } catch (PDOException $e) {
-        return sendResponse(500,$e->getMessage(), null,$response);
     }
 });
 ?>
