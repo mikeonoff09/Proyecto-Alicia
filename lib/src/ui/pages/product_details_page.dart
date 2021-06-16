@@ -6,11 +6,11 @@ import 'package:alicia/src/models/product.dart';
 import 'package:alicia/src/models/product_details.dart' as product_details;
 import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
+import 'package:alicia/src/ui/components/table_filter_dialog.dart';
 import 'package:alicia/src/ui/pages/feature_selector_page.dart';
 import 'package:alicia/src/ui/pages/photo_editor_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:searchable_dropdown/searchable_dropdown.dart';
 
 import 'home_products_page.dart';
 import 'html_editor_page.dart';
@@ -64,12 +64,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   ScrollController _controller;
   ScrollController _controller2 = ScrollController();
   final formKey = GlobalKey<FormState>();
-
-  Fabricante fabricanteSeleccionado =
-      Fabricante(name: "Fabricante", idManufacturer: 0);
-  Distribuidor distribuidorSeleccionado =
-      Distribuidor(name: "Distribuidor", idSupplier: 0);
-  Categoria categoriaSeleccionada = Categoria(name: "Categoría",idCategory: 0);
 
   int selectedImage = 0;
   final _iva = 0.21;
@@ -321,30 +315,32 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.all(8.0),
-                        height: 84,
-                        width: 200,
-                        child: Transform.translate(
-                          offset: Offset(0, 0),
-                          child: SearchableDropdown<Categoria>.single(
-                            value: categoriaSeleccionada,
-                            onChanged: (value) {
-                              setState(() {
-                                categoriaSeleccionada = value;
-                              });
-                              loadData();
-                            },
-                            items: widget.generalData.categorias
-                                .map(
-                                  (e) => DropdownMenuItem<Categoria>(
-                                    child: Text("${e.name}"),
-                                    value: e,
-                                  ),
-                                )
-                                .toList(),
-                            isExpanded: true,
-                          ),
+                      MyTextField(
+                        labelText: "Categoría",
+                        controller: idcategoryController,
+                        readOnly: true,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: "Century Gothic",
+                        ),
+                        suffixWidget: IconButton(
+                          icon: Icon(Icons.edit),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => TableFilterDialog(
+                                campoId: "id_category",
+                                campoToShow: "name",
+                                campofiltro: "name",
+                                title: "Busqueda de Categoría",
+                                widgetBuilder: (int index) {
+                                  return Image.network(
+                                      "https://www.mueblesextraordinarios.com/img/c/$index-thumb.jpg");
+                                },
+                              ),
+                            );
+                          },
                         ),
                       ),
                       customTextField1(
@@ -450,60 +446,67 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   Expanded proveedorTextEditor(BuildContext context) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(8.0),
-        height: 84,
-        width: 200,
-        child: Transform.translate(
-          offset: Offset(0, 0),
-          child: SearchableDropdown<Distribuidor>.single(
-            value: distribuidorSeleccionado,
-            onChanged: (value) {
-              setState(() {
-                distribuidorSeleccionado = value;
-              });
-              loadData();
-            },
-            items: widget.generalData.distribuidores
-                .map(
-                  (e) => DropdownMenuItem<Distribuidor>(
-                    child: Text("${e.name}"),
-                    value: e,
-                  ),
-                )
-                .toList(),
-            isExpanded: true,
-          ),
+      child: MyTextField(
+        labelText: "Proveedor",
+        controller: idsupplierController,
+        readOnly: true,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+          fontFamily: "Century Gothic",
+        ),
+        suffixWidget: IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => TableFilterDialog(
+                campoId: "id_supplier",
+                //TODO   aqui hay que enviar (y despues recoger el id elegido) el listado de distribuidores
+                originalList: widget.generalData.distribuidores,
+                campoToShow: "name",
+                campofiltro: "name",
+                title: "Busqueda de proveedor",
+                widgetBuilder: (int index) {
+                  return Image.network(
+                      "https://www.mueblesextraordinarios.com/img/s/$index-small_default.jpg");
+                },
+              ),
+            );
+          },
         ),
       ),
     );
   }
 
-  // Arreglando
   Widget fabricanteTextEditor(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      height: 84,
-      width: 200,
-      child: Transform.translate(
-        offset: Offset(0, 0),
-        child: SearchableDropdown<Fabricante>.single(
-          value: fabricanteSeleccionado,
-          onChanged: (value) {
-            setState(() {
-              fabricanteSeleccionado = value;
-            });
-            loadData();
+    return Expanded(
+      child: MyTextField(
+        labelText: "Fabricante",
+        controller: idmanufacturerController,
+        readOnly: true,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+          fontFamily: "Century Gothic",
+        ),
+        suffixWidget: IconButton(
+          icon: Icon(Icons.edit),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => TableFilterDialog(
+                campoId: "id_manufacturer",
+                campoToShow: "name",
+                campofiltro: "name",
+                title: "Búsqueda de fabricante",
+                widgetBuilder: (int index) {
+                  return Image.network(
+                      "https://www.mueblesextraordinarios.com/img/m/$index-small_default.jpg");
+                },
+              ),
+            );
           },
-          items: widget.generalData.fabricantes
-              .map(
-                (e) => DropdownMenuItem<Fabricante>(
-                  child: Text("${e.name}"),
-                  value: e,
-                ),
-              )
-              .toList(),
-          isExpanded: true,
         ),
       ),
     );
