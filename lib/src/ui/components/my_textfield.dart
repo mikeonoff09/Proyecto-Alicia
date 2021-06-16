@@ -243,76 +243,106 @@ class MyTextField extends StatelessWidget {
       builder: (context, value, child) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            onTap: onTap,
-            textAlign: textAlign,
-            autofocus: autoFocus,
-            obscureText: (isPassword) ? (!value) : false,
-            keyboardType: keyboardType,
-            onChanged: onChanged,
-            controller: controller,
-            focusNode: focusNode,
-            maxLength: maxLength,
-            initialValue: initialValue,
-            validator: requiredField
-                ? validator != null
-                    ? (value) {
-                        value = value.trim();
-                        controller?.text = value;
-                        return validator(value);
+          child: Stack(
+            children: [
+              TextFormField(
+                onTap: onTap,
+                textAlign: textAlign,
+                autofocus: autoFocus,
+                obscureText: (isPassword) ? (!value) : false,
+                keyboardType: keyboardType,
+                onChanged: onChanged,
+                controller: controller,
+                focusNode: focusNode,
+                maxLength: null,
+                initialValue: initialValue,
+                validator: requiredField
+                    ? validator != null
+                        ? (value) {
+                            value = value.trim();
+                            controller?.text = value;
+                            return validator(value);
+                          }
+                        : (value) {
+                            value = value.trim();
+                            controller?.text = value;
+                            return _validator(
+                              value,
+                            );
+                          }
+                    : null,
+                onEditingComplete: nextFocus != null
+                    ? () {
+                        FocusScope.of(context).requestFocus(nextFocus);
                       }
-                    : (value) {
-                        value = value.trim();
-                        controller?.text = value;
-                        return _validator(
-                          value,
-                        );
-                      }
-                : null,
-            onEditingComplete: nextFocus != null
-                ? () {
-                    FocusScope.of(context).requestFocus(nextFocus);
-                  }
-                : () {
-                    FocusScope.of(context).requestFocus(FocusNode());
-                    onEditingComplete();
-                  },
-            textInputAction:
-                nextFocus != null ? TextInputAction.next : textInputAction,
-            enabled: enabled,
-            readOnly: readOnly,
-            onSaved: (value) {
-              onSaved(value);
-            },
-            maxLines: maxLines,
-            style: style,
-            decoration: InputDecoration(
-              fillColor: fillColor,
-              filled: fillColor != null,
-              suffixIcon: suffixWidget,
-              border: border,
-              disabledBorder: border,
-              enabledBorder: border,
-              errorBorder: border,
-              focusedErrorBorder: border,
-              focusedBorder: border,
-              hintText: hintText != null ? hintText : strHintText,
-              labelText: labelText != null ? labelText : null,
-              prefixIcon: prefixIcon,
-              suffix: (isPassword)
-                  ? GestureDetector(
-                      child:
-                          Icon(value ? Icons.visibility_off : Icons.visibility),
-                      onTap: () {
-                        showPassword.value = !showPassword.value;
+                    : () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                        onEditingComplete();
                       },
-                    )
-                  : null,
-              labelStyle: TextStyle(
-                fontSize: 18,
-                backgroundColor: Colors.white,
+                textInputAction:
+                    nextFocus != null ? TextInputAction.next : textInputAction,
+                enabled: enabled,
+                readOnly: readOnly,
+                onSaved: (value) {
+                  onSaved(value);
+                },
+                maxLines: maxLines,
+                style: style,
+                decoration: InputDecoration(
+                  fillColor: fillColor,
+                  filled: fillColor != null,
+                  suffixIcon: suffixWidget,
+                  border: border,
+                  disabledBorder: border,
+                  enabledBorder: border,
+                  errorBorder: border,
+                  focusedErrorBorder: border,
+                  focusedBorder: border,
+                  hintText: hintText != null ? hintText : strHintText,
+                  labelText: labelText != null ? labelText : null,
+                  prefixIcon: prefixIcon,
+                  suffix: (isPassword)
+                      ? GestureDetector(
+                          child: Icon(
+                              value ? Icons.visibility_off : Icons.visibility),
+                          onTap: () {
+                            showPassword.value = !showPassword.value;
+                          },
+                        )
+                      : null,
+                  labelStyle: TextStyle(
+                    fontSize: 18,
+                    backgroundColor: Colors.white,
+                  ),
+                ),
               ),
-            ),
+              ValueListenableBuilder(
+                  valueListenable: this.controller,
+                  builder: (context, value, child) {
+                    return Align(
+                      alignment: Alignment.topRight,
+                      child: Builder(
+                        builder: (context) {
+                          if (this.maxLength == null) return SizedBox();
+                          return Transform.translate(
+                            child: Container(
+                              child: Text(
+                                "${controller.text.length}/${this.maxLength}",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 2.5),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(7)),
+                            ),
+                            offset: Offset(-5, -10),
+                          );
+                        },
+                      ),
+                    );
+                  })
+            ],
           ),
         );
       },

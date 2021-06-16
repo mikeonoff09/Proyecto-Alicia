@@ -1,7 +1,5 @@
-List<Map<String, dynamic>> constructorSQLselect(
-    {String campofiltro,
-    String textofiltro,
-    List<Map<String, dynamic>> originalList}) {
+List<dynamic> constructorSQLselect(
+    {String campofiltro, String textofiltro, List<dynamic> originalList}) {
   if (campofiltro.isEmpty) {
     //throw Exception("Error Campo obligatorio");
     //Si no se encuentra filtros, se devuelve el listado original
@@ -15,7 +13,8 @@ List<Map<String, dynamic>> constructorSQLselect(
 
   if (textofiltro != "") {
     List<String> textosToSearch = textofiltro.split(" ");
-    return originalList.where((element) {
+    return originalList.where((e) {
+      final element = e;
       dynamic val = element[campofiltro];
       String textToSearch = "";
       if (val == null) return false;

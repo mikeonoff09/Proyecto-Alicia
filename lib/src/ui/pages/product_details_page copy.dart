@@ -15,11 +15,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'home_products_page.dart';
 import 'html_editor_page.dart';
 
-class ProductDetailsPage extends StatefulWidget {
+class ProductDetailsPageCopy extends StatefulWidget {
   final ProductModel product;
 
   final InitalData generalData;
-  const ProductDetailsPage({
+  const ProductDetailsPageCopy({
     Key key,
     @required this.product,
     @required this.generalData,
@@ -29,7 +29,7 @@ class ProductDetailsPage extends StatefulWidget {
   _ProductDetailsPageState createState() => _ProductDetailsPageState();
 }
 
-class _ProductDetailsPageState extends State<ProductDetailsPage> {
+class _ProductDetailsPageState extends State<ProductDetailsPageCopy> {
   bool loading = true;
 
   List<product_details.Feature> features;
@@ -319,6 +319,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         labelText: "Categoría",
                         controller: idcategoryController,
                         readOnly: true,
+                        maxLength: null,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
@@ -462,8 +463,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               context: context,
               builder: (context) => TableFilterDialog(
                 campoId: "id_supplier",
-                //TODO   aqui hay que enviar (y despues recoger el id elegido) el listado de distribuidores
-                originalList: widget.generalData.distribuidores,
+                originalList: widget.generalData.distribuidores
+                    .map((e) => e.toJson())
+                    .toList(),
                 campoToShow: "name",
                 campofiltro: "name",
                 title: "Busqueda de proveedor",

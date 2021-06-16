@@ -291,12 +291,14 @@ class PsFeatureProduct extends Equatable {
     this.nombrefeaturesuper,
     this.nombrefeature,
     this.nombrefeacturevalue,
+    this.idProduct,
   });
 
   int idfeaturevalue;
   int ordenfeaturesuper;
   int ordenfeature;
   int orderfeaturevalue;
+  int idProduct;
   String nombrefeaturesuper;
   String nombrefeature;
   String nombrefeacturevalue;
@@ -304,10 +306,12 @@ class PsFeatureProduct extends Equatable {
   factory PsFeatureProduct.fromMap(Map<String, dynamic> json) =>
       PsFeatureProduct(
         idfeaturevalue: json["id_feature_value"],
+        idProduct: json["id_product"],
       );
 
   Map<String, dynamic> toMap() => {
         "id_feature_value": idfeaturevalue,
+        "id_product": idProduct,
       };
 
   @override

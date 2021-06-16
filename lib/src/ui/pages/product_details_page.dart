@@ -33,6 +33,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   bool loading = true;
 
   List<product_details.Feature> features;
+  int idSupplier = 0;
+  int idCategory = 0;
+  int idManufacture = 0;
 
   final nameController = TextEditingController();
   final priceController = TextEditingController();
@@ -334,6 +337,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 campoToShow: "name",
                                 campofiltro: "name",
                                 title: "Busqueda de Categoría",
+                                originalList: widget.generalData.categorias
+                                    .map((e) => e.toJson())
+                                    .toList(),
+                                onResult: (resultData) {
+                                  idcategoryController.text = resultData.label;
+                                  idCategory = resultData.id;
+                                },
                                 widgetBuilder: (int index) {
                                   return Image.network(
                                       "https://www.mueblesextraordinarios.com/img/c/$index-thumb.jpg");
@@ -462,8 +472,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               context: context,
               builder: (context) => TableFilterDialog(
                 campoId: "id_supplier",
-                //TODO   aqui hay que enviar (y despues recoger el id elegido) el listado de distribuidores
-                originalList: widget.generalData.distribuidores,
+                onResult: (resultData) {
+                  idsupplierController.text = resultData.label;
+                  idSupplier = resultData.id;
+                },
+                originalList: widget.generalData.distribuidores
+                    .map((e) => e.toJson())
+                    .toList(),
                 campoToShow: "name",
                 campofiltro: "name",
                 title: "Busqueda de proveedor",
@@ -497,6 +512,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               context: context,
               builder: (context) => TableFilterDialog(
                 campoId: "id_manufacturer",
+                onResult: (resultData) {
+                  idmanufacturerController.text = resultData.label;
+                  idManufacture = resultData.id;
+                },
+                originalList: widget.generalData.fabricantes
+                    .map((e) => e.toJson())
+                    .toList(),
                 campoToShow: "name",
                 campofiltro: "name",
                 title: "Búsqueda de fabricante",
@@ -762,10 +784,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         productData.psProduct.first.deliveryOutStock;
     idsupplierController.text =
         getSupplierName(productData.psProduct.first.idSupplier);
+
+    this.idSupplier = productData.psProduct.first.idSupplier;
     idmanufacturerController.text =
         getManufacturerName(productData.psProduct.first.idManufacturer);
+    idManufacture = productData.psProduct.first.idManufacturer;
     idcategoryController.text =
         getCategoryName(productData.psProduct.first.idCategoryDefault);
+    idCategory = productData.psProduct.first.idCategoryDefault;
 
     metatitleController.text = productData.psProduct.first.metaTitle;
     metakeywordsController.text = productData.psProduct.first.metaKeywords;
@@ -794,9 +820,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       String resultado;
       resultado = await HttpHandler.instance.saveProduct(
         idproduct: idproductController.text,
-        idsupplier: "3",
-        idmanufacturer: "3",
-        idcategorydefault: "32",
+        idsupplier: idSupplier?.toString(),
+        idmanufacturer: idManufacture?.toString(),
+        idcategorydefault: idCategory?.toString(),
         ean13: ean13Controller.text,
         quantity: quantityController.text,
         minimalquantity: minimalquantityController.text,

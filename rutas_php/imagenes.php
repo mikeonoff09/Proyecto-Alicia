@@ -5,7 +5,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 function resize_image($src, $w, $h, $crop=false) {
     $width = imagesx($src);
 	$height= imagesy($src);
-    $r = $width / $height
+    $r = $width / $height;
     if ($crop) {
         if ($width > $height) {
             $width = ceil($width-($width*abs($r-$w/$h)));
@@ -64,94 +64,170 @@ $app->post('/imagenes/add', function (Request $request, Response $response) {
 			return sendResponse(404,'{"error":"No existe el producto con id_product= '.$id_product .'"}',null, $response);			
 		}
 
-		$id_image = $request->getParam("id_image");
-		if($id_image=="new"){
-			$data_original = base64_decode($request->getParam("imgbase64"),true);
-			if(!$data_original){
-				return sendResponse(404, null, '{"error":"No has enviado una imgbase64 correcta"}', $response);
-			}
-
-			$imagen = imagecreatefromstring($data_original);
-			if(!$imagen){
-				return sendResponse(404, null, '{"error":"No has enviado una imagen original correcta"}', $response);
-			}
-			$width =imagesx($imagen);
-			$height=imagesy($imagen);
-			
-			$sql = 'select id_image from a_tabla_image where id_product = :id_product';
-			$statement = $db->prepare($sql);
-			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-			$statement->execute();
-			$position =$statement->rowCount();
-
-			if($position==0){
-				$cover = 1;
-			}else{
-				$cover = 0;
-			}
-			$md5= hash("md5",$data_original);
-
-			$sql = "insert into a_tabla_image (id_product,position,cover,legend,padding,resolucionorigen,descartada,fechaanadida,md5) values (:id_product,". $position.",". $cover .",'', 0,'". $width . "x". $height."', 0,'".date('Y-m-d H:i:s')."','".$md5."')";
-			$statement = $db->prepare($sql);
-			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-			$statement->execute();
-
-			$id_image = $db->lastInsertId();  //idImage
-			file_put_contents($id_product.'_'.$id_nuevo."_".$position.'_original.jpg', $data_original);
-			$mini= resize_image($imagen,800,800,false);
-			imagejpeg($mini,$id_product.'_'.$id_nuevo."_".$position.'-cart_original.jpg',12);
-			imagedestroy($mini);
-			imagedestroy($imagen);
+		$position = $request->getParam("position");
+		if(!is_numeric($position)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una position correcta"}', $response);
 		}
-			$position = $request->getParam("position");
-			if(!is_numeric($position)){   //debe ser un número
-				return sendResponse(404, null, '{"error":"No has enviado una position correcta"}', $response);
-			}
-			$cover = $request->getParam("cover");
-			if(!is_numeric($cover)){   //debe ser un número
-				return sendResponse(404, null, '{"error":"No has enviado una cover correcta"}', $response);
-			}
-			$legend = $request->getParam("legend");
-
-			$padding = $request->getParam("padding");
-			if(!is_numeric($padding)){   //debe ser un número
-				return sendResponse(404, null, '{"error":"No has enviado una padding correcta"}', $response);
-			}
-			$descartada = $request->getParam("descartada");
-			if(!is_numeric($descartada)){   //debe ser un número
-				return sendResponse(404, null, '{"error":"No has enviado una descartada correcta"}', $response);
-			}
+		$cover = $request->getParam("cover");
+		if(!is_numeric($cover)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una cover correcta"}', $response);
 		}
-		if(!is_numeric($id_image)){   //debe ser un número
-			return sendResponse(404, null, '{"error":"No has enviado una id_imagen correcta"}', $response);
+		$legend = $request->getParam("legend");
+
+		$descartada = $request->getParam("descartada");
+		if(!is_numeric($descartada)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una descartada correcta"}', $response);
+		}
+		$padding = $request->getParam("padding");
+		if(!is_numeric($padding)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una padding correcta"}', $response);
 		}
 
-		$crop64 = base64_decode($request->getParam("crop64"),true);
-		if(!$crop64){
-			return sendResponse(404, null, '{"error":"No has enviado un base64_decode recorte correcto"}', $response);
+		$data_original = base64_decode($request->getParam("imgbase64"),true);
+		if(!$data_original){
+			return sendResponse(404, null, '{"error":"No has enviado una imgbase64 correcta"}', $response);
 		}
-		$imagen = imagecreatefromstring($crop64);
+		$imagen = imagecreatefromstring($data_original);
 		if(!$imagen){
 			return sendResponse(404, null, '{"error":"No has enviado una imagen original correcta"}', $response);
 		}
 		$width =imagesx($imagen);
 		$height=imagesy($imagen);
-		$sql = "update a_tabla_image set position = :position,cover=:cover,legend=:legend,padding=:padding,resolucionrecorte ='". $width . "x". $height."',descartada=:descartada, fechamodificacion='".date('Y-m-d H:i:s')."'";
-		$statement = $db->prepare($sql);
-			$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
-			$statement->bindParam(":cover", $cover, PDO::PARAM_INT);
-			$statement->bindParam(":legend", $legend, PDO::PARAM_STR);
-			$statement->bindParam(":padding", $padding, PDO::PARAM_INT);
-			$statement->bindParam(":descartada", $descartada, PDO::PARAM_INT);
-			$statement->execute();
+		$md5= hash("md5",$data_original);
 
+
+		$crop64 = base64_decode($request->getParam("crop64"),true);
+		if(!$crop64){
+			return sendResponse(404, null, '{"error":"No has enviado un base64_decode recorte correcto"}', $response);
+		}
+		$imagen_crop = imagecreatefromstring($crop64);
+		if(!$imagen_crop){
+			return sendResponse(404, null, '{"error":"No has enviado una imagen original correcta"}', $response);
+		}
+		$width_crop =imagesx($imagen_crop);
+		$height_crop=imagesy($imagen_crop);
+
+		$sql = "insert into a_tabla_image (id_product,position,cover,legend,padding,resolucionorigen,descartada,fechaanadida,md5,resolucionrecorte) values (:id_product,:position,:cover,:legend, :padding,'". $width . "x". $height."', :descartada,'".date('Y-m-d H:i:s')."','".$md5."','". $width_crop . "x". $height_crop."')";
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+		$statement->bindParam(":cover", $cover, PDO::PARAM_INT);
+		$statement->bindParam(":legend", $legend, PDO::PARAM_STR);
+		$statement->bindParam(":padding", $padding, PDO::PARAM_INT);
+		$statement->bindParam(":descartada", $descartada, PDO::PARAM_INT);
+		$statement->execute();
+		$id_image = $db->lastInsertId();
+
+		file_put_contents($id_product.'_'.$id_image."_".$position.'_original.jpg', $data_original);
+		$mini= resize_image($crop64,98,128,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-small_default.jpg',12);
+		$mini= resize_image($crop64,125,125,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-cart_default.jpg.jpg',12);
+		$mini= resize_image($crop64,128,128,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-small_default.jpg',12);
+		$mini= resize_image($crop64,750,750,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-home_default.jpg',12);
+		$mini= resize_image($crop64,1000,1000,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-large_default.jpg',12);
+
+		imagedestroy($mini);
+		imagedestroy($crop64);
 		
-		return sendResponse(201, '{"id_image": '.$id_nuevo.',"id_product": "'.$id_product.'", "position": '.$position.'}',"Alta nueva imagen", $response);
-		
+
+		/*$sql = 'select id_image from a_tabla_image where id_product = :id_product';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+		$statement->execute();
+		$position =$statement->rowCount();*/
+
+		return sendResponse(201, '{"id_image": '.$id_image.',"id_product": "'.$id_product.'", "position": '.$position.'}',"Alta nueva imagen", $response);
 	} catch (PDOException $e) {
 		return sendResponse(500, "al dar de alta imagen nueva", $e->getMessage(), $response);
 	}
 });
+
+$app->post('/imagenes/update', function (Request $request, Response $response) {
+    $id_image = $request->getParam("id_image");
+	if(!is_numeric($id_image)){   //debe ser un número
+		return sendResponse(404, null, '{"error":"No has enviado una idproducto correcto"}', $response);
+	}
+	try {
+		$dbInstance = new Db();
+		$db = $dbInstance->connectDB();
+		$sql = 'select id_product,position,cover from a_tabla_product where id_image = :id_image';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_image", $id_product, PDO::PARAM_INT);
+		$statement->execute();
+		if ($statement->rowCount()==0){
+			return sendResponse(404,'{"error":"No existe el producto con id_product= '.$id_product .'"}',null, $response);			
+		}
+		$position = $request->getParam("position");
+		if(!is_numeric($position)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una position correcta"}', $response);
+		}
+		$cover = $request->getParam("cover");
+		if(!is_numeric($cover)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una cover correcta"}', $response);
+		}
+		$legend = $request->getParam("legend");
+
+		$descartada = $request->getParam("descartada");
+		if(!is_numeric($descartada)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una descartada correcta"}', $response);
+		}
+		$padding = $request->getParam("padding");
+		if(!is_numeric($padding)){   //debe ser un número
+			return sendResponse(404, null, '{"error":"No has enviado una padding correcta"}', $response);
+		}
+
+		$data_crop = base64_decode($request->getParam("imgbase64"),true);
+		if(!$data_crop){
+			return sendResponse(404, null, '{"error":"No has enviado una imgbase64 correcta"}', $response);
+		}
+		$imagen = imagecreatefromstring($data_crop);
+		if(!$imagen){
+			return sendResponse(404, null, '{"error":"No has enviado una imagen original correcta"}', $response);
+		}
+		$width =imagesx($imagen);
+		$height=imagesy($imagen);
+		imagedestroy($imagen);
+
+		$crop64 = base64_decode($request->getParam("crop64"),true);
+		if(!$crop64){
+			return sendResponse(404, null, '{"error":"No has enviado un base64_decode recorte correcto"}', $response);
+		}
+		$imagen_crop = imagecreatefromstring($crop64);
+		if(!$imagen_crop){
+			return sendResponse(404, null, '{"error":"No has enviado una imagen original correcta"}', $response);
+		}
+		$width_crop =imagesx($imagen_crop);
+		$height_crop=imagesy($imagen_crop);
+
+		$sql = "update a_tabla_image set position = :position,cover=:cover,legend=:legend,padding=:padding,resolucionrecorte ='". $width . "x". $height."',descartada=:descartada, fechamodificacion='".date('Y-m-d H:i:s')."' where id_image = :id_image";
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_image", $id_image, PDO::PARAM_INT);
+		$statement->bindParam(":cover", $cover, PDO::PARAM_INT);
+		$statement->bindParam(":legend", $legend, PDO::PARAM_STR);
+		$statement->bindParam(":padding", $padding, PDO::PARAM_INT);
+		$statement->bindParam(":descartada", $descartada, PDO::PARAM_INT);
+		$statement->execute();
+		file_put_contents($id_product.'_'.$id_image."_".$position.'_original.jpg', $data_original);
+		$mini= resize_image($imagen_crop,800,800,false);
+		imagejpeg($mini,$id_product.'_'.$id_image."_".$position.'-cart_original.jpg',12);
+		imagedestroy($mini);
+		imagedestroy($imagen_crop);
+
+		/*$sql = 'select id_image from a_tabla_image where id_product = :id_product';
+		$statement = $db->prepare($sql);
+		$statement->bindParam(":id_product", $id_product, PDO::PARAM_INT);
+		$statement->execute();
+		$position =$statement->rowCount();*/
+
+		return sendResponse(201, '{"id_image": '.$id_image.',"id_product": "'.$id_product.'", "position": '.$position.'}',"Alta nueva imagen", $response);
+	} catch (PDOException $e) {
+		return sendResponse(500, "al dar de alta imagen nueva", $e->getMessage(), $response);
+	}
+});
+
 
 function resize_image3($data, $w, $h) {
 	$id_product = $_POST["id_product"];

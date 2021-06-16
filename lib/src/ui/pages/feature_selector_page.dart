@@ -35,6 +35,16 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.close))
+        ],
+      ),
       content: Container(
         height: MediaQuery.of(context).size.height * 0.8,
         width: MediaQuery.of(context).size.width * 0.8,
@@ -48,6 +58,13 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
           ),
         ),
       ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              _saveForm(context);
+            },
+            child: Text("Guardar")),
+      ],
     );
   }
 
@@ -594,5 +611,15 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
       showError(context,
           "Ocurrió un error al intentar guardar, profavor intentelo nuevamente");
     }
+  }
+
+  Future _saveForm(BuildContext context) async {
+    PsFeatureProduct psFeatureProduct = PsFeatureProduct(
+      idfeaturevalue: selectedFeatureValue.idFeatureValue,
+      idProduct: widget.productData.psProduct.first.idProduct,
+    );
+    showLoading(context);
+    final result =
+        await HttpHandler.instance.saveProductValue(psFeatureProduct);
   }
 }
