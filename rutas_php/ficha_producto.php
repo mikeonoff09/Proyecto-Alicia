@@ -196,7 +196,7 @@ $app->post('/productos/add_update', function (Request $request, Response $respon
 			$dbInstance = new Db();
 			$db = $dbInstance->connectDB();
 			$sql="insert into a_tabla_product (rehacerHTML, id_supplier, id_manufacturer, id_category_default, ean13, quantity, minimal_quantity, price, preciocoste, reference, supplier_reference,   cache_default_attribute, date_add, date_upd, stateWeb, description, description_short, link_rewrite, meta_description, meta_keywords, meta_title, name, delivery_in_stock, delivery_out_stock, paso) values
-										(	0,				0,				0,					0,			'',		0,				1,			0,			0,		'',			'',									0,	'".date('Y-m-d H:i:s')."',now(),0,			'',				'',				'',				'',					'',			'',		'',			'',				'',				0)";
+										(	0,				0,				0,					0,			'',		0,				1,			0,			0,		'',			'',							0,	'".date('Y-m-d H:i:s')."','".date('Y-m-d H:i:s')."',0,	'',			'',				'',				'',					'',			'',		'',			'',				'',				0)";
 			$statement = $db->prepare($sql);
 			$statement->execute();
 			$id_product = $db->lastInsertId();
