@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:alicia/src/datasources/mysql_server.dart';
+import 'dart:ui' as ui;
+
 import 'package:alicia/src/models/product_details_model.dart';
+import 'package:alicia/src/ui/pages/home_products_page.dart';
 import 'package:crop_your_image/crop_your_image.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
-import 'package:http/http.dart' as http;
-import 'package:alicia/src/ui/pages/home_products_page.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
+import 'package:http/http.dart' as http;
 import 'package:image/image.dart' as image;
 
 import '../components/result_canvas_image.dart';
@@ -47,6 +47,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
   final resultFocus = FocusNode();
   Size originalSize;
   int addingImage;
+  bool isNewImage = false;
 
   final imageResult = ValueNotifier<Uint8List>(null);
   Rect lastRect;
@@ -112,6 +113,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
+          print("New Image");
           _addImage(context);
         },
       ),
@@ -213,6 +215,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                           onTap: selectedImage == index || loading
                               ? null
                               : () {
+                                  isNewImage = false;
                                   openImage(imageData.idImage, index, context);
                                 },
                         ),
@@ -393,7 +396,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                                         child: Image.asset("assets/photo.png"),
                                         onTap: () async {
                                           final result = await Process.run(
-                                              "C:\\program files\\adobe\\adobe photoshop 2020\\photoshop.exe",
+                                              "C:\\program files\\adobe\\adobe photoshop 2021\\photoshop.exe",
                                               [
                                                 this
                                                     .downloadedImage
@@ -538,17 +541,16 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
               ),
             ),
             content: ResultCanvasImage(
-                key: resultKey,
-                padding: EdgeInsets.all(800 - (800 * paddingValue)),
-                imageData: this.imageResult.value,
-                top: topMargin),
+              key: resultKey,
+              padding: EdgeInsets.all(800 - (800 * paddingValue)),
+              imageData: this.imageResult.value,
+              top: topMargin,
+            ),
           );
         });
     await Future.delayed(Duration(milliseconds: 500));
     final resultImage = await resultKey.currentState.getImage(Size(800, 800));
-    final resultImage2 = await resultKey.currentState.getImage(
-      Size(150, 150),
-    );
+    final resultImage2 = await resultKey.currentState.getImage(Size(150, 150));
     this.resultImage.writeAsBytesSync(resultImage);
     this.resultImage2.writeAsBytesSync(resultImage2);
 
@@ -577,38 +579,57 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
       } else {
         _scala = originalSize.height / 800;
       }
-      final body = {
+      // final body = {
+      //   "imgbase64": imgbase64,
+      //   "id_product": widget.product.toString(),
+      //   "id_image": widget.images[selectedImage].idImage.toString(),
+      //   "original_crop": orignalCrop64,
+      //   "equipo": equipo,
+      //   "derecha": areaValue.value.right.toString(),
+      //   "izquierda": areaValue.value.left.toString(),
+      //   "abajo": areaValue.value.bottom.toString(),
+      //   "arriba": areaValue.value.top.toString(),
+      //   "targetImage_width": _targetImage.width.toString(),
+      //   "targetImage_height": _targetImage.height.toString(),
+      //   "originalSize_width":
+      //       originalSize.width.toString(), //igual que  targetImage_width
+      //   "originalSize_height":
+      //       originalSize.height.toString(), //igual que  targetImage_height
+      //   "scala": _scala.toString(),
+      //   "padding": paddingValue.toString()
+      // };
+      final bodyNew = {
         "imgbase64": imgbase64,
         "id_product": widget.product.toString(),
-        "id_image": widget.images[selectedImage].idImage.toString(),
+        "padding": paddingValue.toString(),
         "original_crop": orignalCrop64,
-        "equipo": equipo,
-        "derecha": areaValue.value.right.toString(),
-        "izquierda": areaValue.value.left.toString(),
-        "abajo": areaValue.value.bottom.toString(),
-        "arriba": areaValue.value.top.toString(),
-        "targetImage_width": _targetImage.width.toString(),
-        "targetImage_height": _targetImage.height.toString(),
-        "originalSize_width":
-            originalSize.width.toString(), //igual que  targetImage_width
-        "originalSize_height":
-            originalSize.height.toString(), //igual que  targetImage_height
-        "scala": _scala.toString(),
-        "padding": paddingValue.toString()
+        "idImage": isNewImage
+            ? "new"
+            : widget.images[selectedImage].idImage.toString(),
+        "position": isNewImage ? widget.images.length : selectedImage,
+        "cover": 1 // TODO: revisar que valor debe mandarse en esta variable
       };
+      print("ejecutando post");
+      var endpoint = isNewImage? "/imagenes/add":"/imagenes/update";
 
-      http.post(
-        Uri.parse("https://www.mueblesextraordinarios.com/miguel/Resize.php"),
-        body: body,
+      var response = await http.post(
+        Uri.parse(
+            "https://mueblesextraordinarios.com/app2/public/v1" + endpoint),
+        body: json.encode(bodyNew),
         headers: <String, String>{
-          //'Content-Type': 'application/json; charset=UTF-8',
+          'Content-Type': 'application/json; charset=UTF-8',
         },
-      ).then((response) {
-        print(response.body);
-      }).catchError((error) {
-        print(error);
-      });
-    } catch (e) {}
+      );
+      // ).then((response) {
+      //   print("=================response===================");
+      //   print(response.body);
+      // }).catchError((error) {
+      //   print(error.toString());
+      // });
+      print(response.body);
+    } catch (e) {
+      print(e.toString());
+    }
 
     //resultKey.currentState.resetSize();
 
@@ -619,12 +640,15 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
                 content: Text("Imágenes guardadas exitosamente"),
                 actions: [
                   TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text("Aceptar"))
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Aceptar"),
+                  )
                 ],
-              )).then((value) => Navigator.pop(context));
+              )).then(
+        (value) => Navigator.pop(context),
+      );
       return true;
     } else {
       Navigator.pop(context);
@@ -652,8 +676,8 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
     final image = widget.images[index];
     image.descartada = image.descartada == 1 ? 0 : 1;
     setState(() {});
-    await MysqlSeverDataSource.instance
-        .descartadarImage(idImage: image.idImage, descartada: image.descartada);
+    // await MysqlSeverDataSource.instance
+    //     .descartadarImage(idImage: image.idImage, descartada: image.descartada);
   }
 
   Future _addImage(BuildContext context) async {
@@ -668,6 +692,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
     final result = file.getFile();
 
     if (result != null) {
+      isNewImage = true;
       _imageData = result.readAsBytesSync();
 
       ui.Codec codec = await ui.instantiateImageCodec(_imageData);
@@ -709,6 +734,7 @@ class _PhotoEditorPageState extends State<PhotoEditorPage> {
           }));
       print(result.path);
     }
+    isNewImage = false;
   }
 }
 

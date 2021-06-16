@@ -13,45 +13,20 @@ NO_PROXY: undefined
 Logging Categories:
     FlutterDaemon
 
-Sun Jun 13 2021 [22:23:33 GMT-0500 (Ecuador Time)] Log file started
-[10:23:33 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
-[10:23:33 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
-[10:23:33 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
-[10:23:33 PM] [FlutterDaemon] [Info]     PID: 17664
-[10:23:33 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
-[10:23:34 PM] [General] [Error] Error during `edit.getFixes`: invalid file.
-[10:23:35 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":18512}}]
-[10:23:35 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
-[10:23:35 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
-[10:23:35 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
-[10:23:35 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[10:23:36 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:23:36 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
-[10:23:36 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"emulator.getEmulators"}]
-[10:23:36 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[10:23:39 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["windows","ios","android","web"]}}]
-[10:23:39 PM] [General] [Warn] Unable to launch due to no active device
-[10:23:39 PM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["windows","ios","android","web"]}}]
-[10:23:39 PM] [FlutterDaemon] [Info] ==> [{"id":"7","method":"emulator.getEmulators"}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"id":"7","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[10:23:39 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
-[10:25:28 PM] [FlutterDaemon] [Info] ==> [{"id":"8","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:25:28 PM] [FlutterDaemon] [Info] <== [{"id":"8","result":{"platforms":["windows","ios","android","web"]}}]
-[10:25:28 PM] [FlutterDaemon] [Info] ==> [{"id":"9","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[10:25:28 PM] [FlutterDaemon] [Info] <== [{"id":"9","result":{"platforms":["windows","ios","android","web"]}}]
-[10:25:29 PM] [General] [Warn] Did not find session 985bb3bd-2558-4d38-ab53-7a5d5973fce8 to handle dart.progressStart. There were 0 sessions:
-[10:25:29 PM] [General] [Warn] Event will be queued and processed when the session start event fires
-[12:32:04 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
-[1:31:26 AM] [FlutterDaemon] [Info] ==> [{"id":"10","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[1:31:26 AM] [FlutterDaemon] [Info] <== [{"id":"10","result":{"platforms":["windows","ios","android","web"]}}]
-[1:31:26 AM] [FlutterDaemon] [Info] ==> [{"id":"11","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
-[1:31:26 AM] [FlutterDaemon] [Info] <== [{"id":"11","result":{"platforms":["windows","ios","android","web"]}}]
-[1:31:27 AM] [General] [Warn] Did not find session 0994a77b-fda2-4f68-a3b4-8c977cb7ac4e to handle dart.progressStart. There were 0 sessions:
-[1:31:27 AM] [General] [Warn] Event will be queued and processed when the session start event fires
-[4:32:28 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
-[4:32:31 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
-[4:50:49 AM] [General] [Error] Error during `edit.format`: source contains syntax errors.
+Wed Jun 16 2021 [01:38:42 GMT-0500 (Ecuador Time)] Log file started
+[1:38:42 AM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
+[1:38:42 AM] [FlutterDaemon] [Info] ..  in C:\src\flutter
+[1:38:42 AM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[1:38:42 AM] [FlutterDaemon] [Info]     PID: 16028
+[1:38:42 AM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"emulator.getEmulators"}]
+[1:38:43 AM] [General] [Error] Error during `edit.getFixes`: invalid file.
+[1:38:46 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.0","pid":3176}}]
+[1:38:46 AM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
+[1:38:46 AM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[1:38:46 AM] [FlutterDaemon] [Info] <== [{"id":"1","result":[{"id":"Nexus_9_API_30","name":"Nexus 9 API 30","category":"mobile","platformType":"android"},{"id":"Pixel_3_XL_API_30","name":"Pixel 3 XL API 30","category":"mobile","platformType":"android"}]}]
+[1:38:46 AM] [FlutterDaemon] [Info] <== [{"id":"2"}]
+[1:38:50 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null}}]
+[1:38:50 AM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"C:\\Users\\jairo\\Documents\\PCToDriveBackup\\GitHub\\Proyecto-Alicia"}}]
+[1:38:50 AM] [FlutterDaemon] [Info] <== [{"id":"3","result":{"platforms":["windows","ios","android","web"]}}]
+[1:38:50 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
+[1:38:50 AM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null}}]
