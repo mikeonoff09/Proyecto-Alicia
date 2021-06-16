@@ -210,21 +210,19 @@ class HttpHandler {
 
   Future<PsFeatureSuper> updateSuperFeature(PsFeatureSuper superValue) async {
     final response = await http.post(
-        Uri.parse(
-          _baseUrl + "ps_feature_super/update",
-        ),
-        body: json.encode(superValue.toMap()),
-        headers: {
-          HttpHeaders.contentTypeHeader: "application/json",
-        });
+      Uri.parse(_baseUrl + "ps_feature_super/update"),
+      body: json.encode(superValue.toMap()),
+      headers: {HttpHeaders.contentTypeHeader: "application/json"},
+    );
+
     if (response.statusCode == 200) {
       final body = json.decode(response.body);
       final data = body["data"];
-
       return PsFeatureSuper.fromMap(JsonObject.fromString(data).data);
     } else {
       print(response.body);
     }
+    
     return null;
   }
 

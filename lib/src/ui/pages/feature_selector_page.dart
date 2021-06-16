@@ -1,11 +1,9 @@
-import 'package:alicia/src/blocs/features_bloc/features_bloc.dart';
 import 'package:alicia/src/datasources/http_handler.dart';
 import 'package:alicia/src/models/product_details_model.dart';
 import 'package:alicia/src/ui/components/error_dialog.dart';
 import 'package:alicia/src/ui/components/my_textfield.dart';
 import 'package:alicia/src/ui/components/show_loading_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeatureSelectorPage extends StatefulWidget {
   final ProductDetailsMode productData;
@@ -57,7 +55,7 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
     psFeatureSuperList =
         psFeatureSuperList ?? widget.productData.psFeatureSuper;
     psFeatureList = psFeatureList ?? widget.productData.psFeature;
-    final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
+    // final featuresBloc = BlocProvider.of<FeaturesBloc>(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
       child: Row(
@@ -343,16 +341,15 @@ class _FeatureSelectorPageState extends State<FeatureSelectorPage> {
                     Expanded(
                       flex: 1,
                       child: ElevatedButton(
-                          onPressed: () {
-                            //TODO: solicitud de UPDATE ya se realiza hacia el servidor
+                          onPressed: () async {
                             //si resultado es 200 se cierra la ventana
                             //en otro caso muestra el mensaje de error enviado por el servidor
-                            HttpHandler.instance.updateSuperFeature(
+                            PsFeatureSuper psFeatureSuperNew = await HttpHandler.instance.updateSuperFeature(
                                 psFeatureSuper.copyWith(
                                     name: textController.value.text,
                                     idFeatureSuper:
                                         psFeatureSuper.idFeatureSuper,
-                                    position: psFeatureSuper.position));
+                                    position: psFeatureSuper.position)).then((value) => null);
                           },
                           child: Text("Aceptar")),
                     ),
